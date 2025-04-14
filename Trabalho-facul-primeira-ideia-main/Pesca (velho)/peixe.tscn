@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1u2qxgsbo85s"]
+
+[ext_resource type="Script" uid="uid://2p7rrmtwgesc" path="res://Pesca (velho)/peixe.gd" id="1_yd7nk"]
+[ext_resource type="Texture2D" uid="uid://b265atbiwahem" path="res://Pesca (velho)/Assets/fish.png" id="2_ttgvp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yd7nk"]
+radius = 6.0
+height = 28.0
+
+[node name="Peixe" type="CharacterBody2D"]
+script = ExtResource("1_yd7nk")
+
+[node name="Fish" type="Sprite2D" parent="."]
+texture = ExtResource("2_ttgvp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yd7nk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
