@@ -5,7 +5,6 @@ extends TextureRect
 @onready var impacto_esquerda: TextureRect = $"../impacto esquerda"
 @onready var impacto_direita: TextureRect = $"../impacto direita"
 
-
 const INIMIGO_ATAQUE_DIREITA = preload("res://Assets/Finais/inimigo ataque direita.png")
 const INIMIGO_ATAQUE_ESQUERDA = preload("res://Assets/Finais/inimigo ataque esquerda.png")
 const INIMIGO_NEUTRO = preload("res://Assets/Finais/Inimigo neutro.png")

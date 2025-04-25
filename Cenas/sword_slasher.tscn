@@ -191,6 +191,34 @@ expand_mode = 5
 stretch_mode = 5
 script = ExtResource("2_61tt7")
 
+[node name="Barra de vida" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -173.5
+offset_top = -149.0
+offset_right = 173.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Vida" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
+layout_mode = 2
+texture = ExtResource("6_2v1cl")
+expand_mode = 3
+
+[node name="Vida2" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
+layout_mode = 2
+texture = ExtResource("6_2v1cl")
+expand_mode = 3
+
+[node name="Vida3" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
+layout_mode = 2
+texture = ExtResource("6_2v1cl")
+expand_mode = 3
+
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Player" method="_on_camera_2d_swipe"]

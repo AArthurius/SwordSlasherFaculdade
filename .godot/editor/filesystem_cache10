@@ -1,33 +1,31 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1745549207
-export_presets.cfg::TextFile/TextFile::-1::1745555280::0::1::::<><><>0<>0<><>::
-::res://Assets/::1745549893
-flecha.png::CompressedTexture2D/CompressedTexture2D::6907511673529224468::1745555280::1745555280::1::::<><><>0<>0<>cf9c705b58c6cd7d6eea345cf67942a2<>res://.godot/imported/flecha.png-1974e72b776f0ddeff0a334ea83de67b.ctex::
-flechah.png::CompressedTexture2D/CompressedTexture2D::6960756268312228272::1745555280::1745555280::1::::<><><>0<>0<>7a9a978c90e7e8741cb890a17d1eee00<>res://.godot/imported/flechah.png-c0c4a6de49eeda59eec92e8fbbbeeaa5.ctex::
-flechav.png::CompressedTexture2D/CompressedTexture2D::2525396333307233135::1745555280::1745555280::1::::<><><>0<>0<>0e811862f80071e0ad4092732f71e26b<>res://.godot/imported/flechav.png-10bcc76aa1503c682e1990983d5d88d7.ctex::
-inimigo.png::CompressedTexture2D/CompressedTexture2D::8875539598315685931::1745555280::1745555280::1::::<><><>0<>0<>1cdc45b0c1901a2450e7c85356cf8763<>res://.godot/imported/inimigo.png-85803fd68c18be893f1a08e42dbe4a19.ctex::
-jogador.png::CompressedTexture2D/CompressedTexture2D::2494624764468156855::1745555280::1745555280::1::::<><><>0<>0<>0180a45a806c5aa42d1c23b9a3833d13<>res://.godot/imported/jogador.png-e7ef33a05165a7a646bcda6e9af641db.ctex::
-quadrado.jpg::CompressedTexture2D/CompressedTexture2D::4010258822049262116::1745555280::1745555280::1::::<><><>0<>0<>628c852055060d8799354e940bd7715a<>res://.godot/imported/quadrado.jpg-9d8c4d20c7d1c43caf4eddccb1bda61f.ctex::
-::res://Assets/Finais/::1745550350
-flecha azul H.png::CompressedTexture2D::14254767796812249::1745550346::1745550346::1::::<><><>0<>0<>aca77c5fdec627a660bfb75af0fd72cf<>res://.godot/imported/flecha azul H.png-b6f92118f01098bb46903d1c7cd96b5b.ctex::
-flecha azul V.png::CompressedTexture2D::4951444643757182082::1745550350::1745550351::1::::<><><>0<>0<>b66e32bc52a65bdc7c9450b482c85126<>res://.godot/imported/flecha azul V.png-837bb83365f8b803944cb5a89895bad2.ctex::
-flecha azul.png::CompressedTexture2D::8743774484269915456::1745549897::1745549898::1::::<><><>0<>0<>121524839e9949058825a1fa9937af2a<>res://.godot/imported/flecha azul.png-e419abf37425c6c3c12856673ec9a4a4.ctex::
-flecha laranja H.png::CompressedTexture2D::5335636065649143586::1745550346::1745550346::1::::<><><>0<>0<>c876cfa5dbf3cbbaa4c02ec939f1edc9<>res://.godot/imported/flecha laranja H.png-11f9dccdf4967c575ee4ccfc96ea27d3.ctex::
-flecha laranja V.png::CompressedTexture2D::1409685418151051897::1745550350::1745550351::1::::<><><>0<>0<>9f152d06d627fd74049b94670e89ac03<>res://.godot/imported/flecha laranja V.png-c41d50c9ac47eb515271af887ca325dd.ctex::
-flecha laranja.png::CompressedTexture2D::8983019518207778798::1745549897::1745549898::1::::<><><>0<>0<>ce69d534fd03a52613cdbe1c8d418230<>res://.godot/imported/flecha laranja.png-667b87c4156087bb7de44a0cbbdda5b5.ctex::
-Impacto.png::CompressedTexture2D::4414914688037533522::1745549897::1745549906::1::::<><><>0<>0<>3505e8edd0d667a714dae0548e529836<>res://.godot/imported/Impacto.png-f3259bf1c8d4219ef4ecaa53e3446702.ctex::
-inimigo ataque direita.png::CompressedTexture2D::4629878759127682200::1745549897::1745549905::1::::<><><>0<>0<>7302a1c1d418e837cb04c9c610a74fd1<>res://.godot/imported/inimigo ataque direita.png-f3ed5c1116b4ea98f021303a9c68bd3b.ctex::
-inimigo ataque esquerda.png::CompressedTexture2D::2356417246610336070::1745549897::1745549905::1::::<><><>0<>0<>b908c01af2a8e9c34e4bb9873c3df6df<>res://.godot/imported/inimigo ataque esquerda.png-9dc8ae5cf1b670a7f1f2be6a24b1d7dc.ctex::
-Inimigo neutro.png::CompressedTexture2D::5237557876722475136::1745549897::1745549905::1::::<><><>0<>0<>3fdd607e5eda29bcb82801dedbdf3269<>res://.godot/imported/Inimigo neutro.png-ab4f4e409a7b3c3d8ea851c871830e8a.ctex::
-player ataque direita.png::CompressedTexture2D::3805778146846260016::1745549897::1745549905::1::::<><><>0<>0<>af7964db045d6adbb3374cff398fe389<>res://.godot/imported/player ataque direita.png-d3099243bf2b0535276c5f2512b4135f.ctex::
-player ataque esquerda.png::CompressedTexture2D::5577902259167053539::1745549897::1745549905::1::::<><><>0<>0<>dd957a64dca2b0abd85641c31fec41a4<>res://.godot/imported/player ataque esquerda.png-0a611c216ade05bc1c73588c2ff72446.ctex::
-player defesa.png::CompressedTexture2D::4617257339960737457::1745549897::1745549905::1::::<><><>0<>0<>2f47d85374514cce1b4819466ba73c6e<>res://.godot/imported/player defesa.png-8c4f16a6e329ad4ee4a78f939de9a24c.ctex::
-::res://Cenas/::1745550199
-flecha.tscn::PackedScene::7970058368810102696::1745550199::0::1::::<><><>0<>0<><>::uid://c6f3vyn23fyrg::::res://Assets/flechah.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
-salaDungeon.glb::PackedScene::9181164974860498432::1745555280::1745549218::1::::<><><>0<>0<>4a4f3d50857a9119a65eefe4bd5fa3e9<>res://.godot/imported/salaDungeon.glb-fb90f4307db0a430eceebc18c8a20f60.scn::
-sword_slasher.tscn::PackedScene::6468664047896390950::1745550040::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://d32opfj2b70wa::::res://Cenas/salaDungeon.glb<>uid://dbqgl5mbnjqef::::res://Scripts/player.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://c6f3vyn23fyrg::::res://Assets/flechah.png<>uid://cgvd2v3wk7m05::::res://Assets/Finais/Inimigo neutro.png<>uid://b61vs3gsdfr7v::::res://Assets/Finais/player defesa.png
-::res://Scripts/::1745550199
-camera_2d.gd::GDScript/GDScript::8034934747453120834::1745555280::0::1::::<>Camera3D<><>0<>0<><>::
-flecha.gd::GDScript::3374996856871652042::1745550199::0::1::::<>Sprite2D<><>0<>0<><>::
-lista_de_comandos.gd::GDScript::6092673651249217483::1745550189::0::1::::<>Control<><>0<>0<><>::
-player.gd::GDScript::7262866478773182085::1745550040::0::1::::<>TextureRect<><>0<>0<><>::
+::res://::1745609359
+export_presets.cfg::TextFile/TextFile::-1::1745609061::0::1::::<><><>0<>0<><>::
+::res://Assets/::1745609112
+flecha.png::CompressedTexture2D/CompressedTexture2D::6907511673529224468::1745609061::1745609112::1::::<><><>0<>0<>cf9c705b58c6cd7d6eea345cf67942a2<>res://.godot/imported/flecha.png-1974e72b776f0ddeff0a334ea83de67b.ctex::
+flechah.png::CompressedTexture2D/CompressedTexture2D::6960756268312228272::1745609061::1745609112::1::::<><><>0<>0<>7a9a978c90e7e8741cb890a17d1eee00<>res://.godot/imported/flechah.png-c0c4a6de49eeda59eec92e8fbbbeeaa5.ctex::
+flechav.png::CompressedTexture2D/CompressedTexture2D::2525396333307233135::1745609061::1745609112::1::::<><><>0<>0<>0e811862f80071e0ad4092732f71e26b<>res://.godot/imported/flechav.png-10bcc76aa1503c682e1990983d5d88d7.ctex::
+inimigo.png::CompressedTexture2D/CompressedTexture2D::8875539598315685931::1745609061::1745609112::1::::<><><>0<>0<>1cdc45b0c1901a2450e7c85356cf8763<>res://.godot/imported/inimigo.png-85803fd68c18be893f1a08e42dbe4a19.ctex::
+jogador.png::CompressedTexture2D/CompressedTexture2D::2494624764468156855::1745609061::1745609112::1::::<><><>0<>0<>0180a45a806c5aa42d1c23b9a3833d13<>res://.godot/imported/jogador.png-e7ef33a05165a7a646bcda6e9af641db.ctex::
+quadrado.jpg::CompressedTexture2D/CompressedTexture2D::4010258822049262116::1745609061::1745609112::1::::<><><>0<>0<>628c852055060d8799354e940bd7715a<>res://.godot/imported/quadrado.jpg-9d8c4d20c7d1c43caf4eddccb1bda61f.ctex::
+::res://Assets/Finais/::1745609133
+flecha azul H.png::CompressedTexture2D/CompressedTexture2D::14254767796812249::1745609061::1745609124::1::::<><><>0<>0<>aca77c5fdec627a660bfb75af0fd72cf<>res://.godot/imported/flecha azul H.png-b6f92118f01098bb46903d1c7cd96b5b.ctex::
+flecha azul V.png::CompressedTexture2D/CompressedTexture2D::4951444643757182082::1745609061::1745609124::1::::<><><>0<>0<>b66e32bc52a65bdc7c9450b482c85126<>res://.godot/imported/flecha azul V.png-837bb83365f8b803944cb5a89895bad2.ctex::
+flecha laranja H.png::CompressedTexture2D/CompressedTexture2D::5335636065649143586::1745609061::1745609124::1::::<><><>0<>0<>c876cfa5dbf3cbbaa4c02ec939f1edc9<>res://.godot/imported/flecha laranja H.png-11f9dccdf4967c575ee4ccfc96ea27d3.ctex::
+flecha laranja V.png::CompressedTexture2D/CompressedTexture2D::1409685418151051897::1745609061::1745609124::1::::<><><>0<>0<>9f152d06d627fd74049b94670e89ac03<>res://.godot/imported/flecha laranja V.png-c41d50c9ac47eb515271af887ca325dd.ctex::
+Impacto.png::CompressedTexture2D/CompressedTexture2D::4414914688037533522::1745609061::1745609133::1::::<><><>0<>0<>3505e8edd0d667a714dae0548e529836<>res://.godot/imported/Impacto.png-f3259bf1c8d4219ef4ecaa53e3446702.ctex::
+inimigo ataque direita.png::CompressedTexture2D/CompressedTexture2D::4629878759127682200::1745609061::1745609123::1::::<><><>0<>0<>7302a1c1d418e837cb04c9c610a74fd1<>res://.godot/imported/inimigo ataque direita.png-f3ed5c1116b4ea98f021303a9c68bd3b.ctex::
+inimigo ataque esquerda.png::CompressedTexture2D/CompressedTexture2D::2356417246610336070::1745609061::1745609123::1::::<><><>0<>0<>b908c01af2a8e9c34e4bb9873c3df6df<>res://.godot/imported/inimigo ataque esquerda.png-9dc8ae5cf1b670a7f1f2be6a24b1d7dc.ctex::
+Inimigo neutro.png::CompressedTexture2D/CompressedTexture2D::5237557876722475136::1745609061::1745609124::1::::<><><>0<>0<>3fdd607e5eda29bcb82801dedbdf3269<>res://.godot/imported/Inimigo neutro.png-ab4f4e409a7b3c3d8ea851c871830e8a.ctex::
+player ataque direita.png::CompressedTexture2D/CompressedTexture2D::3805778146846260016::1745609061::1745609123::1::::<><><>0<>0<>af7964db045d6adbb3374cff398fe389<>res://.godot/imported/player ataque direita.png-d3099243bf2b0535276c5f2512b4135f.ctex::
+player ataque esquerda.png::CompressedTexture2D/CompressedTexture2D::5577902259167053539::1745609061::1745609123::1::::<><><>0<>0<>dd957a64dca2b0abd85641c31fec41a4<>res://.godot/imported/player ataque esquerda.png-0a611c216ade05bc1c73588c2ff72446.ctex::
+player defesa.png::CompressedTexture2D/CompressedTexture2D::4617257339960737457::1745609061::1745609124::1::::<><><>0<>0<>2f47d85374514cce1b4819466ba73c6e<>res://.godot/imported/player defesa.png-8c4f16a6e329ad4ee4a78f939de9a24c.ctex::
+::res://Cenas/::1745609308
+flecha.tscn::PackedScene::7970058368810102696::1745609308::0::1::::<><><>0<>0<><>::uid://g51kxb32ni4::::res://Assets/Finais/flecha azul H.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
+salaDungeon.glb::PackedScene/PackedScene::9181164974860498432::1745609061::1745609133::1::::<><><>0<>0<>4a4f3d50857a9119a65eefe4bd5fa3e9<>res://.godot/imported/salaDungeon.glb-fb90f4307db0a430eceebc18c8a20f60.scn::
+sword_slasher.tscn::PackedScene::6468664047896390950::1745609308::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://d32opfj2b70wa::::res://Cenas/salaDungeon.glb<>uid://dbqgl5mbnjqef::::res://Scripts/player.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://g51kxb32ni4::::res://Assets/Finais/flecha azul H.png<>uid://cgvd2v3wk7m05::::res://Assets/Finais/Inimigo neutro.png<>uid://b35u884qfai6e::::res://Assets/Finais/Impacto.png<>uid://b61vs3gsdfr7v::::res://Assets/Finais/player defesa.png
+::res://Scripts/::1745609061
+camera_2d.gd::GDScript/GDScript::8034934747453120834::1745609061::0::1::::<>Camera3D<><>0<>0<><>::
+flecha.gd::GDScript/GDScript::3374996856871652042::1745609061::0::1::::<>Sprite2D<><>0<>0<><>::
+lista_de_comandos.gd::GDScript/GDScript::6092673651249217483::1745609061::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript/GDScript::7262866478773182085::1745609061::0::1::::<>TextureRect<><>0<>0<><>::
