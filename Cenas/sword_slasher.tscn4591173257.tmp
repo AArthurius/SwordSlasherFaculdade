@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyfp7mi73rcru"]
+
+[ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
+[ext_resource type="PackedScene" uid="uid://d32opfj2b70wa" path="res://Cenas/salaDungeon.glb" id="1_tq7cw"]
+[ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/player.gd" id="2_61tt7"]
+[ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
+[ext_resource type="Texture2D" uid="uid://c6f3vyn23fyrg" path="res://Assets/flechah.png" id="4_xlxsc"]
+[ext_resource type="Texture2D" uid="uid://dypm3ttd4ervn" path="res://Assets/inimigo.png" id="5_xlxsc"]
+[ext_resource type="Texture2D" uid="uid://bbsodt3x5fvhn" path="res://Assets/jogador.png" id="6_3muu5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_86t8k"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_tq7cw"]
+sky_material = SubResource("ProceduralSkyMaterial_86t8k")
+
+[sub_resource type="Environment" id="Environment_86t8k"]
+background_mode = 2
+sky = SubResource("Sky_tq7cw")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="sword slasher" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_86t8k")
+
+[node name="3D" type="Node3D" parent="."]
+
+[node name="salaDungeon" parent="3D" instance=ExtResource("1_tq7cw")]
+
+[node name="Camera2D" type="Camera3D" parent="3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0, 1.06532, 1.91102)
+script = ExtResource("1_86t8k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Área vísivel da lista" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 285.0
+grow_horizontal = 2
+
+[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI/Área vísivel da lista"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 214.0
+grow_horizontal = 2
+script = ExtResource("3_61tt7")
+
+[node name="Flechas" type="Control" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+anchors_preset = 0
+
+[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+position = Vector2(50, 181)
+
+[node name="Flechah" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos0"]
+visible = false
+scale = Vector2(0.155521, 0.1554)
+texture = ExtResource("4_xlxsc")
+
+[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+position = Vector2(50, 258.5)
+
+[node name="Flechah" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos1"]
+visible = false
+scale = Vector2(0.078, 0.078)
+texture = ExtResource("4_xlxsc")
+
+[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+position = Vector2(50, 301.66)
+
+[node name="Flechah" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos2"]
+visible = false
+scale = Vector2(0.052, 0.052)
+texture = ExtResource("4_xlxsc")
+
+[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+position = Vector2(50, 332.25)
+
+[node name="Flechah" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos3"]
+visible = false
+scale = Vector2(0.039, 0.039)
+texture = ExtResource("4_xlxsc")
+
+[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+position = Vector2(50, 356)
+
+[node name="Flechah" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/fora"]
+visible = false
+scale = Vector2(0.031, 0.031)
+texture = ExtResource("4_xlxsc")
+
+[node name="Aparecer flecha" type="Timer" parent="CanvasLayer/UI"]
+autostart = true
+
+[node name="Inimigo" type="TextureRect" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -263.0
+offset_top = -590.0
+offset_right = 263.0
+offset_bottom = -153.635
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_xlxsc")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Player" type="TextureRect" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -263.0
+offset_top = -436.365
+offset_right = 263.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_3muu5")
+expand_mode = 5
+stretch_mode = 5
+script = ExtResource("2_61tt7")
+
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Player" method="_on_camera_2d_swipe"]
+[connection signal="timeout" from="CanvasLayer/UI/Aparecer flecha" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_aparecer_flecha_timeout"]
