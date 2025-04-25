@@ -1,5 +1,7 @@
-HBoxContainer
 TextureRect
+TextureButton
+VBoxContainer
+HBoxContainer
 Timer
 Control
 Sprite2D
