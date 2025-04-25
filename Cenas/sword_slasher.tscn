@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://g51kxb32ni4" path="res://Assets/Finais/flecha azul H.png" id="5_amkhj"]
 [ext_resource type="Texture2D" uid="uid://cgvd2v3wk7m05" path="res://Assets/Finais/Inimigo neutro.png" id="5_mq458"]
 [ext_resource type="Texture2D" uid="uid://b35u884qfai6e" path="res://Assets/Finais/Impacto.png" id="6_2v1cl"]
-[ext_resource type="Texture2D" uid="uid://buhsu0hkk25q7" path="res://Assets/Finais/player ataque direita.png" id="7_amkhj"]
+[ext_resource type="Texture2D" uid="uid://b61vs3gsdfr7v" path="res://Assets/Finais/player defesa.png" id="6_amkhj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_86t8k"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -186,7 +186,7 @@ offset_top = -436.365
 offset_right = 263.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("7_amkhj")
+texture = ExtResource("6_amkhj")
 expand_mode = 5
 stretch_mode = 5
 script = ExtResource("2_61tt7")
