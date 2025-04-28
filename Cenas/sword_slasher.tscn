@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=25 format=3 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="PackedScene" uid="uid://d32opfj2b70wa" path="res://Cenas/salaDungeon.glb" id="1_tq7cw"]
@@ -8,6 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://cgvd2v3wk7m05" path="res://Assets/Finais/Inimigo neutro.png" id="5_mq458"]
 [ext_resource type="Texture2D" uid="uid://b35u884qfai6e" path="res://Assets/Finais/Impacto.png" id="6_2v1cl"]
 [ext_resource type="Texture2D" uid="uid://b61vs3gsdfr7v" path="res://Assets/Finais/player defesa.png" id="6_amkhj"]
+[ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
+[ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
+[ext_resource type="Texture2D" uid="uid://doiidkvmg87lg" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png" id="13_1i0ms"]
+[ext_resource type="Texture2D" uid="uid://bf3gtqyg7wdrt" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Default.png" id="13_ht1eh"]
+[ext_resource type="Texture2D" uid="uid://00hmjfqxi43v" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Hover.png" id="14_1i0ms"]
+[ext_resource type="Texture2D" uid="uid://cqik87clqaany" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png" id="14_n8unr"]
+[ext_resource type="Texture2D" uid="uid://cnwvi4bcrd2hp" path="res://Assets/placeholder/aviso de perigo.png" id="15_ht1eh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_86t8k"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -23,6 +30,298 @@ tonemap_mode = 2
 ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_61aoi"]
+resource_name = "Fade out"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_ht1eh"]
+resource_name = "Fade in"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_1i0ms"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Black:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Black:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Black:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Instructions:modulate:r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Instructions:modulate:g")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Instructions:modulate:b")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Instructions:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Game Over/Background:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(83, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Game Over/Background:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(330, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_n8unr"]
+resource_name = "Fade Instructions"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Instructions:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Instructions:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Instructions:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Instructions:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_u4r6q"]
+resource_name = "Game Over Screen appear"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game Over/Background:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(83, -0.25, 0, 0.25, 0, 83, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Game Over/Background:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(981, -0.25, 0, 0.25, 0, 330, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n8unr"]
+_data = {
+&"Fade Instructions": SubResource("Animation_n8unr"),
+&"Fade in": SubResource("Animation_ht1eh"),
+&"Fade out": SubResource("Animation_61aoi"),
+&"Game Over Screen appear": SubResource("Animation_u4r6q"),
+&"RESET": SubResource("Animation_1i0ms")
+}
 
 [node name="sword slasher" type="Node3D"]
 
@@ -73,7 +372,6 @@ script = ExtResource("3_61tt7")
 anchors_preset = 0
 
 [node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
-visible = false
 position = Vector2(50, 130)
 
 [node name="Flechah2" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos0"]
@@ -81,7 +379,6 @@ scale = Vector2(0.2, 0.199)
 texture = ExtResource("5_amkhj")
 
 [node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
-visible = false
 position = Vector2(50, 304)
 
 [node name="Flechah2" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos1"]
@@ -89,7 +386,6 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_amkhj")
 
 [node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
-visible = false
 position = Vector2(50, 401)
 
 [node name="Flechah2" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos2"]
@@ -97,7 +393,6 @@ scale = Vector2(0.066, 0.066)
 texture = ExtResource("5_amkhj")
 
 [node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
-visible = false
 position = Vector2(50, 469)
 
 [node name="Flechah2" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos3"]
@@ -105,7 +400,6 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("5_amkhj")
 
 [node name="fora" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
-visible = false
 position = Vector2(50, 522)
 
 [node name="Flechah2" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/fora"]
@@ -113,7 +407,7 @@ scale = Vector2(0.04, 0.04)
 texture = ExtResource("5_amkhj")
 
 [node name="Aparecer flecha" type="Timer" parent="CanvasLayer/UI"]
-autostart = true
+one_shot = true
 
 [node name="Reset sprites" type="Timer" parent="CanvasLayer/UI"]
 wait_time = 0.3
@@ -219,8 +513,134 @@ layout_mode = 2
 texture = ExtResource("6_2v1cl")
 expand_mode = 3
 
+[node name="Game Over" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_61aoi")
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/UI/Game Over"]
+layout_mode = 2
+offset_left = 83.0
+offset_top = 330.0
+offset_right = 457.0
+offset_bottom = 630.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_2v1cl")
+expand_mode = 5
+
+[node name="Título" type="Label" parent="CanvasLayer/UI/Game Over/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = 33.0
+offset_right = 188.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 55
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Botões" type="HBoxContainer" parent="CanvasLayer/UI/Game Over/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = 5.0
+offset_right = 113.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/separation = 50
+
+[node name="Play" type="TextureButton" parent="CanvasLayer/UI/Game Over/Background/Botões"]
+layout_mode = 2
+texture_normal = ExtResource("13_1i0ms")
+texture_pressed = ExtResource("14_n8unr")
+stretch_mode = 0
+
+[node name="Exit" type="TextureButton" parent="CanvasLayer/UI/Game Over/Background/Botões"]
+layout_mode = 2
+texture_normal = ExtResource("13_ht1eh")
+texture_pressed = ExtResource("14_1i0ms")
+stretch_mode = 0
+
+[node name="Tempo de reação Label" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_right = 49.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "0.00s"
+horizontal_alignment = 1
+
+[node name="Bordas Vermelhas" type="TextureRect" parent="CanvasLayer/UI/Tempo de reação Label"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -220.5
+offset_right = 319.5
+offset_bottom = 960.0
+mouse_filter = 2
+texture = ExtResource("15_ht1eh")
+
+[node name="Tempo de reação" type="Timer" parent="CanvasLayer/UI/Tempo de reação Label"]
+wait_time = 2.5
+one_shot = true
+
+[node name="Instructions" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -197.0
+offset_right = 166.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Swipe to start"
+
+[node name="Black" type="ColorRect" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="CanvasLayer/UI"]
+libraries = {
+&"": SubResource("AnimationLibrary_n8unr")
+}
+
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Player" method="_on_camera_2d_swipe"]
 [connection signal="timeout" from="CanvasLayer/UI/Aparecer flecha" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_aparecer_flecha_timeout"]
 [connection signal="timeout" from="CanvasLayer/UI/Reset sprites" to="CanvasLayer/UI/Player" method="_on_reset_sprites_timeout"]
+[connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Play" to="CanvasLayer/UI/Game Over" method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Exit" to="CanvasLayer/UI/Game Over" method="_on_exit_pressed"]
+[connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]

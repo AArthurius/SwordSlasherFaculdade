@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Sword Slasher Faculdade"
-run/main_scene="uid://cyfp7mi73rcru"
+run/main_scene="uid://drixhcc8rhejd"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
 
 [display]
 

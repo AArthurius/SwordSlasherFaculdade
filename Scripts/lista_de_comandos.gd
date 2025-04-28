@@ -10,25 +10,46 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 @onready var fora: Marker2D = $fora
 @onready var barra_de_vida: HBoxContainer = $"../../Barra de vida"
 @onready var flechas: Control = $Flechas
+@onready var game_over: Control = $"../../Game Over"
+@onready var tempo_de_reação_label: Label = $"../../Tempo de reação Label"
+@onready var tempo_de_reação: Timer = $"../../Tempo de reação Label/Tempo de reação"
+@onready var animation: AnimationPlayer = $"../../Animation"
+@onready var bordas_vermelhas: TextureRect = $"../../Tempo de reação Label/Bordas Vermelhas"
 
 var flechaScale = Vector2(0.2, 0.2)
-var contador = 0
 var tempoTween = 0.25
 var limite = 10
 var dead = false
 
+func _ready():
+	animation.play("Fade in")
+	pos_0.hide()
+	pos_1.hide()
+	pos_2.hide()
+	pos_3.hide()
+	fora.hide()
+	for i in 5:
+		addArrow(randi_range(0,3))
+
 func _process(delta) -> void:
 	updateArrows()
-	if contador > 3:
-		contador = 0
-	if Input.is_action_just_pressed("ui_accept"):
-		addArrow(contador)
-		contador += 1
-	
+	avisoPerigo()
 
+func avisoPerigo():
+	if dead:
+		bordas_vermelhas.modulate = Color(1, 1, 1, 1)
+	
+	var tempoTotal = snapped(tempo_de_reação.wait_time, 0.1)
+	var tempoSobrando = snapped(tempo_de_reação.time_left, 0.1)
+	
+	tempo_de_reação_label.text = str(tempoSobrando, "s")
+	bordas_vermelhas.modulate = Color(1, 1, 1, (tempoTotal - tempoSobrando)/tempoTotal)
+	
+	print((tempoTotal - tempoSobrando))
 
 func gameOver():
 	dead = true
+	game_over.gameOver()
 
 func addArrow(direção):
 	#0 direita
@@ -75,24 +96,48 @@ func updateArrows():
 				flechas.get_child(i).modulate = Color(1, 1, 1, 0)
 
 func _on_aparecer_flecha_timeout() -> void:
-	
-	
+	#Desligado
 	if flechas.get_children().size() < limite and not dead:
 		addArrow(randi_range(0,3))
 		addArrow(randi_range(0,3))
 		addArrow(randi_range(0,3))
 
-func checkArrow(swipeDirection):
+func checkArrow(swipeDirection, timeout: bool):
 	if flechas.get_children().size() > 0 and not dead:
-		if flechas.get_child(0).direction == swipeDirection:
-			player.attack(swipeDirection, flechas.get_child(0).enemyAttack)
-			flechas.get_child(0).queue_free()
+		#acerto
+		if flechas.get_child(0).direction == swipeDirection and not timeout:
+			player.attack(swipeDirection, flechas.get_child(0).enemyAttack, true, false)
+			Global.pontuaçãoAtual
+		#erro
 		else:
-				if barra_de_vida.get_child_count() <= 0:
-					gameOver()
-				else: 
-					barra_de_vida.get_child(-1).queue_free()
+			#acabou o tempo
+			if timeout:
+				player.attack(swipeDirection, flechas.get_child(0).enemyAttack, false, true)
+			#errou a direção
+			else:
+				player.attack(swipeDirection, flechas.get_child(0).enemyAttack, false, false)
+			#diminui a vida
+			if barra_de_vida.get_child_count() <= 1:
+				gameOver()
+				barra_de_vida.get_child(-1).queue_free()
+			else: 
+				barra_de_vida.get_child(-1).queue_free()
+		#adiciona mais uma flecha - tira a flecha usada - reinicia o timer do ataque inimigo
+		addArrow(randi_range(0,3))
+		flechas.get_child(0).queue_free()
+		tempo_de_reação.start()
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
+	if $"../../Instructions".visible:
+		animation.play("Fade Instructions")
+		bordas_vermelhas.show()
+	
 	if flechas.get_child_count() > 0 and not dead:
-		checkArrow(directionIndex)
+		checkArrow(directionIndex, false)
+
+func _on_tempo_de_reação_timeout() -> void:
+	checkArrow(flechas.get_child(0).direction, true)
+
+func _on_animation_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Fade Instructions":
+		$"../../Instructions".hide()
