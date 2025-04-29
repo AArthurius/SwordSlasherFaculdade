@@ -98,5 +98,14 @@ func resetSprites():
 	impacto_esquerda.hide()
 	impacto_direita.hide()
 
+func change_state():
+	pass
+
+func set_sprite():
+	pass
+
+
+
+
 func _on_reset_sprites_timeout() -> void:
 	resetSprites()

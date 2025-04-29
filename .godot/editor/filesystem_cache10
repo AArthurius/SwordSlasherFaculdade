@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1745868823
+::res://::1745953551
 export_presets.cfg::TextFile/TextFile::-1::1745609061::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1745610242
 ::res://Assets/Finais/::1745609133
@@ -15,7 +15,7 @@ player ataque direita.png::CompressedTexture2D/CompressedTexture2D::380577814684
 player ataque esquerda.png::CompressedTexture2D/CompressedTexture2D::5577902259167053539::1745609061::1745609123::1::::<><><>0<>0<>dd957a64dca2b0abd85641c31fec41a4<>res://.godot/imported/player ataque esquerda.png-0a611c216ade05bc1c73588c2ff72446.ctex::
 player defesa.png::CompressedTexture2D/CompressedTexture2D::4617257339960737457::1745609061::1745609124::1::::<><><>0<>0<>2f47d85374514cce1b4819466ba73c6e<>res://.godot/imported/player defesa.png-8c4f16a6e329ad4ee4a78f939de9a24c.ctex::
 ::res://Assets/placeholder/::1745869380
-aviso de perigo.png::CompressedTexture2D::5732003513304969617::1745869380::1745869380::1::::<><><>0<>0<>70c3115b53b2924f9cae7f9a4132c2d2<>res://.godot/imported/aviso de perigo.png-e8102f75a9751b3d0420e4d8fff1cba4.ctex::
+aviso de perigo.png::CompressedTexture2D/CompressedTexture2D::5732003513304969617::1745869380::1745869380::1::::<><><>0<>0<>70c3115b53b2924f9cae7f9a4132c2d2<>res://.godot/imported/aviso de perigo.png-e8102f75a9751b3d0420e4d8fff1cba4.ctex::
 flecha.png::CompressedTexture2D/CompressedTexture2D::6907511673529224468::1745609061::1745610242::1::::<><><>0<>0<>2efac0adcce61ae625d70dcaa993843c<>res://.godot/imported/flecha.png-d4937f5a2059685b686dafd9d2cecdee.ctex::
 flechah.png::CompressedTexture2D/CompressedTexture2D::6960756268312228272::1745609061::1745610242::1::::<><><>0<>0<>01ef87bdecd70b97d32c4cd63f5a4df7<>res://.godot/imported/flechah.png-06fd0eb88bb14e4c962a08d105153ee8.ctex::
 flechav.png::CompressedTexture2D/CompressedTexture2D::2525396333307233135::1745609061::1745610242::1::::<><><>0<>0<>f02f5207d97ad98e4a9fa9878e0184a4<>res://.godot/imported/flechav.png-a8802deaa0c2f3c5a15ed1aa27edb5e8.ctex::
@@ -108,16 +108,16 @@ Unactive.png::CompressedTexture2D/CompressedTexture2D::7676577456924018694::1745
 1-3.png::CompressedTexture2D/CompressedTexture2D::4056379124783620921::1745610279::1745610279::1::::<><><>0<>0<>ecc4fcf45d65c26d71b554d3fee887c1<>res://.godot/imported/1-3.png-30fd02b0d72248abc84e8443a4026a57.ctex::
 2-3.png::CompressedTexture2D/CompressedTexture2D::8969517828501097180::1745610279::1745610279::1::::<><><>0<>0<>ecc338d909e6ab61bc6703ff940c5528<>res://.godot/imported/2-3.png-0d9d014180f647d8641ee9a86cd9b610.ctex::
 3-3.png::CompressedTexture2D/CompressedTexture2D::2758115807881452740::1745610279::1745610279::1::::<><><>0<>0<>6d761766bfd97c4ad1a07cc03006588c<>res://.godot/imported/3-3.png-fbd3ac319ecb5863ddcb6383f02ac0ac.ctex::
-::res://Cenas/::1745868994
-flecha.tscn::PackedScene::7970058368810102696::1745868598::0::1::::<><><>0<>0<><>::uid://g51kxb32ni4::::res://Assets/Finais/flecha azul H.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
-menu.tscn::PackedScene::8370396516007970733::1745868598::0::1::::<><><>0<>0<><>::uid://cjwxd446wmvqj::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Default.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://d2671viwls7u::::res://Scripts/menu.gd<>uid://cyna05ueh8hak::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Hover.png<>uid://bcpmi1p6y1rcb::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X.png<>uid://bvf88yy5h4lo3::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X Hover.png
+::res://Cenas/::1745871678
+flecha.tscn::PackedScene::7970058368810102696::1745871648::0::1::::<><><>0<>0<><>::uid://g51kxb32ni4::::res://Assets/Finais/flecha azul H.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
+menu.tscn::PackedScene::8370396516007970733::1745871648::0::1::::<><><>0<>0<><>::uid://cjwxd446wmvqj::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Default.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://d2671viwls7u::::res://Scripts/menu.gd<>uid://cyna05ueh8hak::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Hover.png<>uid://bcpmi1p6y1rcb::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X.png<>uid://bvf88yy5h4lo3::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X Hover.png
 salaDungeon.glb::PackedScene/PackedScene::9181164974860498432::1745609061::1745609133::1::::<><><>0<>0<>4a4f3d50857a9119a65eefe4bd5fa3e9<>res://.godot/imported/salaDungeon.glb-fb90f4307db0a430eceebc18c8a20f60.scn::
-sword_slasher.tscn::PackedScene::6468664047896390950::1745868994::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://d32opfj2b70wa::::res://Cenas/salaDungeon.glb<>uid://dbqgl5mbnjqef::::res://Scripts/player.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://g51kxb32ni4::::res://Assets/Finais/flecha azul H.png<>uid://cgvd2v3wk7m05::::res://Assets/Finais/Inimigo neutro.png<>uid://b35u884qfai6e::::res://Assets/Finais/Impacto.png<>uid://b61vs3gsdfr7v::::res://Assets/Finais/player defesa.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://bi46ulynp3hed::::res://Scripts/game_over.gd<>uid://1k6uftrokq5y::::res://Assets/placeholder/UI/Buttons/Square-Medium/Play/Default.png<>uid://rswfa3ya0es2::::res://Assets/placeholder/UI/Buttons/Square-Medium/Play/Hover.png<>uid://doiidkvmg87lg::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png<>uid://cqik87clqaany::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png<>uid://cnwvi4bcrd2hp::::res://Assets/placeholder/aviso de perigo.png
-::res://Scripts/::1745868859
+sword_slasher.tscn::PackedScene::6468664047896390950::1745871678::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://d32opfj2b70wa::::res://Cenas/salaDungeon.glb<>uid://dbqgl5mbnjqef::::res://Scripts/player.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://g51kxb32ni4::::res://Assets/Finais/flecha azul H.png<>uid://cgvd2v3wk7m05::::res://Assets/Finais/Inimigo neutro.png<>uid://b35u884qfai6e::::res://Assets/Finais/Impacto.png<>uid://b61vs3gsdfr7v::::res://Assets/Finais/player defesa.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://bi46ulynp3hed::::res://Scripts/game_over.gd<>uid://doiidkvmg87lg::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png<>uid://bf3gtqyg7wdrt::::res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Default.png<>uid://00hmjfqxi43v::::res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Hover.png<>uid://cqik87clqaany::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png<>uid://cnwvi4bcrd2hp::::res://Assets/placeholder/aviso de perigo.png
+::res://Scripts/::1745871647
 camera_2d.gd::GDScript/GDScript::8034934747453120834::1745609061::0::1::::<>Camera3D<><>0<>0<><>::
 flecha.gd::GDScript/GDScript::3374996856871652042::1745609061::0::1::::<>Sprite2D<><>0<>0<><>::
-lista_de_comandos.gd::GDScript::6092673651249217483::1745868859::0::1::::<>Control<><>0<>0<><>::
-player.gd::GDScript::7262866478773182085::1745866855::0::1::::<>TextureRect<><>0<>0<><>::
-menu.gd::GDScript::268245500895761684::1745862018::0::1::::<>Control<><>0<>0<><>::
-game_over.gd::GDScript::3009716945762923799::1745868485::0::1::::<>Control<><>0<>0<><>::
+game_over.gd::GDScript::3009716945762923799::1745870159::0::1::::<>Control<><>0<>0<><>::
 Global.gd::GDScript::8378714616868836821::1745868852::0::1::::<>Node<><>0<>0<><>::
+lista_de_comandos.gd::GDScript::6092673651249217483::1745871647::0::1::::<>Control<><>0<>0<><>::
+menu.gd::GDScript::268245500895761684::1745862018::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript::7262866478773182085::1745866855::0::1::::<>TextureRect<><>0<>0<><>::
