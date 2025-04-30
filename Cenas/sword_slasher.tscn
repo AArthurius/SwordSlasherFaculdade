@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://g51kxb32ni4" path="res://Assets/Finais/flecha azul H.png" id="5_amkhj"]
 [ext_resource type="Texture2D" uid="uid://cgvd2v3wk7m05" path="res://Assets/Finais/Inimigo neutro.png" id="5_mq458"]
 [ext_resource type="Texture2D" uid="uid://b35u884qfai6e" path="res://Assets/Finais/Impacto.png" id="6_2v1cl"]
-[ext_resource type="Texture2D" uid="uid://b61vs3gsdfr7v" path="res://Assets/Finais/player defesa.png" id="6_amkhj"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
 [ext_resource type="Texture2D" uid="uid://doiidkvmg87lg" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png" id="13_1i0ms"]
 [ext_resource type="Texture2D" uid="uid://bf3gtqyg7wdrt" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Default.png" id="13_ht1eh"]
 [ext_resource type="Texture2D" uid="uid://00hmjfqxi43v" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Hover.png" id="14_1i0ms"]
 [ext_resource type="Texture2D" uid="uid://cqik87clqaany" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png" id="14_n8unr"]
+[ext_resource type="Texture2D" uid="uid://c270jp8tmdkxw" path="res://Assets/Finais/player defesa esquerda.png" id="15_frf08"]
 [ext_resource type="Texture2D" uid="uid://cnwvi4bcrd2hp" path="res://Assets/placeholder/aviso de perigo.png" id="15_ht1eh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_86t8k"]
@@ -406,31 +406,19 @@ position = Vector2(50, 522)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("5_amkhj")
 
-[node name="Aparecer flecha" type="Timer" parent="CanvasLayer/UI"]
+[node name="Aparecer flecha" type="Timer" parent="CanvasLayer/UI/Área vísivel da lista"]
 one_shot = true
 
-[node name="Reset sprites" type="Timer" parent="CanvasLayer/UI"]
+[node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Reset sprites" type="Timer" parent="CanvasLayer/UI/Objetos de ação"]
 wait_time = 0.3
 one_shot = true
 
-[node name="Inimigo" type="TextureRect" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -263.0
-offset_top = -633.0
-offset_right = 263.0
-offset_bottom = 58.5127
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("5_mq458")
-expand_mode = 5
-stretch_mode = 5
-
-[node name="impacto esquerda" type="TextureRect" parent="CanvasLayer/UI"]
+[node name="impacto esquerda" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -438,17 +426,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -247.0
-offset_top = -590.0
-offset_right = -10.0
-offset_bottom = -81.0
+offset_left = 3.0
+offset_top = 330.0
+offset_right = 240.0
+offset_bottom = 839.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_2v1cl")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="impacto direita" type="TextureRect" parent="CanvasLayer/UI"]
+[node name="impacto direita" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -456,10 +444,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 56.0
-offset_top = -585.0
-offset_right = 293.0
-offset_bottom = -76.0
+offset_left = 306.0
+offset_top = 335.0
+offset_right = 543.0
+offset_bottom = 844.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_2v1cl")
@@ -468,19 +456,37 @@ stretch_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="Player" type="TextureRect" parent="CanvasLayer/UI"]
+[node name="Inimigo" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -263.0
-offset_top = -436.365
-offset_right = 263.0
+offset_left = -13.0
+offset_top = 287.0
+offset_right = 513.0
+offset_bottom = 978.513
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_amkhj")
+texture = ExtResource("5_mq458")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Player" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = 228.487
+offset_right = 513.0
+offset_bottom = 920.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("15_frf08")
 expand_mode = 5
 stretch_mode = 5
 script = ExtResource("2_61tt7")
@@ -514,6 +520,7 @@ texture = ExtResource("6_2v1cl")
 expand_mode = 3
 
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -585,7 +592,6 @@ offset_right = 49.5
 offset_bottom = 69.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 50
-text = "0.00s"
 horizontal_alignment = 1
 
 [node name="Bordas Vermelhas" type="TextureRect" parent="CanvasLayer/UI/Tempo de reação Label"]
@@ -636,9 +642,9 @@ libraries = {
 
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]
-[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Player" method="_on_camera_2d_swipe"]
-[connection signal="timeout" from="CanvasLayer/UI/Aparecer flecha" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_aparecer_flecha_timeout"]
-[connection signal="timeout" from="CanvasLayer/UI/Reset sprites" to="CanvasLayer/UI/Player" method="_on_reset_sprites_timeout"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação/Player" method="_on_camera_2d_swipe"]
+[connection signal="timeout" from="CanvasLayer/UI/Área vísivel da lista/Aparecer flecha" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_aparecer_flecha_timeout"]
+[connection signal="timeout" from="CanvasLayer/UI/Objetos de ação/Reset sprites" to="CanvasLayer/UI/Objetos de ação/Player" method="_on_reset_sprites_timeout"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Play" to="CanvasLayer/UI/Game Over" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Exit" to="CanvasLayer/UI/Game Over" method="_on_exit_pressed"]
 [connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_tempo_de_reação_timeout"]

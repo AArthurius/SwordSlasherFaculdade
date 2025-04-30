@@ -1,8 +1,7 @@
 extends Control
 
 const FLECHA = preload("res://Cenas/flecha.tscn")
-@onready var player: TextureRect = $"../../Player"
-
+@onready var player: TextureRect = $"../../Objetos de ação/Player"
 @onready var pos_0: Marker2D = $Pos0
 @onready var pos_1: Marker2D = $Pos1
 @onready var pos_2: Marker2D = $Pos2
@@ -42,10 +41,10 @@ func avisoPerigo():
 	var tempoTotal = snapped(tempo_de_reação.wait_time, 0.1)
 	var tempoSobrando = snapped(tempo_de_reação.time_left, 0.1)
 	
-	tempo_de_reação_label.text = str(tempoSobrando, "s")
+	#tempo_de_reação_label.text = str(tempoSobrando, "s")
 	bordas_vermelhas.modulate = Color(1, 1, 1, (tempoTotal - tempoSobrando)/tempoTotal)
 	
-	print((tempoTotal - tempoSobrando))
+
 
 func gameOver():
 	dead = true

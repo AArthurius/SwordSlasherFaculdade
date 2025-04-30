@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b61vs3gsdfr7v"
-path="res://.godot/imported/player defesa.png-8c4f16a6e329ad4ee4a78f939de9a24c.ctex"
+uid="uid://djimvk5v6fp1m"
+path="res://.godot/imported/player defesa direita.png-6c59c103ab55770118ed04e8f9beba15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Finais/player defesa.png"
-dest_files=["res://.godot/imported/player defesa.png-8c4f16a6e329ad4ee4a78f939de9a24c.ctex"]
+source_file="res://Assets/Finais/player defesa direita.png"
+dest_files=["res://.godot/imported/player defesa direita.png-6c59c103ab55770118ed04e8f9beba15.ctex"]
 
 [params]
 
