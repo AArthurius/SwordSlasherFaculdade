@@ -1,8 +1,7 @@
 extends Control
 
 const FLECHA = preload("res://Cenas/flecha.tscn")
-@onready var player: TextureRect = $"../../Player"
-
+@onready var player: TextureRect = $"../../Objetos de ação/Player"
 @onready var pos_0: Marker2D = $Pos0
 @onready var pos_1: Marker2D = $Pos1
 @onready var pos_2: Marker2D = $Pos2
@@ -16,10 +15,13 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 @onready var animation: AnimationPlayer = $"../../Animation"
 @onready var bordas_vermelhas: TextureRect = $"../../Tempo de reação Label/Bordas Vermelhas"
 
-var flechaScale = Vector2(0.2, 0.2)
+
+var flechaScale = Vector2(0.3, 0.3)
 var tempoTween = 0.25
 var limite = 10
 var dead = false
+
+@onready var tamanhoTextura = $Pos0/Flechah2.texture.get_height()/2
 
 func _ready():
 	animation.play("Fade in")
@@ -28,12 +30,21 @@ func _ready():
 	pos_2.hide()
 	pos_3.hide()
 	fora.hide()
+	
+	ajustarDistancia()
+	
 	for i in 5:
 		addArrow(randi_range(0,3))
 
 func _process(delta) -> void:
 	updateArrows()
 	avisoPerigo()
+
+func ajustarDistancia():
+	pos_1.position.y = pos_0.position.y + (tamanhoTextura*flechaScale.y) + (tamanhoTextura*(flechaScale.y/2))
+	pos_2.position.y = pos_1.position.y + (tamanhoTextura*flechaScale.y/2) + (tamanhoTextura*(flechaScale.y/3))
+	pos_3.position.y = pos_2.position.y + (tamanhoTextura*flechaScale.y/3) + (tamanhoTextura*(flechaScale.y/4))
+	fora.position.y = pos_3.position.y + (tamanhoTextura*flechaScale.y/4) + (tamanhoTextura*(flechaScale.y/5))
 
 func avisoPerigo():
 	if dead:
@@ -42,10 +53,10 @@ func avisoPerigo():
 	var tempoTotal = snapped(tempo_de_reação.wait_time, 0.1)
 	var tempoSobrando = snapped(tempo_de_reação.time_left, 0.1)
 	
-	tempo_de_reação_label.text = str(tempoSobrando, "s")
+	#tempo_de_reação_label.text = str(tempoSobrando, "s")
 	bordas_vermelhas.modulate = Color(1, 1, 1, (tempoTotal - tempoSobrando)/tempoTotal)
 	
-	print((tempoTotal - tempoSobrando))
+
 
 func gameOver():
 	dead = true

@@ -1,4 +1,5 @@
 res://Cenas/sword_slasher.tscn
+res://Scripts/player.gd
 res://Cenas/flecha.tscn
 res://Cenas/menu.tscn
-res://Scripts/player.gd
+res://Scripts/lista_de_comandos.gd

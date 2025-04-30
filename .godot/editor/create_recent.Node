@@ -1,3 +1,5 @@
+OmniLight3D
+VBoxContainer
 Control
 TextureRect
 HBoxContainer
@@ -6,9 +8,7 @@ AnimationPlayer
 AnimationTree
 ColorRect
 Timer
-VBoxContainer
 TextureButton
 CenterContainer
 Sprite2D
 Marker2D
-Node2D
