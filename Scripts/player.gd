@@ -50,22 +50,22 @@ func attack(attackDirection, enemyAttack, hit: bool, timeout: bool):
 
 func _on_reset_sprites_timeout() -> void:
 	modulate = Color.WHITE
-	#if spriteID in [0, 2]:
-		#texture = spritesPlayerDef[0]
-		#inimigo.texture = spritesInimigoDef[0]
-	#else:
-		#texture = spritesPlayerDef[1]
-		#inimigo.texture = spritesInimigoDef[1]
+	if spriteID in [0, 2]:
+		texture = spritesPlayerDef[0]
+		inimigo.texture = spritesInimigoDef[0]
+	else:
+		texture = spritesPlayerDef[1]
+		inimigo.texture = spritesInimigoDef[1]
 	impacto_esquerda.hide()
 	impacto_direita.hide()
 
 func setSprite(enemyAttack):
-	#if enemyAttack:
-		#inimigo.texture = spritesInimigoAt[spriteID]
-		#texture = spritesPlayerDef[spriteID]
-	#else:
-		#texture = spritesPlayerAt[spriteID]
-		#inimigo.texture = spritesInimigoDef[spriteID]
+	if enemyAttack:
+		inimigo.texture = spritesInimigoAt[spriteID]
+		texture = spritesPlayerDef[spriteID]
+	else:
+		texture = spritesPlayerAt[spriteID]
+		inimigo.texture = spritesInimigoDef[spriteID]
 	
 	#mostrar impacto
 	if spriteID in [0, 2]:
