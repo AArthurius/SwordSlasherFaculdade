@@ -55,9 +55,8 @@ func avisoPerigo():
 	var tempoTotal = snapped(tempo_de_reação.wait_time, 0.1)
 	var tempoSobrando = snapped(tempo_de_reação.time_left, 0.1)
 	
-	tempo_de_reação_label.text = str(tempoSobrando, "s")
+	#tempo_de_reação_label.text = str(tempoSobrando, "s")
 	bordas_vermelhas.modulate = Color(1, 1, 1, (tempoTotal - tempoSobrando)/tempoTotal)
-	
 
 func gameOver():
 	dead = true
@@ -75,6 +74,11 @@ func addArrow(direção):
 		flecha.enemyAttack = true 
 	else:
 		flecha.enemyAttack = false
+	
+	if flechas.get_child_count() > 4:
+		if flechas.get_child(-1).direction == direção:
+			direção = randi_range(0, 3)
+	
 	
 	flecha.direction = direção
 	flecha.scale = flechaScale/5
