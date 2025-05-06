@@ -1,12 +1,16 @@
 extends Node
 
-var pontuaçãoAtual = 0
+var pontuaçãoAtual:int = 0
+var pontuações = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pontuaçãoAtual = 0
 
+func addPoints(amount):
+	pontuaçãoAtual += amount
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func gameOver():
+	pontuações.append(pontuaçãoAtual)
+	pontuações.sort()
+	pontuações.reverse()

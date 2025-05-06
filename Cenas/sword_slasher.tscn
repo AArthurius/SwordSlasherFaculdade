@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=96 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="PackedScene" uid="uid://d32opfj2b70wa" path="res://Cenas/salaDungeon.glb" id="1_tq7cw"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cqik87clqaany" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png" id="14_n8unr"]
 [ext_resource type="Texture2D" uid="uid://c270jp8tmdkxw" path="res://Assets/Finais/player defesa esquerda.png" id="15_frf08"]
 [ext_resource type="Texture2D" uid="uid://cnwvi4bcrd2hp" path="res://Assets/placeholder/aviso de perigo.png" id="15_ht1eh"]
+[ext_resource type="FontFile" uid="uid://c334wmluxu68f" path="res://Assets/m5x7.ttf" id="16_1i0ms"]
+[ext_resource type="Script" uid="uid://cgvpamqbbdyko" path="res://Scripts/pontuação.gd" id="16_n8unr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c08h"]
 resource_name = "Material"
@@ -1557,6 +1559,7 @@ anchors_preset = 0
 position = Vector2(50, 109)
 
 [node name="Flechah2" type="Sprite2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos0"]
+position = Vector2(0, 2)
 scale = Vector2(0.3, 0.299)
 texture = ExtResource("5_amkhj")
 
@@ -1821,6 +1824,35 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_n8unr")
 }
+
+[node name="Pontuação" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+script = ExtResource("16_n8unr")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/Pontuação"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 9.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
 
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]

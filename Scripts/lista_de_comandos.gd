@@ -14,6 +14,7 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 @onready var tempo_de_reação: Timer = $"../../Tempo de reação Label/Tempo de reação"
 @onready var animation: AnimationPlayer = $"../../Animation"
 @onready var bordas_vermelhas: TextureRect = $"../../Tempo de reação Label/Bordas Vermelhas"
+@onready var pontuação: Control = $"../../Pontuação"
 
 
 var flechaScale = Vector2(0.3, 0.3)
@@ -24,6 +25,7 @@ var dead = false
 @onready var tamanhoTextura = $Pos0/Flechah2.texture.get_height()/2
 
 func _ready():
+	Global.pontuaçãoAtual = 0
 	animation.play("Fade in")
 	pos_0.hide()
 	pos_1.hide()
@@ -53,14 +55,14 @@ func avisoPerigo():
 	var tempoTotal = snapped(tempo_de_reação.wait_time, 0.1)
 	var tempoSobrando = snapped(tempo_de_reação.time_left, 0.1)
 	
-	#tempo_de_reação_label.text = str(tempoSobrando, "s")
+	tempo_de_reação_label.text = str(tempoSobrando, "s")
 	bordas_vermelhas.modulate = Color(1, 1, 1, (tempoTotal - tempoSobrando)/tempoTotal)
 	
-
 
 func gameOver():
 	dead = true
 	game_over.gameOver()
+	Global.gameOver()
 
 func addArrow(direção):
 	#0 direita
@@ -117,8 +119,8 @@ func checkArrow(swipeDirection, timeout: bool):
 	if flechas.get_children().size() > 0 and not dead:
 		#acerto
 		if flechas.get_child(0).direction == swipeDirection and not timeout:
+			pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1))
 			player.attack(swipeDirection, flechas.get_child(0).enemyAttack, true, false)
-			Global.pontuaçãoAtual
 		#erro
 		else:
 			#acabou o tempo

@@ -1,9 +1,9 @@
+Label
+Control
 OmniLight3D
 VBoxContainer
-Control
 TextureRect
 HBoxContainer
-Label
 AnimationPlayer
 AnimationTree
 ColorRect
