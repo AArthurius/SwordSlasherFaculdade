@@ -1,7 +1,7 @@
 extends Control
 
 const FLECHA = preload("res://Cenas/flecha.tscn")
-@onready var player: TextureRect = $"../../Objetos de ação/Player"
+@onready var ação: Control = $"../../Objetos de ação"
 @onready var pos_0: Marker2D = $Pos0
 @onready var pos_1: Marker2D = $Pos1
 @onready var pos_2: Marker2D = $Pos2
@@ -22,19 +22,15 @@ var tempoTween = 0.25
 var limite = 10
 var dead = false
 
-@onready var tamanhoTextura = $Pos0/Flechah2.texture.get_height()/2
+@onready var tamanhoTextura = $Pos0/Flecha.texture.get_height()/2
 
 func _ready():
 	Global.pontuaçãoAtual = 0
 	animation.play("Fade in")
 	pos_0.hide()
-	pos_1.hide()
-	pos_2.hide()
-	pos_3.hide()
-	fora.hide()
-	
 	ajustarDistancia()
 	
+	bordas_vermelhas.modulate = Color(1,1,1,0)
 	for i in 5:
 		addArrow(randi_range(0,3))
 
@@ -49,8 +45,12 @@ func ajustarDistancia():
 	fora.position.y = pos_3.position.y + (tamanhoTextura*flechaScale.y/4) + (tamanhoTextura*(flechaScale.y/5))
 
 func avisoPerigo():
+	if tempo_de_reação.is_stopped():
+		bordas_vermelhas.modulate = Color(1, 1, 1, 0)
+		return
 	if dead:
 		bordas_vermelhas.modulate = Color(1, 1, 1, 1)
+		return
 	
 	var tempoTotal = snapped(tempo_de_reação.wait_time, 0.1)
 	var tempoSobrando = snapped(tempo_de_reação.time_left, 0.1)
@@ -71,9 +71,9 @@ func addArrow(direção):
 	var flecha = FLECHA.instantiate()
 	
 	if randi_range(0, 1) == 0: 
-		flecha.enemyAttack = true 
+		flecha.enemyArrow = true 
 	else:
-		flecha.enemyAttack = false
+		flecha.enemyArrow = false
 	
 	if flechas.get_child_count() > 4:
 		if flechas.get_child(-1).direction == direção:
@@ -124,15 +124,14 @@ func checkArrow(swipeDirection, timeout: bool):
 		#acerto
 		if flechas.get_child(0).direction == swipeDirection and not timeout:
 			pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1))
-			player.attack(swipeDirection, flechas.get_child(0).enemyAttack, true, false)
+			ação.attack(swipeDirection, flechas.get_child(0).enemyArrow, true, false)
 		#erro
 		else:
 			#acabou o tempo
 			if timeout:
-				player.attack(swipeDirection, flechas.get_child(0).enemyAttack, false, true)
+				ação.attack(swipeDirection, flechas.get_child(0).enemyAttack, false, true)
 			#errou a direção
-			else:
-				player.attack(swipeDirection, flechas.get_child(0).enemyAttack, false, false)
+			else:ação.attack(swipeDirection, flechas.get_child(0).enemyArrow, false, false)
 			#diminui a vida
 			if barra_de_vida.get_child_count() <= 1:
 				gameOver()

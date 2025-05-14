@@ -1,40 +1,36 @@
 extends Sprite2D
 
-const FLECHAH = preload("res://Assets/Finais/flecha azul H.png")
-const FLECHAV = preload("res://Assets/Finais/flecha azul V.png")
-const FLECHA_LARANJA_H = preload("res://Assets/Finais/flecha laranja H.png")
-const FLECHA_LARANJA_V = preload("res://Assets/Finais/flecha laranja V.png")
+const SETA_AZUL = preload("res://Assets/Finais/UI/seta azul.png")
+const SETA_LARANJA = preload("res://Assets/Finais/UI/seta laranja.png")
+const SETA_CINZA = preload("res://Assets/Finais/UI/seta cinza.png")
+const SETA_CORAÇÃO = preload("res://Assets/Finais/UI/seta coração.png")
+
 
 @export var direction = 0
-var enemyAttack = true
-
+var cinza = false
+var coração = false
+var enemyArrow = false
 
 func _ready() -> void:
-	if enemyAttack:
-		match direction:
-			0: #left
-				texture = FLECHA_LARANJA_H
-				flip_h = true
-			1: #right
-				texture = FLECHA_LARANJA_H
-				flip_h = false
-			2: #up
-				texture = FLECHA_LARANJA_V
-				flip_h = false
-			3: #down
-				texture = FLECHA_LARANJA_V
-				flip_v = true
+	if cinza:
+		texture = SETA_CINZA
+	elif coração:
+		texture = SETA_CORAÇÃO
+	elif enemyArrow:
+		texture = SETA_LARANJA
 	else:
-		match direction:
-			0: #left
-				texture = FLECHAH
-				flip_h = true
-			1: #right
-				texture = FLECHAH
-				flip_h = false
-			2: #up
-				texture = FLECHAV
-				flip_h = false
-			3: #down
-				texture = FLECHAV
-				flip_v = true
+		texture = SETA_AZUL
+		
+	match direction:
+		0: #left
+			rotation = deg_to_rad(0)
+			flip_h = true
+		1: #right
+			rotation = deg_to_rad(0)
+			flip_h = false
+		2: #up
+			rotation = deg_to_rad(90)
+			flip_h = true
+		3: #down
+			rotation = deg_to_rad(90)
+			flip_h = false
