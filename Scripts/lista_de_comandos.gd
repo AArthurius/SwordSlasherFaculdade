@@ -70,10 +70,12 @@ func addArrow(direção):
 	#3 baixo
 	var flecha = FLECHA.instantiate()
 	
-	if randi_range(0, 1) == 0: 
-		flecha.enemyArrow = true 
-	else:
-		flecha.enemyArrow = false
+	# /// Tipo de flecha \\\
+	
+	#if randi_range(0, 1) == 0: 
+		#flecha.enemyArrow = true 
+	#else:
+		#flecha.enemyArrow = false
 	
 	if flechas.get_child_count() > 4:
 		if flechas.get_child(-1).direction == direção:

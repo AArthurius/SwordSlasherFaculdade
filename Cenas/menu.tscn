@@ -207,6 +207,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 texture_normal = ExtResource("1_eheat")
 texture_pressed = ExtResource("2_fapvr")
+stretch_mode = 3
 
 [node name="Exit" type="TextureButton" parent="Botões"]
 layout_mode = 2

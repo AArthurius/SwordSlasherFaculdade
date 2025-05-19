@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
 [ext_resource type="Texture2D" uid="uid://b35u884qfai6e" path="res://Assets/Velho/Impacto.png" id="6_2v1cl"]
 [ext_resource type="Texture2D" uid="uid://m0qbh0phvck1" path="res://Assets/Finais/Objetos de ação/Inimigo defesa sheet.png" id="6_u4r6q"]
-[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/vida.png" id="7_1i0ms"]
+[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="7_1i0ms"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player defesa sheet.png" id="8_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]

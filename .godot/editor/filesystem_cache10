@@ -1,23 +1,26 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1747248168
+::res://::1747679824
 export_presets.cfg::TextFile/TextFile::-1::1745609061::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1747244997
 m5x7.ttf::FontFile/FontFile::6797732294834235315::1746557717::1746557723::1::::<><><>0<>0<>dc6272081f160b67a6073eb635862100<>res://.godot/imported/m5x7.ttf-6dfff7e649197dff7c4caa7190366067.fontdata::
-::res://Assets/Finais/::1747245006
-::res://Assets/Finais/Objetos de ação/::1747249136
+::res://Assets/Finais/::1747679832
+::res://Assets/Finais/Icon/::1747679837
+caveira game over.png::CompressedTexture2D::6518649174931980352::1747679837::1747679838::1::::<><><>0<>0<>8f7705167c0381bd4615ae2455a32183<>res://.godot/imported/caveira game over.png-4b4fcc0bd6a66c7f00a188e7a17f112f.ctex::
+::res://Assets/Finais/Objetos de ação/::1747249137
 Inimigo ataque sheet.png::CompressedTexture2D/CompressedTexture2D::463074358268703641::1747247945::1747247946::1::::<><><>0<>0<>eb22092de313e9667fdc65f0c5996f16<>res://.godot/imported/Inimigo ataque sheet.png-5be90be62931da44e4882d1453a05ae5.ctex::
 Inimigo defesa sheet.png::CompressedTexture2D/CompressedTexture2D::894849232161326510::1747247945::1747247946::1::::<><><>0<>0<>2e29664e781ff3f06c01242582a096ca<>res://.godot/imported/Inimigo defesa sheet.png-23e789271f18a84aae9f1d5602d6511c.ctex::
 Inimigo pré ataque sheet.png::CompressedTexture2D/CompressedTexture2D::554199698703633689::1747247945::1747247945::1::::<><><>0<>0<>95be01690763f40de88e049d2d6adb3d<>res://.godot/imported/Inimigo pré ataque sheet.png-e4a135e8d4cd64713c782be4336805f1.ctex::
 Player ataque sheet.png::CompressedTexture2D/CompressedTexture2D::358627827654698097::1747249136::1747249137::1::::<><><>0<>0<>d05c29fa768ec5029ba2d0ab7cd56c9d<>res://.godot/imported/Player ataque sheet.png-326cff1dc4a7df7802a55c482cc3961e.ctex::
 Player defesa sheet.png::CompressedTexture2D/CompressedTexture2D::4362368474387230502::1747247945::1747247946::1::::<><><>0<>0<>fa5923083e02a8cb2e34dbf79c3640e3<>res://.godot/imported/Player defesa sheet.png-3e3d06766a3a7facebea492d1fff09e4.ctex::
 Player pre ataque sheet.png::CompressedTexture2D/CompressedTexture2D::3340266071064461421::1747247945::1747247946::1::::<><><>0<>0<>f508af1091fcd98a0800ad5d3ef40a72<>res://.godot/imported/Player pre ataque sheet.png-16c2def445c0b26d15e77e24d0b9f693.ctex::
-::res://Assets/Finais/UI/::1747248168
-icone dano.png::CompressedTexture2D/CompressedTexture2D::1688779324427381532::1747248133::1747248134::1::::<><><>0<>0<>6c0c79317209d9c4755983a1159cb0f0<>res://.godot/imported/icone dano.png-2662afdbad38aa66e48658869bd775c8.ctex::
-seta azul.png::CompressedTexture2D/CompressedTexture2D::1263854899862078409::1747248133::1747248134::1::::<><><>0<>0<>6bcb87a26afb0c7640b9d55df19cc021<>res://.godot/imported/seta azul.png-26aac60664c0a9530c0fa8409551a074.ctex::
-seta cinza.png::CompressedTexture2D/CompressedTexture2D::8397913465270068605::1747248133::1747248134::1::::<><><>0<>0<>0e4669634e6fa9a84f61435c6dd03ecd<>res://.godot/imported/seta cinza.png-96a7b7e4ac3ee15b82312ef4bd52a843.ctex::
-seta coração.png::CompressedTexture2D/CompressedTexture2D::6542805391126735506::1747248133::1747248134::1::::<><><>0<>0<>0a1f47ddb11b192cb6561568b6f3df3b<>res://.godot/imported/seta coração.png-407db5b234d8f9a44fea1c7eae8dbca5.ctex::
-seta laranja.png::CompressedTexture2D/CompressedTexture2D::6798602285301213981::1747248133::1747248134::1::::<><><>0<>0<>50722988a97caddb62641ddcbc4cd4a2<>res://.godot/imported/seta laranja.png-b90029babaa72f9f7747c81f7eba2349.ctex::
-vida.png::CompressedTexture2D/CompressedTexture2D::6143031859603504808::1747248133::1747248134::1::::<><><>0<>0<>ff5c141b7f722743c0a54265e2aa4827<>res://.godot/imported/vida.png-ac0ddcdd8a973288a36a7ca8f3e619d7.ctex::
+::res://Assets/Finais/UI/::1747679824
+::res://Assets/Finais/UI/GUI/::1747679825
+icone dano.png::CompressedTexture2D::1688779324427381532::1747248133::1747679825::1::::<><><>0<>0<>5a0b4264a71656091f39ab9eed211611<>res://.godot/imported/icone dano.png-caa8d5906702f0a266b1c80cb43031f2.ctex::
+seta azul.png::CompressedTexture2D::1263854899862078409::1747248133::1747679825::1::::<><><>0<>0<>31acdeb15948ff9308228289ba6b38ff<>res://.godot/imported/seta azul.png-0af9a17c4b72f4dbc5da9e75a65cad62.ctex::
+seta cinza.png::CompressedTexture2D::8397913465270068605::1747248133::1747679825::1::::<><><>0<>0<>a0b5b1b8e55e3cfc65d60b51b4b31232<>res://.godot/imported/seta cinza.png-c5fb36d2fe2430274c9a288c91732751.ctex::
+seta coração.png::CompressedTexture2D::6542805391126735506::1747248133::1747679825::1::::<><><>0<>0<>95b149671c3316230b9bfeb758c34d07<>res://.godot/imported/seta coração.png-828e35a45a3969dad3d5a6b2d84c101a.ctex::
+seta laranja.png::CompressedTexture2D::6798602285301213981::1747248133::1747679825::1::::<><><>0<>0<>b7bc6c50270fa865ab9cc12141027de4<>res://.godot/imported/seta laranja.png-4b8d0314ee10a93e121a3eb2fd1372ab.ctex::
+vida.png::CompressedTexture2D::6143031859603504808::1747248133::1747679825::1::::<><><>0<>0<>04ec2bfe2f292fb536033b0e7c23c061<>res://.godot/imported/vida.png-e9bf450be6d5acec30956080acf2c8c6.ctex::
 ::res://Assets/Finais/UI/Menu/::1747248168
 caveira game over.png::CompressedTexture2D/CompressedTexture2D::5897496298439912057::1747248133::1747248166::1::::<><><>0<>0<>15f41eee30cf67557b35151f01c0b71c<>res://.godot/imported/caveira game over.png-d64aeef502fc8e557c8e8fc62530b35b.ctex::
 game over.png::CompressedTexture2D/CompressedTexture2D::870602827965033979::1747248133::1747248166::1::::<><><>0<>0<>9b4d4e48382512c44a0c3dcc0a136bd9<>res://.godot/imported/game over.png-26f47b8fe53d726a3701943838f3c0c7.ctex::
@@ -31,7 +34,7 @@ restart pressionado.png::CompressedTexture2D/CompressedTexture2D::63318733063281
 resume normal.png::CompressedTexture2D/CompressedTexture2D::9100792615446754370::1747248133::1747248163::1::::<><><>0<>0<>9a97bcdda41104e52630c438e38f9b47<>res://.godot/imported/resume normal.png-ee17923554aac7c8bbe87f09f7f3ba91.ctex::
 resume pressionado.png::CompressedTexture2D/CompressedTexture2D::8295447695548874979::1747248133::1747248163::1::::<><><>0<>0<>f1a51a1de48f2cb09c7612c7bc486d5b<>res://.godot/imported/resume pressionado.png-f3d67f0b93d175b53be1269ff6e14f7c.ctex::
 retangulo.png::CompressedTexture2D/CompressedTexture2D::3109478118571584801::1747248133::1747248163::1::::<><><>0<>0<>97e0550643d7e760b89f8c00dc1fa680<>res://.godot/imported/retangulo.png-485b0695bfc3d146270f3268e3f9839e.ctex::
-simbolo retry.png::CompressedTexture2D::5779793338269418824::1747248133::1747248168::1::::<><><>0<>0<>e352738bd0def6e266885c767c527a49<>res://.godot/imported/simbolo retry.png-413b57dd78fc9c0ee2a941a4e72034c2.ctex::
+simbolo retry.png::CompressedTexture2D/CompressedTexture2D::5779793338269418824::1747248133::1747248168::1::::<><><>0<>0<>e352738bd0def6e266885c767c527a49<>res://.godot/imported/simbolo retry.png-413b57dd78fc9c0ee2a941a4e72034c2.ctex::
 ::res://Assets/placeholder/::1747234139
 aviso de perigo.png::CompressedTexture2D/CompressedTexture2D::5732003513304969617::1747162663::1747234139::1::::<><><>0<>0<>70c3115b53b2924f9cae7f9a4132c2d2<>res://.godot/imported/aviso de perigo.png-e8102f75a9751b3d0420e4d8fff1cba4.ctex::
 flecha.png::CompressedTexture2D/CompressedTexture2D::6907511673529224468::1747162663::1747234139::1::::<><><>0<>0<>2efac0adcce61ae625d70dcaa993843c<>res://.godot/imported/flecha.png-d4937f5a2059685b686dafd9d2cecdee.ctex::
@@ -142,19 +145,19 @@ player ataque direita.png::CompressedTexture2D/CompressedTexture2D::380577814684
 player ataque esquerda.png::CompressedTexture2D/CompressedTexture2D::5577902259167053539::1747234008::1747245009::1::::<><><>0<>0<>365da1d25abe74c961a6943ee1f830e0<>res://.godot/imported/player ataque esquerda.png-9a082df8abd01f73a3d31a443364353d.ctex::
 player defesa direita.png::CompressedTexture2D/CompressedTexture2D::7808243344012692212::1747234008::1747245009::1::::<><><>0<>0<>238bfa289a7471787163849834b22b71<>res://.godot/imported/player defesa direita.png-ce2e847f7cf7cc03a4707d1427c6eae3.ctex::
 player defesa esquerda.png::CompressedTexture2D/CompressedTexture2D::6735535070415532228::1747234008::1747245009::1::::<><><>0<>0<>c764c7c33fcb9ce87d7ba850bdb3b63a<>res://.godot/imported/player defesa esquerda.png-cd8305d47d5a0192910fdeeb37bc1b22.ctex::
-::res://Cenas/::1747249003
-flecha.tscn::PackedScene::7970058368810102696::1747248562::0::1::::<><><>0<>0<><>::uid://sahrgodvam8h::::res://Assets/Finais/UI/seta azul.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
-menu.tscn::PackedScene::8370396516007970733::1747248562::0::1::::<><><>0<>0<><>::uid://cjwxd446wmvqj::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Default.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://d2671viwls7u::::res://Scripts/menu.gd<>uid://cyna05ueh8hak::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Hover.png<>uid://bcpmi1p6y1rcb::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X.png<>uid://bvf88yy5h4lo3::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X Hover.png
+::res://Cenas/::1747679824
+flecha.tscn::PackedScene::7970058368810102696::1747679824::0::1::::<><><>0<>0<><>::uid://sahrgodvam8h::::res://Assets/Finais/UI/GUI/seta azul.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
+menu.tscn::PackedScene::8370396516007970733::1747677554::0::1::::<><><>0<>0<><>::uid://cjwxd446wmvqj::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Default.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://d2671viwls7u::::res://Scripts/menu.gd<>uid://cyna05ueh8hak::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Hover.png<>uid://bcpmi1p6y1rcb::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X.png<>uid://dhuworsc3hldu::::res://Assets/Finais/UI/Menu/Logo sword slasher.png<>uid://bvf88yy5h4lo3::::res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X Hover.png
 salaDungeon.glb::PackedScene/PackedScene::9181164974860498432::1745609061::1745609133::1::::<><><>0<>0<>4a4f3d50857a9119a65eefe4bd5fa3e9<>res://.godot/imported/salaDungeon.glb-fb90f4307db0a430eceebc18c8a20f60.scn::
 salaDungeonV2.glb::PackedScene/PackedScene::5066369315772649163::1746027531::1746027555::1::::<><><>0<>0<>2426447647fd11962acdd9d7480acb6c<>res://.godot/imported/salaDungeonV2.glb-8a32089c41ffeedb4266223a78f005dc.scn::
-sword_slasher.tscn::PackedScene::6468664047896390950::1747249003::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://d32opfj2b70wa::::res://Cenas/salaDungeon.glb<>uid://dbqgl5mbnjqef::::res://Scripts/Objetos de ação.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://sahrgodvam8h::::res://Assets/Finais/UI/seta azul.png<>uid://b35u884qfai6e::::res://Assets/Velho/Impacto.png<>uid://m0qbh0phvck1::::res://Assets/Finais/Objetos de ação/Inimigo defesa sheet.png<>uid://ctry3p3csgcei::::res://Assets/Finais/UI/vida.png<>uid://b3fftothk8dvi::::res://Assets/Finais/Objetos de ação/Player defesa sheet.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://bi46ulynp3hed::::res://Scripts/game_over.gd<>uid://doiidkvmg87lg::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png<>uid://bf3gtqyg7wdrt::::res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Default.png<>uid://00hmjfqxi43v::::res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Hover.png<>uid://cqik87clqaany::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png<>uid://cnwvi4bcrd2hp::::res://Assets/placeholder/aviso de perigo.png<>uid://c334wmluxu68f::::res://Assets/m5x7.ttf<>uid://cgvpamqbbdyko::::res://Scripts/pontuação.gd
-::res://Scripts/::1747248562
+sword_slasher.tscn::PackedScene::6468664047896390950::1747679824::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://d32opfj2b70wa::::res://Cenas/salaDungeon.glb<>uid://dbqgl5mbnjqef::::res://Scripts/Objetos de ação.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://dls0xxuy2slb1::::res://Cenas/flecha.tscn<>uid://b35u884qfai6e::::res://Assets/Velho/Impacto.png<>uid://m0qbh0phvck1::::res://Assets/Finais/Objetos de ação/Inimigo defesa sheet.png<>uid://ctry3p3csgcei::::res://Assets/Finais/UI/GUI/vida.png<>uid://b3fftothk8dvi::::res://Assets/Finais/Objetos de ação/Player defesa sheet.png<>uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://bi46ulynp3hed::::res://Scripts/game_over.gd<>uid://doiidkvmg87lg::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png<>uid://bf3gtqyg7wdrt::::res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Default.png<>uid://00hmjfqxi43v::::res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Hover.png<>uid://cqik87clqaany::::res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png<>uid://cnwvi4bcrd2hp::::res://Assets/placeholder/aviso de perigo.png<>uid://c334wmluxu68f::::res://Assets/m5x7.ttf<>uid://mnyx32biajwl::::res://Assets/Finais/UI/Menu/game over.png<>uid://cgvpamqbbdyko::::res://Scripts/pontuação.gd<>uid://cqa15xf7a3gnh::::res://Assets/Finais/UI/Menu/caveira game over.png
+::res://Scripts/::1747677552
 camera_2d.gd::GDScript/GDScript::8034934747453120834::1747248104::0::1::::<>Camera3D<><>0<>0<><>::
-flecha.gd::GDScript::3374996856871652042::1747248562::0::1::::<>Sprite2D<><>0<>0<><>::
+flecha.gd::GDScript/GDScript::3374996856871652042::1747253208::0::1::::<>Sprite2D<><>0<>0<><>::
 game_over.gd::GDScript/GDScript::3009716945762923799::1745870159::0::1::::<>Control<><>0<>0<><>::
 Global.gd::GDScript/GDScript::8378714616868836821::1746558441::0::1::::<>Node<><>0<>0<><>::
-lista_de_comandos.gd::GDScript/GDScript::6092673651249217483::1747237408::0::1::::<>Control<><>0<>0<><>::
+lista_de_comandos.gd::GDScript::6092673651249217483::1747677552::0::1::::<>Control<><>0<>0<><>::
 menu.gd::GDScript/GDScript::268245500895761684::1745862018::0::1::::<>Control<><>0<>0<><>::
-Objetos de ação.gd::GDScript::7262866478773182085::1747248227::0::1::::<>Control<><>0<>0<><>::
+Objetos de ação.gd::GDScript::7262866478773182085::1747676837::0::1::::<>Control<><>0<>0<><>::
 pontuação.gd::GDScript/GDScript::5238237771985138826::1746559925::0::1::::<>Control<><>0<>0<><>::
-save ação.gd::GDScript/GDScript::1384867060683925488::1747244751::0::1::::<>Control<><>0<>0<><>::
+save ação.gd::GDScript/GDScript::1384867060683925488::1747250844::0::1::::<>Control<><>0<>0<><>::

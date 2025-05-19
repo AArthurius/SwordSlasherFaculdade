@@ -1,9 +1,9 @@
 extends Sprite2D
 
-const SETA_AZUL = preload("res://Assets/Finais/UI/seta azul.png")
-const SETA_LARANJA = preload("res://Assets/Finais/UI/seta laranja.png")
-const SETA_CINZA = preload("res://Assets/Finais/UI/seta cinza.png")
-const SETA_CORAÇÃO = preload("res://Assets/Finais/UI/seta coração.png")
+const SETA_AZUL = preload("res://Assets/Finais/UI/GUI/seta azul.png")
+const SETA_CINZA = preload("res://Assets/Finais/UI/GUI/seta cinza.png")
+const SETA_CORAÇÃO = preload("res://Assets/Finais/UI/GUI/seta coração.png")
+const SETA_LARANJA = preload("res://Assets/Finais/UI/GUI/seta laranja.png")
 
 
 @export var direction = 0
