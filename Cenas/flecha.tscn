@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dls0xxuy2slb1"]
 
-[ext_resource type="Texture2D" uid="uid://g51kxb32ni4" path="res://Assets/Finais/flecha azul H.png" id="1_52tm8"]
+[ext_resource type="Texture2D" uid="uid://sahrgodvam8h" path="res://Assets/Finais/UI/GUI/seta azul.png" id="1_52tm8"]
 [ext_resource type="Script" uid="uid://boc4x8e2isjqw" path="res://Scripts/flecha.gd" id="2_q3q1g"]
 
 [node name="Flecha" type="Sprite2D"]

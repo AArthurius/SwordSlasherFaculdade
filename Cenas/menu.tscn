@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://drixhcc8rhejd"]
+[gd_scene load_steps=12 format=3 uid="uid://drixhcc8rhejd"]
 
 [ext_resource type="Texture2D" uid="uid://cjwxd446wmvqj" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Default.png" id="1_eheat"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="1_fapvr"]
 [ext_resource type="Script" uid="uid://d2671viwls7u" path="res://Scripts/menu.gd" id="1_kdsmm"]
 [ext_resource type="Texture2D" uid="uid://cyna05ueh8hak" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Hover.png" id="2_fapvr"]
 [ext_resource type="Texture2D" uid="uid://bcpmi1p6y1rcb" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X.png" id="3_kdsmm"]
+[ext_resource type="Texture2D" uid="uid://dhuworsc3hldu" path="res://Assets/Finais/UI/Menu/Logo sword slasher.png" id="3_plcv4"]
 [ext_resource type="Texture2D" uid="uid://bvf88yy5h4lo3" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X Hover.png" id="4_8lfl8"]
 
 [sub_resource type="Animation" id="Animation_kdsmm"]
@@ -174,19 +175,18 @@ offset_right = 608.0
 offset_bottom = 1099.0
 texture = ExtResource("1_fapvr")
 
-[node name="Título" type="Label" parent="."]
+[node name="Titulo" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -188.0
-offset_top = 209.0
-offset_right = 188.0
-offset_bottom = 285.0
+offset_left = -254.0
+offset_top = 1.0
+offset_right = 268.0
+offset_bottom = 373.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 55
-text = "Sword Slasher"
-horizontal_alignment = 1
+texture = ExtResource("3_plcv4")
+expand_mode = 1
 
 [node name="Botões" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -207,6 +207,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 texture_normal = ExtResource("1_eheat")
 texture_pressed = ExtResource("2_fapvr")
+stretch_mode = 3
 
 [node name="Exit" type="TextureButton" parent="Botões"]
 layout_mode = 2
