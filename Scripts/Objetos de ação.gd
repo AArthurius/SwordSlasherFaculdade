@@ -9,14 +9,13 @@ extends Control
 @onready var impacto_baixo: TextureRect = $"Impactos/impacto baixo"
 
 
+const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/inimigo base atk sheet.png")
+const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo base def sheet.png")
+const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo pré ataque sheet.png")
 
-const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo ataque sheet.png")
-const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo defesa sheet.png")
-const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo pré ataque sheet.png")
-
-const P_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Player ataque sheet.png")
-const P_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Player defesa sheet.png")
-const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player pre ataque sheet.png")
+const P_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player atk sheet.png")
+const P_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png")
+const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player pre ataque sheet.png")
 
 var impactos = []
 

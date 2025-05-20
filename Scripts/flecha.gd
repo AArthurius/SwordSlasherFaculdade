@@ -9,15 +9,13 @@ const SETA_LARANJA = preload("res://Assets/Finais/UI/GUI/seta laranja.png")
 @export var direction = 0
 var cinza = false
 var coração = false
-var enemyArrow = false
+var enemyAtk = false
 
 func _ready() -> void:
 	if cinza:
 		texture = SETA_CINZA
 	elif coração:
 		texture = SETA_CORAÇÃO
-	elif enemyArrow:
-		texture = SETA_LARANJA
 	else:
 		texture = SETA_AZUL
 		

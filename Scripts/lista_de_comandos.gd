@@ -72,10 +72,10 @@ func addArrow(direção):
 	
 	# /// Tipo de flecha \\\
 	
-	#if randi_range(0, 1) == 0: 
-		#flecha.enemyArrow = true 
-	#else:
-		#flecha.enemyArrow = false
+	if randi_range(0, 1) == 0: 
+		flecha.enemyAtk= true 
+	else:
+		flecha.enemyAtk = false
 	
 	if flechas.get_child_count() > 4:
 		if flechas.get_child(-1).direction == direção:
@@ -126,14 +126,14 @@ func checkArrow(swipeDirection, timeout: bool):
 		#acerto
 		if flechas.get_child(0).direction == swipeDirection and not timeout:
 			pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1))
-			ação.attack(swipeDirection, flechas.get_child(0).enemyArrow, true, false)
+			ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false)
 		#erro
 		else:
 			#acabou o tempo
 			if timeout:
-				ação.attack(swipeDirection, flechas.get_child(0).enemyAttack, false, true)
+				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, true)
 			#errou a direção
-			else:ação.attack(swipeDirection, flechas.get_child(0).enemyArrow, false, false)
+			else:ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, false)
 			#diminui a vida
 			if barra_de_vida.get_child_count() <= 1:
 				gameOver()
