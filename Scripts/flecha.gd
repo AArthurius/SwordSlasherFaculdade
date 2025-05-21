@@ -1,5 +1,7 @@
 extends Sprite2D
 
+@onready var Lista: Control = $"../.."
+
 const SETA_AZUL = preload("res://Assets/Finais/UI/GUI/seta azul.png")
 const SETA_CINZA = preload("res://Assets/Finais/UI/GUI/seta cinza.png")
 const SETA_CORAÇÃO = preload("res://Assets/Finais/UI/GUI/seta coração.png")
@@ -7,25 +9,21 @@ const SETA_LARANJA = preload("res://Assets/Finais/UI/GUI/seta laranja.png")
 
 @export var direction = 0
 
-#azul - 0
-var laranja = false# - 1
-var cinza = false# - 2
-var coração = false# - 3
-var double = false# - 4 - não implementado ainda
+enum Tipo {AZUL = 0, LARANJA = 1, CINZA = 2, CORAÇÃO = 3, DOUBLE = 4}
+var setaAtual = Tipo.AZUL
 
-var enemyAtk = false
+var enemyAtk = null
 var SetasPossiveis = {0:true, 1:true, 2:true, 3:true}
-
 
 func _ready() -> void:
 	# determina se vai uma animação de ataque do inimigo ou do player
-	if randi_range(0, 1) == 0: 
-		enemyAtk= true 
-	else:
-		enemyAtk = false
+	if enemyAtk == null:
+		if randi_range(0, 1) == 0: 
+			enemyAtk= true 
+		else:
+			enemyAtk = false
 	
 	setArrowType()
-	
 	#muda a orientação sprite com relação a direção -> setada no node Lista de Comandos
 	setSpriteDirection()
 
@@ -33,20 +31,24 @@ func setArrowType():
 	var seta = randSeta()
 	while(SetasPossiveis[seta] == false):
 		seta = randSeta()
-		print(seta)
 	
 	match seta:
-		0:
+		Tipo.AZUL:
 			texture = SETA_AZUL
-		1:
+			setaAtual = Tipo.AZUL
+		Tipo.LARANJA:
 			texture = SETA_LARANJA
-			laranja = true
-		2:
+			setaAtual = Tipo.LARANJA
+			Lista.setaContadorLaranja = 1
+		Tipo.CINZA:
 			texture = SETA_CINZA
-			cinza = true
-		3:
+			setaAtual = Tipo.CINZA
+		Tipo.CORAÇÃO:
 			texture = SETA_CORAÇÃO
-			coração = true
+			setaAtual = Tipo.CORAÇÃO
+		Tipo.DOUBLE:
+			texture = SETA_AZUL
+			setaAtual = Tipo.DOUBLE
 
 func randSeta():
 	# Valores
@@ -54,7 +56,7 @@ func randSeta():
 	# 1 = Laranja
 	# 2 = Coração
 	# 3 = Cinza
-	var pool:Dictionary = {0:20, 1:12, 2:8, 3:1}
+	var pool:Dictionary = {0:20, 1:15, 2:8, 3:1}
 	var totalWeight = 0
 	
 	for i in pool:

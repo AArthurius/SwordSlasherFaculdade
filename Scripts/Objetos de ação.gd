@@ -15,7 +15,7 @@ const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/
 
 const P_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player atk sheet.png")
 const P_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png")
-const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player pre ataque sheet.png")
+const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player pre atk sheet.png")
 
 var impactos = []
 
@@ -68,7 +68,7 @@ func _ready() -> void:
 	
 	Hideimpactos()
 
-func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool):
+func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, laranja:bool = false):
 	if timeout:
 		#player dano
 		changeSprite(player, P_DEF_SHEET, 5)
@@ -77,16 +77,20 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool):
 	else:
 		#player acertou o input
 		if acerto:
-			if enemyAtk:
-				#ataque inimigo
-				changeSprite(inimigo, I_ATK_SHEET, Direction)
-				#defesa player
-				changeSprite(player, P_DEF_SHEET, Direction)
+			if laranja:
+				#pre ataque player
+				changeSprite(player, P_PRE_SHEET, Direction)
 			else:
-				#ataque do player
-				changeSprite(player, P_ATK_SHEET, Direction)
-				#defesa inimigo
-				changeSprite(inimigo, I_DEF_SHEET, Direction)
+				if enemyAtk:
+					#ataque inimigo
+					changeSprite(inimigo, I_ATK_SHEET, Direction)
+					#defesa player
+					changeSprite(player, P_DEF_SHEET, Direction)
+				else:
+					#ataque do player
+					changeSprite(player, P_ATK_SHEET, Direction)
+					#defesa inimigo
+					changeSprite(inimigo, I_DEF_SHEET, Direction)
 		#player errou o input
 		else:
 			#ataque inimigo
@@ -94,9 +98,9 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool):
 			#player dano
 			changeSprite(player, P_DEF_SHEET, 5)
 	
-	
-	impactos[Direction].show()
-	reset_sprites.start()
+	if !laranja:
+		impactos[Direction].show()
+		reset_sprites.start()
 
 func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int):
 	var spriteRect = Rect2(ID * sheetWidth, 0, sheetWidth, sheetHeight)

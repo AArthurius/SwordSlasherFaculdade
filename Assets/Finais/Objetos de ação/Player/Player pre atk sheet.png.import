@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnubxupykhgb2"
-path="res://.godot/imported/Player pre ataque sheet.png-3647184acb80e7620e313a44931d1743.ctex"
+uid="uid://bgynk6gu81aw2"
+path="res://.godot/imported/Player pre atk sheet.png-fb71a3f75a989cb011845aef3ff0d2c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Finais/Objetos de ação/Player/Player pre ataque sheet.png"
-dest_files=["res://.godot/imported/Player pre ataque sheet.png-3647184acb80e7620e313a44931d1743.ctex"]
+source_file="res://Assets/Finais/Objetos de ação/Player/Player pre atk sheet.png"
+dest_files=["res://.godot/imported/Player pre atk sheet.png-fb71a3f75a989cb011845aef3ff0d2c1.ctex"]
 
 [params]
 
