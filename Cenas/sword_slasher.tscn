@@ -1534,17 +1534,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Área vísivel da lista" type="Control" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = 285.0
-grow_horizontal = 2
-
-[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI/Área vísivel da lista"]
+[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1555,28 +1545,25 @@ offset_bottom = 214.0
 grow_horizontal = 2
 script = ExtResource("3_61tt7")
 
-[node name="Flechas" type="Control" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Flechas" type="Control" parent="CanvasLayer/UI/Lista de Comandos"]
 anchors_preset = 0
 
-[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 109)
 
-[node name="Flecha" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
+[node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
 
-[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 265)
 
-[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 401)
 
-[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 469)
 
-[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 522)
-
-[node name="Aparecer flecha" type="Timer" parent="CanvasLayer/UI/Área vísivel da lista"]
-one_shot = true
 
 [node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
 anchors_preset = 0
@@ -1599,7 +1586,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="impacto esquerda" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 0" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1617,7 +1604,7 @@ texture = ExtResource("6_2v1cl")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="impacto direita" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1637,7 +1624,7 @@ stretch_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="impacto cima" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 2" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1657,7 +1644,7 @@ stretch_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="impacto baixo" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 3" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1712,6 +1699,7 @@ texture = ExtResource("7_1i0ms")
 expand_mode = 3
 
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1863,12 +1851,12 @@ theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
 
-[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
-[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]
-[connection signal="timeout" from="CanvasLayer/UI/Área vísivel da lista/Aparecer flecha" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_aparecer_flecha_timeout"]
+[connection signal="DoubleSwipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_double_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Lista de Comandos" method="_on_camera_2d_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_swipe"]
 [connection signal="timeout" from="CanvasLayer/UI/Objetos de ação/Reset sprites" to="CanvasLayer/UI/Objetos de ação" method="_on_reset_sprites_timeout"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Play" to="CanvasLayer/UI/Game Over" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Exit" to="CanvasLayer/UI/Game Over" method="_on_exit_pressed"]
-[connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
-[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_animation_animation_finished"]
+[connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]

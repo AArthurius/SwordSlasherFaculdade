@@ -1,9 +1,9 @@
+Label
 TextureRect
 Button
 TextEdit
 Control
 Sprite2D
-Label
 OmniLight3D
 VBoxContainer
 HBoxContainer

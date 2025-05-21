@@ -3,10 +3,10 @@ extends Control
 @onready var inimigo: Sprite2D = $Inimigo
 @onready var player: Sprite2D = $Player
 @onready var reset_sprites: Timer = $"Reset sprites"
-@onready var impacto_esquerda: TextureRect = $"Impactos/impacto esquerda"
-@onready var impacto_direita: TextureRect = $"Impactos/impacto direita"
-@onready var impacto_cima: TextureRect = $"Impactos/impacto cima"
-@onready var impacto_baixo: TextureRect = $"Impactos/impacto baixo"
+@onready var impacto_0: TextureRect = $"Impactos/impacto 0"
+@onready var impacto_1: TextureRect = $"Impactos/impacto 1"
+@onready var impacto_2: TextureRect = $"Impactos/impacto 2"
+@onready var impacto_3: TextureRect = $"Impactos/impacto 3"
 
 
 const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/inimigo base atk sheet.png")
@@ -30,6 +30,21 @@ var sheetHeight = 657
 # 4 - neutro - só na de defesa
 # 5 - dano - só na de defesa 
 
+func _on_camera_2d_double_swipe(directionIndex: Variant) -> void:
+	match directionIndex:
+		0:
+			#Left
+			print("Double Left Swipe!")
+		1:
+			#Right
+			print("Double Right Swipe!")
+		2:
+			#Up
+			print("Double Up Swipe!")
+		3:
+			#Down
+			print("Double Down Swipe!")
+
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 	match directionIndex:
 		0:
@@ -46,12 +61,12 @@ func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 			print("Down Swipe!")
 
 func _ready() -> void:
-	Hideimpactos()
+	impactos.append(impacto_0)
+	impactos.append(impacto_1)
+	impactos.append(impacto_2)
+	impactos.append(impacto_3)
 	
-	impactos.append(impacto_esquerda)
-	impactos.append(impacto_direita)
-	impactos.append(impacto_cima)
-	impactos.append(impacto_baixo)
+	Hideimpactos()
 
 func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool):
 	if timeout:
@@ -89,7 +104,6 @@ func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int):
 	entity.region_rect = spriteRect
 
 func _on_reset_sprites_timeout() -> void:
-	
 	#voltar pro neutro
 	changeSprite(player, P_DEF_SHEET, 4)
 	changeSprite(inimigo, I_DEF_SHEET, 4)
@@ -97,7 +111,5 @@ func _on_reset_sprites_timeout() -> void:
 	Hideimpactos()
 
 func Hideimpactos():
-	impacto_esquerda.hide()
-	impacto_direita.hide()
-	impacto_cima.hide()
-	impacto_baixo.hide()
+	for i in impactos:
+		i.hide()
