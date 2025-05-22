@@ -1553,6 +1553,7 @@ position = Vector2(50, 109)
 [node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
 
 [node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+visible = false
 position = Vector2(50, 265)
 
 [node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
@@ -1579,6 +1580,63 @@ position = Vector2(270, 655)
 texture = ExtResource("6_fmfii")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
+
+[node name="Vida inimiga" type="HBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 520.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Vida 0" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 2" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 3" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 4" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 5" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 6" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="Impactos" type="Control" parent="CanvasLayer/UI/Objetos de ação"]
 anchors_preset = 0

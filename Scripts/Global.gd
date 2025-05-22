@@ -3,6 +3,8 @@ extends Node
 var pontuaçãoAtual:int = 0
 var pontuações = []
 
+var nivel:int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pontuaçãoAtual = 0

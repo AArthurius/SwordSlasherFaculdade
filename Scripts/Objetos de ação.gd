@@ -19,6 +19,8 @@ const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player
 
 var impactos = []
 
+var posInimigo = Vector2(270, 655)
+
 var sheetWidth = 500
 var sheetHeight = 657
 
@@ -73,7 +75,7 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, laranja:b
 		#player dano
 		changeSprite(player, P_DEF_SHEET, 5)
 		#ataque inimigo
-		changeSprite(inimigo, I_ATK_SHEET, Direction)
+		changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivel)
 	else:
 		#player acertou o input
 		if acerto:
@@ -83,18 +85,18 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, laranja:b
 			else:
 				if enemyAtk:
 					#ataque inimigo
-					changeSprite(inimigo, I_ATK_SHEET, Direction)
+					changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivel)
 					#defesa player
 					changeSprite(player, P_DEF_SHEET, Direction)
 				else:
 					#ataque do player
 					changeSprite(player, P_ATK_SHEET, Direction)
 					#defesa inimigo
-					changeSprite(inimigo, I_DEF_SHEET, Direction)
+					changeSprite(inimigo, I_DEF_SHEET, Direction, Global.nivel)
 		#player errou o input
 		else:
 			#ataque inimigo
-			changeSprite(inimigo, I_ATK_SHEET, Direction)
+			changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivel)
 			#player dano
 			changeSprite(player, P_DEF_SHEET, 5)
 	
@@ -102,8 +104,10 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, laranja:b
 		impactos[Direction].show()
 		reset_sprites.start()
 
-func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int):
-	var spriteRect = Rect2(ID * sheetWidth, 0, sheetWidth, sheetHeight)
+func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int, nivel: int = 0):
+	var spriteRect = Rect2(ID * sheetWidth, 0 * sheetHeight, sheetWidth, sheetHeight) 
+	#usar quando tiver os sprites de inimigos mais fortes
+	#var spriteRect = Rect2(ID * sheetWidth, nivel * sheetHeight, sheetWidth, sheetHeight)
 	entity.texture = sheet
 	entity.region_rect = spriteRect
 
@@ -117,3 +121,6 @@ func _on_reset_sprites_timeout() -> void:
 func Hideimpactos():
 	for i in impactos:
 		i.hide()
+
+func mudarInimigo():
+	pass

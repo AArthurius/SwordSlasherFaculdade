@@ -113,7 +113,7 @@ func addArrow(direção):
 					direção = 3
 				3:
 					direção = 2
-
+	
 	flecha.direction = direção
 	flecha.scale = flechaScale/5
 	flecha.position = fora.position
@@ -202,7 +202,6 @@ func afterCheck():
 		setaCoraçãoContador -= 1
 		addArrow(randi_range(0,3))
 		flechas.get_child(0).queue_free()
-
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 	if $"../Instructions".visible:
