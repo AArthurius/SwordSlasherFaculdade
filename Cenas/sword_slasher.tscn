@@ -1,13 +1,12 @@
-[gd_scene load_steps=99 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=98 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
-[ext_resource type="PackedScene" uid="uid://d32opfj2b70wa" path="res://Cenas/salaDungeon.glb" id="1_tq7cw"]
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
-[ext_resource type="Texture2D" uid="uid://b35u884qfai6e" path="res://Assets/Velho/Impacto.png" id="6_2v1cl"]
+[ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://cqrplt2bdgah3" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo base def sheet.png" id="6_fmfii"]
-[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="7_1i0ms"]
+[ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
@@ -1515,9 +1514,6 @@ transform = Transform3D(0.0186861, 0, 0, 0, 0.0200971, 0, 0, 0, 0.0186861, -0.36
 mesh = SubResource("ArrayMesh_is6gr")
 skeleton = NodePath("")
 
-[node name="salaDungeon" parent="3D" instance=ExtResource("1_tq7cw")]
-visible = false
-
 [node name="Camera2D" type="Camera3D" parent="3D"]
 transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0, -0.0266703, 1.71774)
 fov = 80.0
@@ -1534,17 +1530,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Área vísivel da lista" type="Control" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = 285.0
-grow_horizontal = 2
-
-[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI/Área vísivel da lista"]
+[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1555,28 +1541,29 @@ offset_bottom = 214.0
 grow_horizontal = 2
 script = ExtResource("3_61tt7")
 
-[node name="Flechas" type="Control" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Flechas" type="Control" parent="CanvasLayer/UI/Lista de Comandos"]
 anchors_preset = 0
 
-[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Flecha2" parent="CanvasLayer/UI/Lista de Comandos/Flechas" instance=ExtResource("4_u4r6q")]
 position = Vector2(50, 109)
 
-[node name="Flecha" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
+[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+position = Vector2(50, 109)
 
-[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
+
+[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+visible = false
 position = Vector2(50, 265)
 
-[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 401)
 
-[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 469)
 
-[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos"]
+[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 522)
-
-[node name="Aparecer flecha" type="Timer" parent="CanvasLayer/UI/Área vísivel da lista"]
-one_shot = true
 
 [node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
 anchors_preset = 0
@@ -1594,12 +1581,22 @@ texture = ExtResource("6_fmfii")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
+[node name="Lista de vida inimiga" type="VBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
+z_index = -5
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Barra de vida inimiga" parent="CanvasLayer/UI/Objetos de ação/Lista de vida inimiga" instance=ExtResource("6_5byvl")]
+layout_mode = 2
+
 [node name="Impactos" type="Control" parent="CanvasLayer/UI/Objetos de ação"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="impacto esquerda" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 0" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1613,11 +1610,11 @@ offset_right = 240.0
 offset_bottom = 839.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_2v1cl")
+texture = ExtResource("6_l5he2")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="impacto direita" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1631,13 +1628,13 @@ offset_right = 543.0
 offset_bottom = 844.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_2v1cl")
+texture = ExtResource("6_l5he2")
 expand_mode = 5
 stretch_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="impacto cima" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 2" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1651,13 +1648,13 @@ offset_right = 274.0
 offset_bottom = 1020.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_2v1cl")
+texture = ExtResource("6_l5he2")
 expand_mode = 5
 stretch_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="impacto baixo" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
+[node name="impacto 3" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Impactos"]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -1671,7 +1668,7 @@ offset_right = 395.0
 offset_bottom = 776.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("6_2v1cl")
+texture = ExtResource("6_l5he2")
 expand_mode = 5
 stretch_mode = 5
 flip_h = true
@@ -1683,35 +1680,8 @@ texture = ExtResource("8_l5he2")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
-[node name="Barra de vida" type="HBoxContainer" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -187.0
-offset_top = -122.0
-offset_right = 187.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Vida" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-
-[node name="Vida2" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-
-[node name="Vida3" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1863,12 +1833,12 @@ theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
 
-[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista" method="_on_camera_2d_swipe"]
-[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_camera_2d_swipe"]
-[connection signal="timeout" from="CanvasLayer/UI/Área vísivel da lista/Aparecer flecha" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_aparecer_flecha_timeout"]
+[connection signal="DoubleSwipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_double_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Lista de Comandos" method="_on_camera_2d_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_swipe"]
 [connection signal="timeout" from="CanvasLayer/UI/Objetos de ação/Reset sprites" to="CanvasLayer/UI/Objetos de ação" method="_on_reset_sprites_timeout"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Play" to="CanvasLayer/UI/Game Over" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Exit" to="CanvasLayer/UI/Game Over" method="_on_exit_pressed"]
-[connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
-[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Área vísivel da lista/Lista de Comandos" method="_on_animation_animation_finished"]
+[connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]
