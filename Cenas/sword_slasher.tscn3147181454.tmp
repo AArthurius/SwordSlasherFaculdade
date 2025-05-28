@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
-[ext_resource type="PackedScene" uid="uid://yuc47yctd8at" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
+[ext_resource type="PackedScene" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
+[ext_resource type="Texture2D" uid="uid://cqrplt2bdgah3" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo base def sheet.png" id="6_fmfii"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
@@ -1062,9 +1063,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i76vb")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n8unr"]
-load_path = "res://.godot/imported/Inimigo base def sheet.png-8b2a24e1cf7bd9c91014517df52e73ad.ctex"
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u4r6q"]
 load_path = "res://.godot/imported/Player defesa sheet.png-23a41d995db2a3d6c03fe15d497afd99.ctex"
 
@@ -1581,7 +1579,7 @@ one_shot = true
 
 [node name="Inimigo" type="Sprite2D" parent="CanvasLayer/UI/Objetos de ação"]
 position = Vector2(270, 655)
-texture = SubResource("CompressedTexture2D_n8unr")
+texture = ExtResource("6_fmfii")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 

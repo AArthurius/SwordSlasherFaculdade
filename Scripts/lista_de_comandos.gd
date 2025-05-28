@@ -1,20 +1,20 @@
 extends Control
 
 const FLECHA = preload("res://Cenas/flecha.tscn")
-@onready var ação: Control = $"../../Objetos de ação"
+@onready var ação: Control = $"../Objetos de ação"
 @onready var pos_0: Marker2D = $Pos0
 @onready var pos_1: Marker2D = $Pos1
 @onready var pos_2: Marker2D = $Pos2
 @onready var pos_3: Marker2D = $Pos3
 @onready var fora: Marker2D = $fora
-@onready var barra_de_vida: HBoxContainer = $"../../Barra de vida"
+@onready var barra_de_vida: HBoxContainer = $"../Barra de vida"
 @onready var flechas: Control = $Flechas
-@onready var game_over: Control = $"../../Game Over"
-@onready var tempo_de_reação_label: Label = $"../../Tempo de reação Label"
-@onready var tempo_de_reação: Timer = $"../../Tempo de reação Label/Tempo de reação"
-@onready var animation: AnimationPlayer = $"../../Animation"
-@onready var bordas_vermelhas: TextureRect = $"../../Tempo de reação Label/Bordas Vermelhas"
-@onready var pontuação: Control = $"../../Pontuação"
+@onready var game_over: Control = $"../Game Over"
+@onready var tempo_de_reação_label: Label = $"../Tempo de reação Label"
+@onready var tempo_de_reação: Timer = $"../Tempo de reação Label/Tempo de reação"
+@onready var animation: AnimationPlayer = $"../Animation"
+@onready var bordas_vermelhas: TextureRect = $"../Tempo de reação Label/Bordas Vermelhas"
+@onready var pontuação: Control = $"../Pontuação"
 
 
 var flechaScale = Vector2(0.3, 0.3)
@@ -146,7 +146,7 @@ func checkArrow(swipeDirection, timeout: bool):
 		tempo_de_reação.start()
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
-	if $"../../Instructions".visible:
+	if $"../Instructions".visible:
 		animation.play("Fade Instructions")
 		bordas_vermelhas.show()
 	
@@ -158,4 +158,4 @@ func _on_tempo_de_reação_timeout() -> void:
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Fade Instructions":
-		$"../../Instructions".hide()
+		$"../Instructions".hide()

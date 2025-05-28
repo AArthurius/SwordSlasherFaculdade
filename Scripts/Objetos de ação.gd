@@ -3,10 +3,11 @@ extends Control
 @onready var inimigo: Sprite2D = $Inimigo
 @onready var player: Sprite2D = $Player
 @onready var reset_sprites: Timer = $"Reset sprites"
-@onready var impacto_esquerda: TextureRect = $"Impactos/impacto esquerda"
-@onready var impacto_direita: TextureRect = $"Impactos/impacto direita"
-@onready var impacto_cima: TextureRect = $"Impactos/impacto cima"
-@onready var impacto_baixo: TextureRect = $"Impactos/impacto baixo"
+@onready var impacto_0: TextureRect = $"Impactos/impacto 0"
+@onready var impacto_1: TextureRect = $"Impactos/impacto 1"
+@onready var impacto_2: TextureRect = $"Impactos/impacto 2"
+@onready var impacto_3: TextureRect = $"Impactos/impacto 3"
+
 
 
 const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/inimigo base atk sheet.png")
@@ -15,7 +16,7 @@ const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/
 
 const P_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player atk sheet.png")
 const P_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png")
-const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player pre ataque sheet.png")
+const P_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player pre atk sheet.png")
 
 var impactos = []
 
@@ -48,10 +49,10 @@ func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 func _ready() -> void:
 	Hideimpactos()
 	
-	impactos.append(impacto_esquerda)
-	impactos.append(impacto_direita)
-	impactos.append(impacto_cima)
-	impactos.append(impacto_baixo)
+	impactos.append(impacto_0)
+	impactos.append(impacto_1)
+	impactos.append(impacto_2)
+	impactos.append(impacto_3)
 
 func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool):
 	if timeout:
@@ -97,7 +98,7 @@ func _on_reset_sprites_timeout() -> void:
 	Hideimpactos()
 
 func Hideimpactos():
-	impacto_esquerda.hide()
-	impacto_direita.hide()
-	impacto_cima.hide()
-	impacto_baixo.hide()
+	impacto_0.hide()
+	impacto_1.hide()
+	impacto_2.hide()
+	impacto_3.hide()
