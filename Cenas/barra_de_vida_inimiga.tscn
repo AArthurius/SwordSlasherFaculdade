@@ -3,7 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="1_6qwqn"]
 
 [node name="Barra de vida inimiga" type="HBoxContainer"]
-alignment = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -262.0
+offset_right = 262.0
+offset_bottom = 40.0
+grow_horizontal = 2
 
 [node name="Vida 1" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(40, 40)

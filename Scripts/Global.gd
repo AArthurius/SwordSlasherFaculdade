@@ -3,7 +3,7 @@ extends Node
 var pontuaçãoAtual:int = 0
 var pontuações = []
 
-var nivel:int = 0
+var nivelDificuldade:int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +11,10 @@ func _ready() -> void:
 
 func addPoints(amount):
 	pontuaçãoAtual += amount
+
+func aumentarDificuldade():
+	nivelDificuldade += 1
+
 
 func gameOver():
 	pontuações.append(pontuaçãoAtual)

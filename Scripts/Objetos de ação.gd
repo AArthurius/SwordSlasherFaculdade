@@ -7,7 +7,9 @@ extends Control
 @onready var impacto_1: TextureRect = $"Impactos/impacto 1"
 @onready var impacto_2: TextureRect = $"Impactos/impacto 2"
 @onready var impacto_3: TextureRect = $"Impactos/impacto 3"
+@onready var lista_de_vida_inimiga: VBoxContainer = $"Lista de vida inimiga"
 
+const BARRA_DE_VIDA_INIMIGA = preload("res://Cenas/barra_de_vida_inimiga.tscn")
 
 const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/inimigo base atk sheet.png")
 const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo base def sheet.png")
@@ -70,12 +72,13 @@ func _ready() -> void:
 	
 	Hideimpactos()
 
-func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, laranja:bool = false):
+func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool = false, laranja:bool = false):
 	if timeout:
 		#player dano
 		changeSprite(player, P_DEF_SHEET, 5)
 		#ataque inimigo
-		changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivel)
+		
+		changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivelDificuldade)
 	else:
 		#player acertou o input
 		if acerto:
@@ -83,20 +86,25 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, laranja:b
 				#pre ataque player
 				changeSprite(player, P_PRE_SHEET, Direction)
 			else:
-				if enemyAtk:
+				if dano:
+					#ataque do player
+					changeSprite(player, P_ATK_SHEET, Direction)
+					#danoinimigo
+					changeSprite(inimigo, I_DEF_SHEET, 5, Global.nivelDificuldade)
+				elif enemyAtk:
 					#ataque inimigo
-					changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivel)
+					changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivelDificuldade)
 					#defesa player
 					changeSprite(player, P_DEF_SHEET, Direction)
 				else:
 					#ataque do player
 					changeSprite(player, P_ATK_SHEET, Direction)
 					#defesa inimigo
-					changeSprite(inimigo, I_DEF_SHEET, Direction, Global.nivel)
+					changeSprite(inimigo, I_DEF_SHEET, Direction, Global.nivelDificuldade)
 		#player errou o input
 		else:
 			#ataque inimigo
-			changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivel)
+			changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivelDificuldade)
 			#player dano
 			changeSprite(player, P_DEF_SHEET, 5)
 	
@@ -121,6 +129,9 @@ func _on_reset_sprites_timeout() -> void:
 func Hideimpactos():
 	for i in impactos:
 		i.hide()
-
-func mudarInimigo():
-	pass
+	
+func proximoInimigo():
+	for i in Global.nivelDificuldade:
+		var vidaInimiga = BARRA_DE_VIDA_INIMIGA.instantiate()
+		
+		lista_de_vida_inimiga.add_child(vidaInimiga)

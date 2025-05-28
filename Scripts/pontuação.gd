@@ -7,14 +7,19 @@ extends Control
 func _process(delta: float) -> void:
 	label.text = str(Global.pontuaçãoAtual)
 	
-	if Global.pontuaçãoAtual > 10000:
-		tempo_de_reação.wait_time = 0.5
-	elif Global.pontuaçãoAtual > 6000:
-		tempo_de_reação.wait_time = 1
-	elif Global.pontuaçãoAtual > 3000:
+	
+
+func aumentarDificuldade():
+	Global.nivelDificuldade += 1
+	
+	if Global.nivelDificuldade == 2:
+		tempo_de_reação.wait_time = 3
+	elif Global.pontuaçãoAtual == 4:
 		tempo_de_reação.wait_time = 1.5
-	elif Global.pontuaçãoAtual > 1000:
-		tempo_de_reação.wait_time = 2
+	elif Global.pontuaçãoAtual == 5:
+		tempo_de_reação.wait_time = 1
+	elif Global.pontuaçãoAtual == 6:
+		tempo_de_reação.wait_time = 0.5
 
 func acerto(tempoReação):
 	var tempoLimite = tempo_de_reação.wait_time

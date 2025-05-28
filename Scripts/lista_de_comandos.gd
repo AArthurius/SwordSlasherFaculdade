@@ -7,14 +7,17 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 @onready var pos_2: Marker2D = $Pos2
 @onready var pos_3: Marker2D = $Pos3
 @onready var fora: Marker2D = $fora
-@onready var barra_de_vida: HBoxContainer = $"../Barra de vida"
+@onready var barra_de_vida: HBoxContainer = $"../Objetos de ação/Barra de Vida"
 @onready var flechas: Control = $Flechas
 @onready var game_over: Control = $"../Game Over"
-@onready var tempo_de_reação_label: Label = $"Tempo de reação Label"
+@onready var tempo_de_reação_label: Label = $"../Tempo de reação Label"
 @onready var tempo_de_reação: Timer = $"../Tempo de reação Label/Tempo de reação"
 @onready var animation: AnimationPlayer = $"../Animation"
 @onready var bordas_vermelhas: TextureRect = $"../Tempo de reação Label/Bordas Vermelhas"
 @onready var pontuação: Control = $"../Pontuação"
+@onready var lista_de_vida_inimiga: VBoxContainer = $"../Objetos de ação/Lista de vida inimiga"
+
+
 
 
 var flechaScale = Vector2(0.3, 0.3)
@@ -44,6 +47,9 @@ func _ready():
 func _process(delta) -> void:
 	updateArrows()
 	avisoPerigo()
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		damageInimigo()
 
 func ajustarDistancia():
 	pos_1.position.y = pos_0.position.y + (tamanhoTextura*flechaScale.y) + (tamanhoTextura*(flechaScale.y/2))
@@ -103,6 +109,7 @@ func addArrow(direção):
 			for i in flecha.SetasPossiveis:
 				if i != 0:
 					flecha.SetasPossiveis[i] = false
+			flecha.dano = true
 			flecha.enemyAtk= false 
 			match flechas.get_child(-1).direction:
 				0:
@@ -155,11 +162,15 @@ func checkArrow(swipeDirection, timeout: bool):
 	if flechas.get_children().size() > 0 and not dead:
 		#acerto
 		if flechas.get_child(0).direction == swipeDirection and not timeout:
-			pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1))
-			if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA:
-				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, true)
-			else:
-				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false)
+			pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1)) #pontuar
+			if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
+				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
+			else: # se não for laranja
+				if flechas.get_child(0).dano == true: #se for logo depois de uma laranja da dano no inimigo
+					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, true, false)
+					damageInimigo()
+				else:
+					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, false)
 			
 			checkTipo(flechas.get_child(0))
 		#erro
@@ -217,3 +228,18 @@ func _on_tempo_de_reação_timeout() -> void:
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Fade Instructions":
 		$"../Instructions".hide()
+
+func damageInimigo():
+	if lista_de_vida_inimiga.get_child(-1).get_child_count() > 1:
+		lista_de_vida_inimiga.get_child(-1).get_child(-1).queue_free()
+	else:
+		
+		lista_de_vida_inimiga.get_child(-1).queue_free()
+		if lista_de_vida_inimiga.get_child_count() < 2:
+			pontuação.aumentarDificuldade()
+			ação.proximoInimigo()
+		
+	
+	
+	
+	#print(Global.nivelDificuldade)
