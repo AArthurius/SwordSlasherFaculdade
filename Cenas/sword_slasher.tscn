@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
+[ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://cqrplt2bdgah3" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo base def sheet.png" id="6_fmfii"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
-[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="7_1i0ms"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
@@ -1581,62 +1581,15 @@ texture = ExtResource("6_fmfii")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
-[node name="Vida inimiga" type="HBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 520.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Lista de vida inimiga" type="VBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
+z_index = -5
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 40.0
 alignment = 1
 
-[node name="Vida 0" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
+[node name="Barra de vida inimiga" parent="CanvasLayer/UI/Objetos de ação/Lista de vida inimiga" instance=ExtResource("6_5byvl")]
 layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Vida 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Vida 2" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Vida 3" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Vida 4" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Vida 5" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="Vida 6" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Vida inimiga"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-stretch_mode = 4
 
 [node name="Impactos" type="Control" parent="CanvasLayer/UI/Objetos de ação"]
 anchors_preset = 0
@@ -1726,34 +1679,6 @@ position = Vector2(270, 635)
 texture = ExtResource("8_l5he2")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
-
-[node name="Barra de vida" type="HBoxContainer" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -187.0
-offset_top = -122.0
-offset_right = 187.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Vida" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-
-[node name="Vida2" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
-
-[node name="Vida3" type="TextureRect" parent="CanvasLayer/UI/Barra de vida"]
-layout_mode = 2
-texture = ExtResource("7_1i0ms")
-expand_mode = 3
 
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
 visible = false

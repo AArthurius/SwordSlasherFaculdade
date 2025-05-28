@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://73mwsioj00p3"]
+
+[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="1_6qwqn"]
+
+[node name="Barra de vida inimiga" type="HBoxContainer"]
+alignment = 1
+
+[node name="Vida 1" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 2" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 3" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 4" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 5" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 6" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 7" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 8" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 9" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 10" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 11" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 12" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_6qwqn")
+expand_mode = 3
+stretch_mode = 4
