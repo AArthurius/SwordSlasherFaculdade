@@ -16,6 +16,8 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 @onready var bordas_vermelhas: TextureRect = $"../Tempo de reação Label/Bordas Vermelhas"
 @onready var pontuação: Control = $"../Pontuação"
 @onready var lista_de_vida_inimiga: VBoxContainer = $"../Objetos de ação/Lista de vida inimiga"
+@onready var inimigo: Sprite2D = $"../Objetos de ação/Inimigo"
+@onready var player: Sprite2D = $"../Objetos de ação/Player"
 
 
 
@@ -170,6 +172,8 @@ func checkArrow(swipeDirection, timeout: bool):
 			if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
 				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
 			else: # se não for laranja
+				shake(player)
+				shake(inimigo)
 				if flechas.get_child(0).dano == true: #se for logo depois de uma laranja da dano no inimigo
 					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, true, false)
 					damageInimigo()
@@ -179,6 +183,9 @@ func checkArrow(swipeDirection, timeout: bool):
 			checkTipo(flechas.get_child(0))
 		#erro
 		else:
+			shake(player)
+			shake(inimigo)
+			shake(barra_de_vida)
 			#acabou o tempo
 			if timeout:
 				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, true)
@@ -214,9 +221,10 @@ func checkTipo(seta):
 	tempo_de_reação.start()
 
 func afterCheck():
-		setaCoraçãoContador -= 1
-		addArrow(randi_range(0,3))
-		flechas.get_child(0).queue_free()
+	
+	setaCoraçãoContador -= 1
+	addArrow(randi_range(0,3))
+	flechas.get_child(0).queue_free()
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 	if pause:
@@ -239,12 +247,16 @@ func damageInimigo():
 	if lista_de_vida_inimiga.get_child(-1).get_child_count() > 1:
 		lista_de_vida_inimiga.get_child(-1).get_child(-1).queue_free()
 	else:
-		
 		lista_de_vida_inimiga.get_child(-1).queue_free()
 		if lista_de_vida_inimiga.get_child_count() < 2:
 			ação.proximoInimigo()
-		
+			
+	shake(lista_de_vida_inimiga)
+
+func shake(node: Node, factor:int = 10):
+	var tween = create_tween()
+	var originalPos = node.position
 	
-	
-	
-	#print(Global.nivelDificuldade)
+	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
+	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
+	tween.tween_property(node, "position", originalPos, 0.05)
