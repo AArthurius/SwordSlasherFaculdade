@@ -14,11 +14,9 @@ func gameOver():
 	animation.play("Game Over Screen appear")
 
 func _on_play_pressed() -> void:
-	print("restart")
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed() -> void:
-	print("exit")
 	animation.play("Fade out")
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:

@@ -1235,6 +1235,58 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5)
 }
 
+[sub_resource type="Animation" id="Animation_5byvl"]
+resource_name = "Inimigo transição descendo"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objetos de ação/Inimigo:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objetos de ação/Inimigo:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(655, -0.25, 0, 0.25, 0, 1205, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_fmfii"]
+resource_name = "Inimigo transição subindo"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objetos de ação/Inimigo:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objetos de ação/Inimigo:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1205, -0.25, 0, 0.25, 0, 655, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
 [sub_resource type="Animation" id="Animation_1i0ms"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -1368,58 +1420,6 @@ tracks/11/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(655, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_fmfii"]
-resource_name = "Inimigo transição subindo"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Objetos de ação/Inimigo:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Objetos de ação/Inimigo:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1205, -0.25, 0, 0.25, 0, 655, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-
-[sub_resource type="Animation" id="Animation_5byvl"]
-resource_name = "Inimigo transição descendo"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Objetos de ação/Inimigo:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Objetos de ação/Inimigo:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(655, -0.25, 0, 0.25, 0, 1205, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n8unr"]
@@ -1671,6 +1671,7 @@ alignment = 1
 
 [node name="Barra de vida inimiga" parent="CanvasLayer/UI/Objetos de ação/Lista de vida inimiga" instance=ExtResource("6_5byvl")]
 layout_mode = 2
+alignment = 1
 
 [node name="Impactos" type="Control" parent="CanvasLayer/UI/Objetos de ação"]
 anchors_preset = 0
