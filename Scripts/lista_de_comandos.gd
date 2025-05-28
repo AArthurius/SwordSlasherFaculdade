@@ -19,7 +19,7 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 
 
 
-
+var pause:bool = false;
 var flechaScale = Vector2(0.3, 0.3)
 var tempoTween = 0.25
 var limite = 10
@@ -45,6 +45,7 @@ func _ready():
 		addArrow(randi_range(0,3))
 
 func _process(delta) -> void:
+	tempo_de_reação.paused = pause
 	updateArrows()
 	avisoPerigo()
 	
@@ -159,6 +160,9 @@ func updateArrows():
 				flechas.get_child(i).modulate = Color(1, 1, 1, 0)
 
 func checkArrow(swipeDirection, timeout: bool):
+	if pause:
+		return
+	
 	if flechas.get_children().size() > 0 and not dead:
 		#acerto
 		if flechas.get_child(0).direction == swipeDirection and not timeout:
@@ -215,6 +219,8 @@ func afterCheck():
 		flechas.get_child(0).queue_free()
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
+	if pause:
+		return
 	if $"../Instructions".visible:
 		animation.play("Fade Instructions")
 		bordas_vermelhas.show()
@@ -236,7 +242,6 @@ func damageInimigo():
 		
 		lista_de_vida_inimiga.get_child(-1).queue_free()
 		if lista_de_vida_inimiga.get_child_count() < 2:
-			pontuação.aumentarDificuldade()
 			ação.proximoInimigo()
 		
 	

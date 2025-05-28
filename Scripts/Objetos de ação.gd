@@ -8,6 +8,10 @@ extends Control
 @onready var impacto_2: TextureRect = $"Impactos/impacto 2"
 @onready var impacto_3: TextureRect = $"Impactos/impacto 3"
 @onready var lista_de_vida_inimiga: VBoxContainer = $"Lista de vida inimiga"
+@onready var animation: AnimationPlayer = $"../Animation"
+@onready var pontuação: Control = $"../Pontuação"
+@onready var lista_de_comandos: Control = $"../Lista de Comandos"
+
 
 const BARRA_DE_VIDA_INIMIGA = preload("res://Cenas/barra_de_vida_inimiga.tscn")
 
@@ -115,7 +119,7 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int, nivel: int = 0):
 	var spriteRect = Rect2(ID * sheetWidth, 0 * sheetHeight, sheetWidth, sheetHeight) 
 	#usar quando tiver os sprites de inimigos mais fortes
-	#var spriteRect = Rect2(ID * sheetWidth, nivel * sheetHeight, sheetWidth, sheetHeight)
+	#var spriteRect = Rect2(ID * sheetWidth, nivel-1 * sheetHeight, sheetWidth, sheetHeight)
 	entity.texture = sheet
 	entity.region_rect = spriteRect
 
@@ -131,7 +135,16 @@ func Hideimpactos():
 		i.hide()
 	
 func proximoInimigo():
-	for i in Global.nivelDificuldade:
-		var vidaInimiga = BARRA_DE_VIDA_INIMIGA.instantiate()
-		
-		lista_de_vida_inimiga.add_child(vidaInimiga)
+	lista_de_comandos.pause = true
+	animation.play("Inimigo transição descendo")
+
+func _on_animation_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Inimigo transição descendo":
+		pontuação.aumentarDificuldade()
+		for i in Global.nivelDificuldade:
+			var vidaInimiga = BARRA_DE_VIDA_INIMIGA.instantiate()
+			lista_de_vida_inimiga.add_child(vidaInimiga)
+		changeSprite(inimigo, I_DEF_SHEET, 4, Global.nivelDificuldade)
+		animation.play("Inimigo transição subindo")
+	if anim_name == "Inimigo transição subindo":
+		lista_de_comandos.pause = false

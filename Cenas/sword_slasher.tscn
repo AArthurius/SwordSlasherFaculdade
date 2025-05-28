@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=101 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
@@ -1347,6 +1347,80 @@ tracks/9/keys = {
 "points": PackedFloat32Array(330, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Objetos de ação/Inimigo:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Objetos de ação/Inimigo:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(655, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_fmfii"]
+resource_name = "Inimigo transição subindo"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objetos de ação/Inimigo:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objetos de ação/Inimigo:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1205, -0.25, 0, 0.25, 0, 655, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_5byvl"]
+resource_name = "Inimigo transição descendo"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objetos de ação/Inimigo:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(270, -0.25, 0, 0.25, 0, 270, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objetos de ação/Inimigo:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(655, -0.25, 0, 0.25, 0, 1205, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n8unr"]
 _data = {
@@ -1354,6 +1428,8 @@ _data = {
 &"Fade in": SubResource("Animation_ht1eh"),
 &"Fade out": SubResource("Animation_61aoi"),
 &"Game Over Screen appear": SubResource("Animation_u4r6q"),
+&"Inimigo transição descendo": SubResource("Animation_5byvl"),
+&"Inimigo transição subindo": SubResource("Animation_fmfii"),
 &"RESET": SubResource("Animation_1i0ms")
 }
 
@@ -1880,4 +1956,5 @@ horizontal_alignment = 1
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Exit" to="CanvasLayer/UI/Game Over" method="_on_exit_pressed"]
 [connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Objetos de ação" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]

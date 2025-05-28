@@ -18,7 +18,7 @@ func aumentarDificuldade():
 		tempo_de_reação.wait_time = 1.5
 	elif Global.pontuaçãoAtual == 5:
 		tempo_de_reação.wait_time = 1
-	elif Global.pontuaçãoAtual == 6:
+	elif Global.pontuaçãoAtual >= 6:
 		tempo_de_reação.wait_time = 0.5
 
 func acerto(tempoReação):
