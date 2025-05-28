@@ -1,3 +1,4 @@
+HBoxContainer
 TextureRect
 Button
 TextEdit
@@ -6,7 +7,6 @@ Sprite2D
 Label
 OmniLight3D
 VBoxContainer
-HBoxContainer
 AnimationPlayer
 AnimationTree
 ColorRect

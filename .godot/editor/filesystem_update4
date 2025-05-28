@@ -9,3 +9,4 @@ res://Scripts/game_over.gd
 res://Cenas/menu.tscn
 res://Cenas/flecha.tscn
 res://Cenas/barra_de_vida_inimiga.tscn
+res://Scripts/pontuação.gd

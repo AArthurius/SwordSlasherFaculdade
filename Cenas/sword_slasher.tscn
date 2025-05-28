@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=102 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
 [ext_resource type="PackedScene" uid="uid://yuc47yctd8at" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
+[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="7_1i0ms"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
 [ext_resource type="Texture2D" uid="uid://doiidkvmg87lg" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png" id="13_1i0ms"]
@@ -17,6 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://mnyx32biajwl" path="res://Assets/Finais/UI/Menu/game over.png" id="16_fmfii"]
 [ext_resource type="Script" uid="uid://cgvpamqbbdyko" path="res://Scripts/pontuação.gd" id="16_n8unr"]
 [ext_resource type="Texture2D" uid="uid://cqa15xf7a3gnh" path="res://Assets/Finais/UI/Menu/caveira game over.png" id="17_5byvl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n8unr"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_u4r6q"]
+sky_material = SubResource("ProceduralSkyMaterial_n8unr")
+
+[sub_resource type="Environment" id="Environment_l5he2"]
+background_mode = 2
+sky = SubResource("Sky_u4r6q")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c08h"]
 resource_name = "Material"
@@ -1362,11 +1376,12 @@ _data = {
 
 [node name="sword slasher" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l5he2")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44618, 1.97867)
 omni_range = 39.8158
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="3D" type="Node3D" parent="."]
 
@@ -1570,10 +1585,48 @@ position = Vector2(50, 469)
 position = Vector2(50, 522)
 
 [node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_61tt7")
+
+[node name="Barra de vida" type="HBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
+z_index = 5
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -114.0
+offset_right = 175.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Vida 0" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de vida"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de vida"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Vida 2" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de vida"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("7_1i0ms")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="Reset sprites" type="Timer" parent="CanvasLayer/UI/Objetos de ação"]
 wait_time = 0.3

@@ -1,31 +1,66 @@
 extends Camera3D
 
-var length = 30
-var startPos: Vector2
-var curPos: Vector2
-var swiping = false
-var threshold = 5
+var swipe_length = 30
+var fingers_start = {}
+var fingers_current = {}
+var active_fingers = []
 
 signal Swipe(directionIndex)
+signal DoubleSwipe(directionIndex)
 
 func _input(event):
-	# Detectar toque inicial
+
 	if event is InputEventScreenTouch:
-		if event.pressed and not swiping:
-			swiping = true
-			startPos = event.position
-		elif not event.pressed:
-			swiping = false  # Resetar quando o toque é solto
-	
-	# Detectar arrasto (swipe)
-	if event is InputEventScreenDrag and swiping:
-		curPos = event.position
-		var delta = curPos - startPos
-		# Verifica se o swipe atingiu o comprimento mínimo
-		if delta.length() >= length:
-			if abs(delta.y) <= abs(delta.x):
-				emit_signal("Swipe", 0 if delta.x < 0 else 1)  # Esquerda / Direita
-			elif abs(delta.x) <= abs(delta.y):
-				emit_signal("Swipe", 2 if delta.y < 0 else 3)  # Cima / Baixo
-			
-			swiping = false  # Impedir múltiplos disparos para um único swipe
+		if event.pressed:
+			fingers_start[event.index] = event.position
+			fingers_current[event.index] = event.position
+			if event.index not in active_fingers:
+				active_fingers.append(event.index)
+		else:
+			fingers_start.erase(event.index)
+			fingers_current.erase(event.index)
+			active_fingers.erase(event.index)
+
+
+	elif event is InputEventScreenDrag:
+		if event.index in fingers_start:
+			fingers_current[event.index] = event.position
+
+
+	if active_fingers.size() == 2:
+		var index1 = active_fingers[0]
+		var index2 = active_fingers[1]
+
+		var delta1 = fingers_current[index1] - fingers_start[index1]
+		var delta2 = fingers_current[index2] - fingers_start[index2]
+
+		if delta1.length() >= swipe_length and delta2.length() >= swipe_length:
+			var dir1 = get_swipe_direction(delta1)
+			var dir2 = get_swipe_direction(delta2)
+
+			if dir1 == dir2:
+				emit_signal("DoubleSwipe", dir1)
+
+				fingers_start.clear()
+				fingers_current.clear()
+				active_fingers.clear()
+			else:
+
+				pass
+
+
+	elif active_fingers.size() == 1:
+		var index = active_fingers[0]
+		var delta = fingers_current[index] - fingers_start[index]
+		if delta.length() >= swipe_length:
+			var dir = get_swipe_direction(delta)
+			emit_signal("Swipe", dir)
+			fingers_start.clear()
+			fingers_current.clear()
+			active_fingers.clear()
+
+func get_swipe_direction(delta: Vector2) -> int:
+	if abs(delta.x) > abs(delta.y):
+		return 0 if delta.x < 0 else 1
+	else:
+		return 2 if delta.y < 0 else 3
