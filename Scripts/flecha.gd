@@ -12,6 +12,7 @@ const SETA_LARANJA = preload("res://Assets/Finais/UI/GUI/seta laranja.png")
 enum Tipo {AZUL = 0, LARANJA = 1, CINZA = 2, CORAÇÃO = 3, DOUBLE = 4}
 var setaAtual = Tipo.AZUL
 
+var dano:bool = false
 var enemyAtk = null
 var SetasPossiveis = {0:true, 1:true, 2:true, 3:true}
 
