@@ -57,7 +57,6 @@ func randSeta():
 	# 2 = Coração
 	# 3 = Cinza
 	
-	
 	var pool:Dictionary = {0:20, 1:15, 2:8, 3:1}
 	var totalWeight = 0
 	
