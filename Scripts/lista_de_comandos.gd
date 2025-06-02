@@ -27,7 +27,7 @@ var tempoTween = 0.25
 var limite = 10
 var dead = false
 
-var setaCoraçãoContadorMax = 20
+var setaCoraçãoContadorMax = 10
 var setaCoraçãoContador = 0
 
 var setaContadorLaranja = 0
@@ -52,7 +52,9 @@ func _process(delta) -> void:
 	avisoPerigo()
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		damageInimigo()
+		var clone = barra_de_vida.get_child(-1).duplicate()
+		barra_de_vida.add_child(clone)
+		damageInimigo(6)
 
 func ajustarDistancia():
 	pos_1.position.y = pos_0.position.y + (tamanhoTextura*flechaScale.y) + (tamanhoTextura*(flechaScale.y/2))
@@ -95,7 +97,6 @@ func addArrow(direção):
 	if setaCoraçãoContador > 0:
 		flecha.SetasPossiveis[3] = false
 	else:
-		setaCoraçãoContador = setaCoraçãoContadorMax
 		flecha.SetasPossiveis[3] = true
 	
 	if setaContadorLaranja > 0:
@@ -172,20 +173,20 @@ func checkArrow(swipeDirection, timeout: bool):
 			if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
 				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
 			else: # se não for laranja
-				shake(player)
-				shake(inimigo)
+				shake(player, 5)
+				shake(inimigo, 10)
 				if flechas.get_child(0).dano == true: #se for logo depois de uma laranja da dano no inimigo
 					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, true, false)
 					damageInimigo()
 				else:
 					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, false)
 			
-			checkTipo(flechas.get_child(0))
+			checkTipo(flechas.get_child(0), true)
 		#erro
 		else:
-			shake(player)
-			shake(inimigo)
-			shake(barra_de_vida)
+			shake(player, 10)
+			shake(inimigo, 5)
+			shake(barra_de_vida, 10)
 			#acabou o tempo
 			if timeout:
 				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, true)
@@ -197,10 +198,11 @@ func checkArrow(swipeDirection, timeout: bool):
 				barra_de_vida.get_child(-1).queue_free()
 			else: 
 				barra_de_vida.get_child(-1).queue_free()
+			checkTipo(flechas.get_child(0))
 		#adiciona mais uma flecha - tira a flecha usada - reinicia o timer do ataque inimigo
 		afterCheck()
 
-func checkTipo(seta):
+func checkTipo(seta, acerto = false):
 	match seta.setaAtual:
 		seta.Tipo.AZUL:
 			pass
@@ -212,19 +214,21 @@ func checkTipo(seta):
 			pass
 			#inverte a direção quando está no penultimo slot (na função updateArrows()) 
 		seta.Tipo.CORAÇÃO:
-			if barra_de_vida.get_child_count() < 3:
-				var clone = barra_de_vida.get_child(-1).duplicate()
-				barra_de_vida.add_child(clone)
+			if acerto:
+				if barra_de_vida.get_child_count() < 3:
+					var clone = barra_de_vida.get_child(-1).duplicate()
+					barra_de_vida.add_child(clone)
+				setaCoraçãoContador = setaCoraçãoContadorMax
 		seta.Tipo.DOUBLE:
 			pass
 	setaContadorLaranja = 0
 	tempo_de_reação.start()
 
 func afterCheck():
-	
 	setaCoraçãoContador -= 1
 	addArrow(randi_range(0,3))
 	flechas.get_child(0).queue_free()
+	
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 	if pause:
@@ -243,20 +247,25 @@ func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Fade Instructions":
 		$"../Instructions".hide()
 
-func damageInimigo():
-	if lista_de_vida_inimiga.get_child(-1).get_child_count() > 1:
-		lista_de_vida_inimiga.get_child(-1).get_child(-1).queue_free()
-	else:
-		lista_de_vida_inimiga.get_child(-1).queue_free()
-		if lista_de_vida_inimiga.get_child_count() < 2:
-			ação.proximoInimigo()
-			
-	shake(lista_de_vida_inimiga)
+func damageInimigo(amount:int = 1):
+	if lista_de_vida_inimiga.get_child(-1) == null:
+		return
+	
+	for  i in amount:
+		if lista_de_vida_inimiga.get_child(-1).get_child_count() > 1:
+			lista_de_vida_inimiga.get_child(-1).get_child(-1).queue_free()
+		else:
+			lista_de_vida_inimiga.get_child(-1).queue_free()
+			if lista_de_vida_inimiga.get_child_count() < 2:
+				ação.proximoInimigo()
+	
+	shake(lista_de_vida_inimiga, 10)
 
-func shake(node: Node, factor:int = 10):
+func shake(node: Node, factor:int = 5):
 	var tween = create_tween()
 	var originalPos = node.position
 	
 	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
 	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
 	tween.tween_property(node, "position", originalPos, 0.05)
+	lista_de_vida_inimiga. position = Vector2(8, 0)

@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
+[ext_resource type="Texture2D" uid="uid://c5suum0k3scw" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo atk.png" id="5_fmfii"]
 [ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
-[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/vida.png" id="7_1i0ms"]
+[ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/Vida.png" id="8_fmfii"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
@@ -1064,9 +1065,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i76vb")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l5he2"]
-load_path = "res://.godot/imported/Inimigo base def sheet.png-8b2a24e1cf7bd9c91014517df52e73ad.ctex"
-
 [sub_resource type="Animation" id="Animation_n8unr"]
 resource_name = "Fade Instructions"
 length = 0.5
@@ -1659,7 +1657,7 @@ one_shot = true
 
 [node name="Inimigo" type="Sprite2D" parent="CanvasLayer/UI/Objetos de ação"]
 position = Vector2(270, 655)
-texture = SubResource("CompressedTexture2D_l5he2")
+texture = ExtResource("5_fmfii")
 region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
@@ -1778,21 +1776,21 @@ grow_vertical = 0
 [node name="Vida 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de Vida"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-texture = ExtResource("7_1i0ms")
+texture = ExtResource("8_fmfii")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="Vida 2" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de Vida"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-texture = ExtResource("7_1i0ms")
+texture = ExtResource("8_fmfii")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="Vida 3" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de Vida"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-texture = ExtResource("7_1i0ms")
+texture = ExtResource("8_fmfii")
 expand_mode = 3
 stretch_mode = 4
 

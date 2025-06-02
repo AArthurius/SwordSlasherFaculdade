@@ -12,13 +12,15 @@ func _process(delta: float) -> void:
 func aumentarDificuldade():
 	Global.nivelDificuldade += 1
 	
-	if Global.nivelDificuldade == 2:
-		tempo_de_reação.wait_time = 3
-	elif Global.pontuaçãoAtual == 4:
+	if Global.nivelDificuldade == 0:
+		tempo_de_reação.wait_time = 2.5
+	elif Global.nivelDificuldade == 1:
+		tempo_de_reação.wait_time = 2
+	elif Global.pontuaçãoAtual == 2:
 		tempo_de_reação.wait_time = 1.5
-	elif Global.pontuaçãoAtual == 5:
+	elif Global.pontuaçãoAtual == 3:
 		tempo_de_reação.wait_time = 1
-	elif Global.pontuaçãoAtual >= 6:
+	elif Global.pontuaçãoAtual >= 4:
 		tempo_de_reação.wait_time = 0.5
 
 func acerto(tempoReação):

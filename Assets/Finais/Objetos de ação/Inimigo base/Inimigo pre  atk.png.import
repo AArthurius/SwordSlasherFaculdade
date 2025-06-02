@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dowblg5lsjaxy"
-path="res://.godot/imported/Vida.png-493c8b1f8689424ac1e498f1f3a6236c.ctex"
+uid="uid://dd2228mjilsbg"
+path="res://.godot/imported/Inimigo pre  atk.png-480e7621202e008177b179ce58caa402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Finais/UI/GUI/Vida.png"
-dest_files=["res://.godot/imported/Vida.png-493c8b1f8689424ac1e498f1f3a6236c.ctex"]
+source_file="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo pre  atk.png"
+dest_files=["res://.godot/imported/Inimigo pre  atk.png-480e7621202e008177b179ce58caa402.ctex"]
 
 [params]
 

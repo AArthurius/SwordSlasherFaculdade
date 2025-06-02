@@ -55,10 +55,10 @@ func randSeta():
 	# Valores
 	# 0 = Azul
 	# 1 = Laranja
-	# 2 = Coração
-	# 3 = Cinza
+	# 2 = Cinza
+	# 3 = Coração
 	
-	var pool:Dictionary = {0:20, 1:15, 2:8, 3:1}
+	var pool:Dictionary = {0:20, 1:15, 2:7, 3:2}
 	var totalWeight = 0
 	
 	for i in pool:

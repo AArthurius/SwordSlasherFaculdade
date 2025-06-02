@@ -15,9 +15,9 @@ extends Control
 
 const BARRA_DE_VIDA_INIMIGA = preload("res://Cenas/barra_de_vida_inimiga.tscn")
 
-const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/inimigo base atk sheet.png")
-const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo base def sheet.png")
-const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo pré ataque sheet.png")
+const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo atk.png")
+const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo def.png")
+const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo pre  atk.png")
 
 const P_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player atk sheet.png")
 const P_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png")
@@ -69,6 +69,9 @@ func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 			print("Down Swipe!")
 
 func _ready() -> void:
+	changeSprite(player, P_DEF_SHEET, 4)
+	changeSprite(inimigo, I_DEF_SHEET, 4)
+	
 	impactos.append(impacto_0)
 	impactos.append(impacto_1)
 	impactos.append(impacto_2)
@@ -82,7 +85,7 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 		changeSprite(player, P_DEF_SHEET, 5)
 		#ataque inimigo
 		
-		changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivelDificuldade)
+		changeSprite(inimigo, I_ATK_SHEET, Direction)
 	else:
 		#player acertou o input
 		if acerto:
@@ -94,21 +97,21 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 					#ataque do player
 					changeSprite(player, P_ATK_SHEET, Direction)
 					#danoinimigo
-					changeSprite(inimigo, I_DEF_SHEET, 5, Global.nivelDificuldade)
+					changeSprite(inimigo, I_DEF_SHEET, 5)
 				elif enemyAtk:
 					#ataque inimigo
-					changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivelDificuldade)
+					changeSprite(inimigo, I_ATK_SHEET, Direction)
 					#defesa player
 					changeSprite(player, P_DEF_SHEET, Direction)
 				else:
 					#ataque do player
 					changeSprite(player, P_ATK_SHEET, Direction)
 					#defesa inimigo
-					changeSprite(inimigo, I_DEF_SHEET, Direction, Global.nivelDificuldade)
+					changeSprite(inimigo, I_DEF_SHEET, Direction)
 		#player errou o input
 		else:
 			#ataque inimigo
-			changeSprite(inimigo, I_ATK_SHEET, Direction, Global.nivelDificuldade)
+			changeSprite(inimigo, I_ATK_SHEET, Direction)
 			#player dano
 			changeSprite(player, P_DEF_SHEET, 5)
 	
@@ -116,10 +119,17 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 		impactos[Direction].show()
 		reset_sprites.start()
 
-func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int, nivel: int = 0):
-	var spriteRect = Rect2(ID * sheetWidth, 0 * sheetHeight, sheetWidth, sheetHeight) 
+func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int):
 	#usar quando tiver os sprites de inimigos mais fortes
-	#var spriteRect = Rect2(ID * sheetWidth, nivel-1 * sheetHeight, sheetWidth, sheetHeight)
+	var nivel = 0
+	if entity == inimigo:
+		nivel = Global.nivelDificuldade
+	
+	if nivel >= 5:
+		nivel = 4
+	print(nivel)
+	var spriteRect = Rect2(ID * sheetWidth, nivel * sheetHeight, sheetWidth, sheetHeight)
+	
 	entity.texture = sheet
 	entity.region_rect = spriteRect
 
@@ -141,10 +151,12 @@ func proximoInimigo():
 func _on_animation_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Inimigo transição descendo":
 		pontuação.aumentarDificuldade()
+		var vidaInimiga1 = BARRA_DE_VIDA_INIMIGA.instantiate()
+		lista_de_vida_inimiga.add_child(vidaInimiga1)
 		for i in Global.nivelDificuldade:
 			var vidaInimiga = BARRA_DE_VIDA_INIMIGA.instantiate()
 			lista_de_vida_inimiga.add_child(vidaInimiga)
-		changeSprite(inimigo, I_DEF_SHEET, 4, Global.nivelDificuldade)
+		changeSprite(inimigo, I_DEF_SHEET, 4)
 		animation.play("Inimigo transição subindo")
 	if anim_name == "Inimigo transição subindo":
 		lista_de_comandos.pause = false
