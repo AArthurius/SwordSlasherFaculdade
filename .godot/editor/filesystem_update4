@@ -6,3 +6,4 @@ res://Cenas/barra_de_vida_inimiga.tscn
 res://Cenas/flecha.tscn
 res://Scripts/lista_de_comandos.gd
 res://Scripts/flecha.gd
+res://Scripts/game_over.gd

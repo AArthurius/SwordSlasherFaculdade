@@ -221,7 +221,8 @@ func checkTipo(seta, acerto = false):
 				setaCoraçãoContador = setaCoraçãoContadorMax
 		seta.Tipo.DOUBLE:
 			pass
-	setaContadorLaranja = 0
+	if acerto:
+		setaContadorLaranja = 0
 	tempo_de_reação.start()
 
 func afterCheck():

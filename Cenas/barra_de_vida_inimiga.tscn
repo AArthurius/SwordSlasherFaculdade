@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://73mwsioj00p3"]
 
-[ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/Vida.png" id="1_6qwqn"]
+[ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/vida.png" id="1_6qwqn"]
 
 [node name="Barra de vida inimiga" type="HBoxContainer"]
 anchors_preset = 5

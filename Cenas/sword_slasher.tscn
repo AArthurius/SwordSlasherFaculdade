@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
-[ext_resource type="Texture2D" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo atk.png" id="5_fmfii"]
+[ext_resource type="Texture2D" uid="uid://c5suum0k3scw" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo atk.png" id="5_fmfii"]
 [ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
-[ext_resource type="Texture2D" uid="uid://ctry3p3csgcei" path="res://Assets/Finais/UI/GUI/Vida.png" id="8_fmfii"]
+[ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/Vida.png" id="8_fmfii"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
@@ -1684,10 +1684,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 330.0
-offset_right = 240.0
-offset_bottom = 839.0
+offset_left = 48.0
+offset_top = 335.0
+offset_right = 285.0
+offset_bottom = 844.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_l5he2")
@@ -1722,10 +1722,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = 511.0
-offset_right = 274.0
-offset_bottom = 1020.0
+offset_left = 158.0
+offset_top = 267.0
+offset_right = 395.0
+offset_bottom = 776.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_l5he2")
@@ -1742,10 +1742,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 158.0
-offset_top = 267.0
-offset_right = 395.0
-offset_bottom = 776.0
+offset_left = 157.0
+offset_top = 345.0
+offset_right = 394.0
+offset_bottom = 854.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("6_l5he2")
