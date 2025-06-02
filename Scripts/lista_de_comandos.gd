@@ -80,6 +80,7 @@ func gameOver():
 	dead = true
 	game_over.gameOver()
 	Global.gameOver()
+	
 
 func addArrow(direção):
 	#0 direita

@@ -20,3 +20,4 @@ func gameOver():
 	pontuações.append(pontuaçãoAtual)
 	pontuações.sort()
 	pontuações.reverse()
+	nivelDificuldade = 0
