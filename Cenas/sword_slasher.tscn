@@ -4,18 +4,18 @@
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
-[ext_resource type="Texture2D" uid="uid://c5suum0k3scw" path="res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo atk.png" id="5_fmfii"]
+[ext_resource type="Texture2D" uid="uid://65jr517b4wej" path="res://Assets/Finais/Objetos de ação/Inimigo/Inimigo def.png" id="5_fmfii"]
 [ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
-[ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/Vida.png" id="8_fmfii"]
+[ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/vida.png" id="8_fmfii"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
-[ext_resource type="Texture2D" uid="uid://doiidkvmg87lg" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Default.png" id="13_1i0ms"]
-[ext_resource type="Texture2D" uid="uid://bf3gtqyg7wdrt" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Default.png" id="13_ht1eh"]
-[ext_resource type="Texture2D" uid="uid://00hmjfqxi43v" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Home/Hover.png" id="14_1i0ms"]
-[ext_resource type="Texture2D" uid="uid://cqik87clqaany" path="res://Assets/placeholder/UI/Buttons/Square-Medium/Repeat/Hover.png" id="14_n8unr"]
+[ext_resource type="Texture2D" uid="uid://cr7oahb2qespu" path="res://Assets/Finais/UI/Menu/restart noral.png" id="12_fmfii"]
+[ext_resource type="Texture2D" uid="uid://c71nohlr5ddlb" path="res://Assets/Finais/UI/Menu/restart pressionado.png" id="13_5byvl"]
+[ext_resource type="Texture2D" uid="uid://bseqbudl7c1cm" path="res://Assets/Finais/UI/Menu/Exit normal.png" id="14_h0iht"]
 [ext_resource type="Texture2D" uid="uid://cnwvi4bcrd2hp" path="res://Assets/placeholder/aviso de perigo.png" id="15_ht1eh"]
+[ext_resource type="Texture2D" uid="uid://bwhiskfs72dvx" path="res://Assets/Finais/UI/Menu/Exit pressionado.png" id="15_uo2l0"]
 [ext_resource type="FontFile" uid="uid://c334wmluxu68f" path="res://Assets/m5x7.ttf" id="16_1i0ms"]
 [ext_resource type="Texture2D" uid="uid://mnyx32biajwl" path="res://Assets/Finais/UI/Menu/game over.png" id="16_fmfii"]
 [ext_resource type="Script" uid="uid://cgvpamqbbdyko" path="res://Scripts/pontuação.gd" id="16_n8unr"]
@@ -1809,38 +1809,38 @@ layout_mode = 2
 offset_left = 83.0
 offset_top = 330.0
 offset_right = 457.0
-offset_bottom = 630.0
+offset_bottom = 779.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_2v1cl")
 expand_mode = 1
 
-[node name="Botões" type="HBoxContainer" parent="CanvasLayer/UI/Game Over/Background"]
+[node name="Botões" type="VBoxContainer" parent="CanvasLayer/UI/Game Over/Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -113.0
-offset_top = 5.0
-offset_right = 113.0
-offset_bottom = 93.0
+offset_left = -172.0
+offset_top = -159.5
+offset_right = 178.0
+offset_bottom = 270.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-theme_override_constants/separation = 50
+theme_override_constants/separation = -95
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/UI/Game Over/Background/Botões"]
 layout_mode = 2
-texture_normal = ExtResource("13_1i0ms")
-texture_pressed = ExtResource("14_n8unr")
+texture_normal = ExtResource("12_fmfii")
+texture_pressed = ExtResource("13_5byvl")
 stretch_mode = 0
 
 [node name="Exit" type="TextureButton" parent="CanvasLayer/UI/Game Over/Background/Botões"]
 layout_mode = 2
-texture_normal = ExtResource("13_ht1eh")
-texture_pressed = ExtResource("14_1i0ms")
+texture_normal = ExtResource("14_h0iht")
+texture_pressed = ExtResource("15_uo2l0")
 stretch_mode = 0
 
 [node name="Texto" type="TextureRect" parent="CanvasLayer/UI/Game Over/Background"]

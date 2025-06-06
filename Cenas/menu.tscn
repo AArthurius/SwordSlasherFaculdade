@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://drixhcc8rhejd"]
 
-[ext_resource type="Texture2D" uid="uid://cjwxd446wmvqj" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Default.png" id="1_eheat"]
 [ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="1_fapvr"]
 [ext_resource type="Script" uid="uid://d2671viwls7u" path="res://Scripts/menu.gd" id="1_kdsmm"]
-[ext_resource type="Texture2D" uid="uid://cyna05ueh8hak" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/Hover.png" id="2_fapvr"]
-[ext_resource type="Texture2D" uid="uid://bcpmi1p6y1rcb" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X.png" id="3_kdsmm"]
 [ext_resource type="Texture2D" uid="uid://dhuworsc3hldu" path="res://Assets/Finais/UI/Menu/Logo sword slasher.png" id="3_plcv4"]
-[ext_resource type="Texture2D" uid="uid://bvf88yy5h4lo3" path="res://Assets/placeholder/UI/Buttons/Rect-Medium/PlayIcon/X Hover.png" id="4_8lfl8"]
+[ext_resource type="Texture2D" uid="uid://btv521e8n7ypt" path="res://Assets/Finais/UI/Menu/play normal.png" id="4_8lfl8"]
+[ext_resource type="Texture2D" uid="uid://cyq0slekhkdaq" path="res://Assets/Finais/UI/Menu/play pressionado.png" id="5_plcv4"]
+[ext_resource type="Texture2D" uid="uid://bseqbudl7c1cm" path="res://Assets/Finais/UI/Menu/Exit normal.png" id="6_8aipq"]
+[ext_resource type="Texture2D" uid="uid://bwhiskfs72dvx" path="res://Assets/Finais/UI/Menu/Exit pressionado.png" id="7_1evsv"]
 
 [sub_resource type="Animation" id="Animation_kdsmm"]
 resource_name = "Fade in"
@@ -201,18 +201,18 @@ offset_right = 84.0
 offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = -120
 
 [node name="Play" type="TextureButton" parent="Botões"]
 layout_mode = 2
-texture_normal = ExtResource("1_eheat")
-texture_pressed = ExtResource("2_fapvr")
+texture_normal = ExtResource("4_8lfl8")
+texture_pressed = ExtResource("5_plcv4")
 stretch_mode = 3
 
 [node name="Exit" type="TextureButton" parent="Botões"]
 layout_mode = 2
-texture_normal = ExtResource("3_kdsmm")
-texture_pressed = ExtResource("4_8lfl8")
+texture_normal = ExtResource("6_8aipq")
+texture_pressed = ExtResource("7_1evsv")
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {

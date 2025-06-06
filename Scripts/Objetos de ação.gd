@@ -15,9 +15,9 @@ extends Control
 
 const BARRA_DE_VIDA_INIMIGA = preload("res://Cenas/barra_de_vida_inimiga.tscn")
 
-const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo atk.png")
-const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo def.png")
-const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo base/Inimigo pre  atk.png")
+const I_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo/Inimigo atk.png")
+const I_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo/Inimigo def.png")
+const I_PRE_SHEET = preload("res://Assets/Finais/Objetos de ação/Inimigo/Inimigo pre  atk.png")
 
 const P_ATK_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player atk sheet.png")
 const P_DEF_SHEET = preload("res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png")
