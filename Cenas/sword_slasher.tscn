@@ -1592,7 +1592,7 @@ mesh = SubResource("ArrayMesh_is6gr")
 skeleton = NodePath("")
 
 [node name="Camera2D" type="Camera3D" parent="3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0, -0.0266703, 1.71774)
+transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0, -0.207367, 1.71774)
 fov = 80.0
 script = ExtResource("1_86t8k")
 
@@ -1607,46 +1607,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -50.0
-offset_right = 50.0
-offset_bottom = 214.0
-grow_horizontal = 2
-script = ExtResource("3_61tt7")
-
-[node name="Flechas" type="Control" parent="CanvasLayer/UI/Lista de Comandos"]
-anchors_preset = 0
-
-[node name="Flecha2" parent="CanvasLayer/UI/Lista de Comandos/Flechas" instance=ExtResource("4_u4r6q")]
-position = Vector2(50, 109)
-
-[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
-position = Vector2(50, 109)
-
-[node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
-
-[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
-visible = false
-position = Vector2(50, 265)
-
-[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
-position = Vector2(50, 401)
-
-[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
-position = Vector2(50, 469)
-
-[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
-position = Vector2(50, 522)
-
 [node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -401.0
+offset_right = 1.0
+offset_bottom = -401.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_61tt7")
@@ -1662,11 +1631,19 @@ region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
 [node name="Lista de vida inimiga" type="VBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
-z_index = -5
-layout_mode = 0
-offset_left = 8.0
-offset_right = 532.0
-offset_bottom = 40.0
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -51.0
+offset_right = 262.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Barra de vida inimiga" parent="CanvasLayer/UI/Objetos de ação/Lista de vida inimiga" instance=ExtResource("6_5byvl")]
 layout_mode = 2
@@ -1761,6 +1738,7 @@ region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
 [node name="Barra de Vida" type="HBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
+z_index = 2
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -1768,8 +1746,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = -104.0
+offset_top = 270.0
 offset_right = 160.0
+offset_bottom = 374.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -1794,8 +1773,54 @@ texture = ExtResource("8_fmfii")
 expand_mode = 3
 stretch_mode = 4
 
+[node name="Background" type="ColorRect" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 515.0
+offset_right = 591.0
+offset_bottom = 984.0
+color = Color(0, 0, 0, 1)
+
+[node name="Lista de Comandos" type="Control" parent="CanvasLayer/UI"]
+z_index = 10
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -214.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_61tt7")
+
+[node name="Flechas" type="Control" parent="CanvasLayer/UI/Lista de Comandos"]
+anchors_preset = 0
+
+[node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Flechas" instance=ExtResource("4_u4r6q")]
+
+[node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+position = Vector2(50, 21)
+
+[node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Pos0" instance=ExtResource("4_u4r6q")]
+
+[node name="Pos1" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+position = Vector2(50, 1)
+
+[node name="Pos2" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+position = Vector2(50, -65)
+
+[node name="Pos3" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+position = Vector2(50, -105)
+
+[node name="fora" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
+position = Vector2(50, -134)
+
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
 visible = false
+z_index = 750
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1829,7 +1854,6 @@ offset_bottom = 270.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-theme_override_constants/separation = -95
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/UI/Game Over/Background/Botões"]
 layout_mode = 2
@@ -1924,8 +1948,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
+offset_top = 932.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 952.0
 grow_horizontal = 2
 script = ExtResource("16_n8unr")
 
@@ -1948,12 +1973,12 @@ text = "0"
 horizontal_alignment = 1
 
 [connection signal="DoubleSwipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_double_swipe"]
-[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Lista de Comandos" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_swipe"]
+[connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Lista de Comandos" method="_on_camera_2d_swipe"]
 [connection signal="timeout" from="CanvasLayer/UI/Objetos de ação/Reset sprites" to="CanvasLayer/UI/Objetos de ação" method="_on_reset_sprites_timeout"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Play" to="CanvasLayer/UI/Game Over" method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/Game Over/Background/Botões/Exit" to="CanvasLayer/UI/Game Over" method="_on_exit_pressed"]
 [connection signal="timeout" from="CanvasLayer/UI/Tempo de reação Label/Tempo de reação" to="CanvasLayer/UI/Lista de Comandos" method="_on_tempo_de_reação_timeout"]
-[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Objetos de ação" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]

@@ -1,0 +1,264 @@
+[gd_scene load_steps=11 format=3 uid="uid://cvvdpp5kt7os2"]
+
+[ext_resource type="Script" uid="uid://bxhacsjg8uubh" path="res://Scripts/instruções_guia.gd" id="1_51wkp"]
+[ext_resource type="Texture2D" uid="uid://bprwa5u0r87yx" path="res://Assets/Finais/UI/GUI/mão guia.png" id="1_4845f"]
+[ext_resource type="Texture2D" uid="uid://bkkiwd046h3ub" path="res://Assets/Finais/UI/Menu/retangulo.png" id="2_51wkp"]
+[ext_resource type="FontFile" uid="uid://c334wmluxu68f" path="res://Assets/m5x7.ttf" id="3_8vo3s"]
+
+[sub_resource type="Animation" id="Animation_gr5n0"]
+resource_name = "Swipe Baixo"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MãoGuia:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1.7, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MãoGuia:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(326, -0.25, 0, 0.25, 0, 326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MãoGuia:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(666.581, -0.25, 0, 0.25, 0, 862, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_ewrlw"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MãoGuia:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MãoGuia:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(266, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MãoGuia:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_8q5ha"]
+resource_name = "Swipe Esquerda"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MãoGuia:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1.6, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MãoGuia:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(456, -0.25, 0, 0.25, 0, 88, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MãoGuia:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(765, -0.25, 0, 0.25, 0, 765, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_r7eik"]
+resource_name = "Swipe Direita"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MãoGuia:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1.6, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MãoGuia:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(88.0001, -0.25, 0, 0.25, 0, 456, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MãoGuia:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(765, -0.25, 0, 0.25, 0, 765, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_aordn"]
+resource_name = "Swipe Cima"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MãoGuia:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1.6, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MãoGuia:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(326, -0.25, 0, 0.25, 0, 326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MãoGuia:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(859, -0.25, 0, 0.25, 0, 666.581, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmu1e"]
+_data = {
+&"RESET": SubResource("Animation_ewrlw"),
+&"Swipe Baixo": SubResource("Animation_gr5n0"),
+&"Swipe Cima": SubResource("Animation_aordn"),
+&"Swipe Direita": SubResource("Animation_r7eik"),
+&"Swipe Esquerda": SubResource("Animation_8q5ha")
+}
+
+[node name="instruções Guia" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51wkp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -18.0
+offset_right = 568.0
+offset_bottom = 1010.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="MãoGuia" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(326, 266)
+scale = Vector2(0.364, 0.364)
+texture = ExtResource("1_4845f")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cmu1e")
+}
+
+[node name="Background Explicação" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -928.0
+offset_right = 233.0
+offset_bottom = -507.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_51wkp")
+expand_mode = 1
+
+[node name="Explicação" type="Label" parent="Background Explicação"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 12.0
+offset_right = -29.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8vo3s")
+theme_override_font_sizes/font_size = 48
+text = "Explicação "
+autowrap_mode = 3

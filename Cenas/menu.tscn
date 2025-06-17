@@ -168,6 +168,7 @@ grow_vertical = 2
 script = ExtResource("1_kdsmm")
 
 [node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.237539, 0.237539, 0.237539, 1)
 layout_mode = 0
 offset_left = -68.0
 offset_top = -37.0
@@ -201,7 +202,6 @@ offset_right = 84.0
 offset_bottom = 239.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = -120
 
 [node name="Play" type="TextureButton" parent="Botões"]
 layout_mode = 2

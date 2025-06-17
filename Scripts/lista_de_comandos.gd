@@ -1,6 +1,8 @@
 extends Control
 
 const FLECHA = preload("res://Cenas/flecha.tscn")
+const INSTRUÇÕES_GUIA = preload("res://Cenas/instruções_guia.tscn")
+@onready var camera: Camera3D = $"../../../3D/Camera2D"
 @onready var ação: Control = $"../Objetos de ação"
 @onready var pos_0: Marker2D = $Pos0
 @onready var pos_1: Marker2D = $Pos1
@@ -19,18 +21,16 @@ const FLECHA = preload("res://Cenas/flecha.tscn")
 @onready var inimigo: Sprite2D = $"../Objetos de ação/Inimigo"
 @onready var player: Sprite2D = $"../Objetos de ação/Player"
 
-
-
 var pause:bool = false;
 var flechaScale = Vector2(0.3, 0.3)
 var tempoTween = 0.25
 var limite = 10
 var dead = false
-
 var setaCoraçãoContadorMax = 10
 var setaCoraçãoContador = 0
-
 var setaContadorLaranja = 0
+var explicando = false
+
 
 @onready var tamanhoTextura = $Pos0/Flecha.texture.get_height()/2
 
@@ -57,13 +57,13 @@ func _process(delta) -> void:
 		damageInimigo(6)
 
 func ajustarDistancia():
-	pos_1.position.y = pos_0.position.y + (tamanhoTextura*flechaScale.y) + (tamanhoTextura*(flechaScale.y/2))
-	pos_2.position.y = pos_1.position.y + (tamanhoTextura*flechaScale.y/2) + (tamanhoTextura*(flechaScale.y/3))
-	pos_3.position.y = pos_2.position.y + (tamanhoTextura*flechaScale.y/3) + (tamanhoTextura*(flechaScale.y/4))
-	fora.position.y = pos_3.position.y + (tamanhoTextura*flechaScale.y/4) + (tamanhoTextura*(flechaScale.y/5))
+	pos_1.position.y = pos_0.position.y - (tamanhoTextura*flechaScale.y) - (tamanhoTextura*(flechaScale.y/2))
+	pos_2.position.y = pos_1.position.y - (tamanhoTextura*flechaScale.y/2) - (tamanhoTextura*(flechaScale.y/3))
+	pos_3.position.y = pos_2.position.y - (tamanhoTextura*flechaScale.y/3) - (tamanhoTextura*(flechaScale.y/4))
+	fora.position.y = pos_3.position.y - (tamanhoTextura*flechaScale.y/4) - (tamanhoTextura*(flechaScale.y/5))
 
 func avisoPerigo():
-	if tempo_de_reação.is_stopped():
+	if tempo_de_reação.is_stopped() or explicando:
 		bordas_vermelhas.modulate = Color(1, 1, 1, 0)
 		return
 	if dead:
@@ -80,7 +80,6 @@ func gameOver():
 	dead = true
 	game_over.gameOver()
 	Global.gameOver()
-	
 
 func addArrow(direção):
 	#0 direita
@@ -141,6 +140,12 @@ func updateArrows():
 				tween.tween_property(flechas.get_child(i), "position", pos_0.position, tempoTween)
 				tween.tween_property(flechas.get_child(i), "scale", flechaScale, tempoTween)
 				tween.tween_property(flechas.get_child(i), "modulate", Color(1, 1, 1, 1), tempoTween)
+					#checar se essa seta já foi vista
+					#AZUL = 0, LARANJA = 1, CINZA = 2, CORAÇÃO = 3, DOUBLE = 4
+				for j in Global.setasExplicadas.size():
+					if Global.setasExplicadas[j] == false:
+						if flechas.get_child(0).setaAtual == j and explicando == false:
+							explicarSeta()
 				if flechas.get_child(i).setaAtual == flechas.get_child(i).Tipo.CINZA:
 					if flechas.get_child(i).direction > 1:
 						tween.tween_property(flechas.get_child(i), "rotation", deg_to_rad(270), tempoTween)
@@ -163,45 +168,64 @@ func updateArrows():
 				flechas.get_child(i).position = fora.position
 				flechas.get_child(i).modulate = Color(1, 1, 1, 0)
 
+func explicarSeta():
+	var explicação = INSTRUÇÕES_GUIA.instantiate()
+	explicação.tipo = flechas.get_child(0).setaAtual
+	explicação.direção = flechas.get_child(0).direction
+	camera.connect("Swipe", explicação.swipeCheck)
+	camera.connect("DoubleSwipe", explicação.doubleSwipeCheck)
+	get_parent().add_child(explicação)
+	explicando = true
+
 func checkArrow(swipeDirection, timeout: bool):
 	if pause:
 		return
+	#checar se existe
+	if not (flechas.get_children().size() > 0 and not dead):
+		return
+	if explicando:
+		return
 	
-	if flechas.get_children().size() > 0 and not dead:
-		#acerto
-		if flechas.get_child(0).direction == swipeDirection and not timeout:
-			pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1)) #pontuar
-			if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
-				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
-			else: # se não for laranja
-				shake(player, 5)
-				shake(inimigo, 10)
-				if flechas.get_child(0).dano == true: #se for logo depois de uma laranja da dano no inimigo
-					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, true, false)
-					damageInimigo()
-				else:
-					ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, false)
-			
-			checkTipo(flechas.get_child(0), true)
-		#erro
+	#acerto
+	if flechas.get_child(0).direction == swipeDirection and not timeout:
+		acerto(swipeDirection)
+	#erro
+	else:
+		erro(swipeDirection, timeout)
+	#adiciona mais uma flecha - tira a flecha usada - reinicia o timer do ataque inimigo
+	afterCheck()
+
+func acerto(swipeDirection):
+	pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1)) #pontuar
+	if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
+		ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
+	else: # se não for laranja
+		shake(player, 5)
+		shake(inimigo, 10)
+		if flechas.get_child(0).dano == true: #se for logo depois de uma laranja da dano no inimigo
+			ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, true, false)
+			damageInimigo()
 		else:
-			shake(player, 10)
-			shake(inimigo, 5)
-			shake(barra_de_vida, 10)
-			#acabou o tempo
-			if timeout:
-				ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, true)
-			#errou a direção
-			else:ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, false)
-			#diminui a vida
-			if barra_de_vida.get_child_count() <= 1:
-				gameOver()
-				barra_de_vida.get_child(-1).queue_free()
-			else: 
-				barra_de_vida.get_child(-1).queue_free()
-			checkTipo(flechas.get_child(0))
-		#adiciona mais uma flecha - tira a flecha usada - reinicia o timer do ataque inimigo
-		afterCheck()
+			ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, false)
+	
+	checkTipo(flechas.get_child(0), true)
+
+func erro(swipeDirection, timeout:bool):
+	shake(player, 10)
+	shake(inimigo, 5)
+	shake(barra_de_vida, 10)
+	#acabou o tempo
+	if timeout:
+		ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, true)
+	#errou a direção
+	else:ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, false, false)
+	#diminui a vida
+	if barra_de_vida.get_child_count() <= 1:
+		gameOver()
+		barra_de_vida.get_child(-1).queue_free()
+	else: 
+		barra_de_vida.get_child(-1).queue_free()
+	checkTipo(flechas.get_child(0))
 
 func checkTipo(seta, acerto = false):
 	match seta.setaAtual:
@@ -230,7 +254,6 @@ func afterCheck():
 	setaCoraçãoContador -= 1
 	addArrow(randi_range(0,3))
 	flechas.get_child(0).queue_free()
-	
 
 func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 	if pause:
@@ -270,4 +293,3 @@ func shake(node: Node, factor:int = 5):
 	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
 	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
 	tween.tween_property(node, "position", originalPos, 0.05)
-	lista_de_vida_inimiga. position = Vector2(8, 0)

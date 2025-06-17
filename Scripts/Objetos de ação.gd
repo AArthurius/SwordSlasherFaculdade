@@ -34,7 +34,7 @@ var sheetHeight = 657
 # 0 - esquerda
 # 1 - direita
 # 2 - cima
-# 3 - baixo - sem sprites ainda usando sprites de ataque cima
+# 3 - baixo
 # 4 - neutro - só na de defesa
 # 5 - dano - só na de defesa 
 
