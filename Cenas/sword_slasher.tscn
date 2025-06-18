@@ -1592,7 +1592,7 @@ mesh = SubResource("ArrayMesh_is6gr")
 skeleton = NodePath("")
 
 [node name="Camera2D" type="Camera3D" parent="3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0, -0.207367, 1.71774)
+transform = Transform3D(1, 0, 0, 0, 0.999883, 0.0153234, 0, -0.0153234, 0.999883, 0, -0.361653, 1.71774)
 fov = 80.0
 script = ExtResource("1_86t8k")
 
@@ -1631,7 +1631,7 @@ region_enabled = true
 region_rect = Rect2(2000, 0, 500, 657)
 
 [node name="Lista de vida inimiga" type="VBoxContainer" parent="CanvasLayer/UI/Objetos de ação"]
-z_index = 10
+z_index = -1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1639,9 +1639,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -262.0
-offset_top = -51.0
+offset_top = -72.0
 offset_right = 262.0
-offset_bottom = -11.0
+offset_bottom = 857.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -1751,6 +1751,7 @@ offset_right = 160.0
 offset_bottom = 374.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
 
 [node name="Vida 1" type="TextureRect" parent="CanvasLayer/UI/Objetos de ação/Barra de Vida"]
 custom_minimum_size = Vector2(40, 40)

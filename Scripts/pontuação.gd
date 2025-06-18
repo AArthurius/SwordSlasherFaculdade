@@ -16,11 +16,11 @@ func checkDificuldade():
 	elif Global.nivelDificuldade == 1:
 		tempo_de_reação.wait_time = 2
 	elif Global.pontuaçãoAtual == 2:
-		tempo_de_reação.wait_time = 1.5
+		tempo_de_reação.wait_time = 1.75
 	elif Global.pontuaçãoAtual == 3:
-		tempo_de_reação.wait_time = 1
+		tempo_de_reação.wait_time = 1.5
 	elif Global.pontuaçãoAtual >= 4:
-		tempo_de_reação.wait_time = 0.5
+		tempo_de_reação.wait_time = 1.5
 
 func aumentarDificuldade():
 	Global.nivelDificuldade += 1

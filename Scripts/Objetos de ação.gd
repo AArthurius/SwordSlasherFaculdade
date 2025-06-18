@@ -84,7 +84,6 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 		#player dano
 		changeSprite(player, P_DEF_SHEET, 5)
 		#ataque inimigo
-		
 		changeSprite(inimigo, I_ATK_SHEET, Direction)
 	else:
 		#player acertou o input
@@ -137,13 +136,12 @@ func _on_reset_sprites_timeout() -> void:
 	#voltar pro neutro
 	changeSprite(player, P_DEF_SHEET, 4)
 	changeSprite(inimigo, I_DEF_SHEET, 4)
-	
 	Hideimpactos()
 
 func Hideimpactos():
 	for i in impactos:
 		i.hide()
-	
+
 func proximoInimigo():
 	lista_de_comandos.pause = true
 	animation.play("Inimigo transição descendo")

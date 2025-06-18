@@ -28,9 +28,7 @@ var limite = 10
 var dead = false
 var setaCoraçãoContadorMax = 10
 var setaCoraçãoContador = 0
-var setaContadorLaranja = 0
 var explicando = false
-
 
 @onready var tamanhoTextura = $Pos0/Flecha.texture.get_height()/2
 
@@ -94,15 +92,21 @@ func addArrow(direção):
 	# 2 = Cinza
 	# 3 = Coração
 	# 4 = Double
+	if Global.nivelDificuldade <= 0:
+		flecha.SetasPossiveis[0] = false
+	else:
+		flecha.SetasPossiveis[0] = true
+	
+	if Global.nivelDificuldade == 2:
+		flecha.SetasPossiveis[2] = true
+	else:
+		flecha.SetasPossiveis[2] = false
+	
 	if setaCoraçãoContador > 0:
 		flecha.SetasPossiveis[3] = false
 	else:
 		flecha.SetasPossiveis[3] = true
 	
-	if setaContadorLaranja > 0:
-		flecha.SetasPossiveis[1] = false
-	else:
-		flecha.SetasPossiveis[1] = true
 	
 	if flechas.get_child_count() > 4:
 		if flechas.get_child(-1).direction == direção:
@@ -113,6 +117,7 @@ func addArrow(direção):
 			for i in flecha.SetasPossiveis:
 				if i != 0:
 					flecha.SetasPossiveis[i] = false
+			flecha.SetasPossiveis[0] = true
 			flecha.dano = true
 			flecha.enemyAtk= false 
 			match flechas.get_child(-1).direction:
@@ -246,8 +251,6 @@ func checkTipo(seta, acerto = false):
 				setaCoraçãoContador = setaCoraçãoContadorMax
 		seta.Tipo.DOUBLE:
 			pass
-	if acerto:
-		setaContadorLaranja = 0
 	tempo_de_reação.start()
 
 func afterCheck():
@@ -261,7 +264,6 @@ func _on_camera_2d_swipe(directionIndex: Variant) -> void:
 	if $"../Instructions".visible:
 		animation.play("Fade Instructions")
 		bordas_vermelhas.show()
-	
 	if flechas.get_child_count() > 0 and not dead:
 		checkArrow(directionIndex, false)
 
@@ -275,7 +277,6 @@ func _on_animation_animation_finished(anim_name: StringName) -> void:
 func damageInimigo(amount:int = 1):
 	if lista_de_vida_inimiga.get_child(-1) == null:
 		return
-	
 	for  i in amount:
 		if lista_de_vida_inimiga.get_child(-1).get_child_count() > 1:
 			lista_de_vida_inimiga.get_child(-1).get_child(-1).queue_free()
@@ -283,13 +284,17 @@ func damageInimigo(amount:int = 1):
 			lista_de_vida_inimiga.get_child(-1).queue_free()
 			if lista_de_vida_inimiga.get_child_count() < 2:
 				ação.proximoInimigo()
-	
+				if barra_de_vida.get_child_count() < 3:
+					var clone = barra_de_vida.get_child(-1).duplicate()
+					barra_de_vida.add_child(clone)
+					if barra_de_vida.get_child_count() <= 2:
+						clone = barra_de_vida.get_child(-1).duplicate()
+						barra_de_vida.add_child(clone)
 	shake(lista_de_vida_inimiga, 10)
 
 func shake(node: Node, factor:int = 5):
 	var tween = create_tween()
 	var originalPos = node.position
-	
 	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
 	tween.tween_property(node, "position", originalPos + Vector2(randi_range(0,factor) * sign(randf() - 0.5), randi_range(0,factor) * sign(randf() - 0.5)), 0.05)
 	tween.tween_property(node, "position", originalPos, 0.05)

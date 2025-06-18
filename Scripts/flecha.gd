@@ -40,7 +40,6 @@ func setArrowType():
 		Tipo.LARANJA:
 			texture = SETA_LARANJA
 			setaAtual = Tipo.LARANJA
-			Lista.setaContadorLaranja = 1
 		Tipo.CINZA:
 			texture = SETA_CINZA
 			setaAtual = Tipo.CINZA
