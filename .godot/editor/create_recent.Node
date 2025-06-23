@@ -1,5 +1,7 @@
-ColorRect
 Control
+AudioStreamPlayer2D
+Node
+ColorRect
 Sprite2D
 TextureRect
 Label
@@ -10,5 +12,3 @@ SubViewportContainer
 VBoxContainer
 HBoxContainer
 ItemList
-BoxContainer
-Button

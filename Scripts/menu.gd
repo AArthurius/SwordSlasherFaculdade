@@ -1,6 +1,8 @@
 extends Control
 
 @onready var animation: AnimationPlayer = $Animation
+@onready var sons: Control = $Sons
+
 
 const SWORD_SLASHER = preload("res://Cenas/sword_slasher.tscn")
 
@@ -10,9 +12,11 @@ func _ready() -> void:
 	animation.play("Fade in")
 
 func button_exit_pressed() -> void:
+	sons.playSFX(2)
 	get_tree().quit()
 
 func button_play_pressed() -> void:
+	sons.playSFX(2)
 	animation.play("Fade out")
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:

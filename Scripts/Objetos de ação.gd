@@ -11,6 +11,7 @@ extends Control
 @onready var animation: AnimationPlayer = $"../Animation"
 @onready var pontuação: Control = $"../Pontuação"
 @onready var lista_de_comandos: Control = $"../Lista de Comandos"
+@onready var sons: Control = $"../Sons"
 
 
 const BARRA_DE_VIDA_INIMIGA = preload("res://Cenas/barra_de_vida_inimiga.tscn")
@@ -115,6 +116,7 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 			changeSprite(player, P_DEF_SHEET, 5)
 	
 	if !laranja:
+		sons.playSFX(randi_range(0,1))
 		impactos[Direction].show()
 		reset_sprites.start()
 

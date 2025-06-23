@@ -3,6 +3,7 @@ extends Control
 const MENU = preload("res://Cenas/menu.tscn")
 const SWORD_SLASHER = preload("res://Cenas/sword_slasher.tscn")
 @onready var animation: AnimationPlayer = $"../Animation"
+@onready var sons: Control = $"../Sons"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,9 +15,11 @@ func gameOver():
 	animation.play("Game Over Screen appear")
 
 func _on_play_pressed() -> void:
+	sons.playSFX(2)
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed() -> void:
+	sons.playSFX(2)
 	animation.play("Fade out")
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:

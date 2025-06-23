@@ -1,9 +1,14 @@
-[gd_scene load_steps=101 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=106 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
+[ext_resource type="AudioStream" uid="uid://cqo064k331g3r" path="res://Assets/Sons/Game over sfx.mp3" id="2_5sjv0"]
 [ext_resource type="Script" uid="uid://dbqgl5mbnjqef" path="res://Scripts/Objetos de ação.gd" id="2_61tt7"]
+[ext_resource type="Script" uid="uid://butp3v2qvg8c2" path="res://Scripts/sons.gd" id="2_85djr"]
 [ext_resource type="Script" uid="uid://cs2lpej1i4tep" path="res://Scripts/lista_de_comandos.gd" id="3_61tt7"]
+[ext_resource type="AudioStream" uid="uid://b5woswibx24fo" path="res://Assets/Sons/Inimigo Slash.mp3" id="3_85djr"]
+[ext_resource type="AudioStream" uid="uid://c583uxxjtymjr" path="res://Assets/Sons/player slash sfx.mp3" id="4_2gyqn"]
 [ext_resource type="PackedScene" uid="uid://dls0xxuy2slb1" path="res://Cenas/flecha.tscn" id="4_u4r6q"]
+[ext_resource type="AudioStream" uid="uid://sojr8v7b2f05" path="res://Assets/Sons/UI sfx.mp3" id="5_4gbm1"]
 [ext_resource type="Texture2D" uid="uid://65jr517b4wej" path="res://Assets/Finais/Objetos de ação/Inimigo/Inimigo def.png" id="5_fmfii"]
 [ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
@@ -1607,6 +1612,26 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
+[node name="Sons" type="Control" parent="CanvasLayer/UI"]
+anchors_preset = 0
+script = ExtResource("2_85djr")
+
+[node name="Game Over SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+stream = ExtResource("2_5sjv0")
+bus = &"SFX"
+
+[node name="Slash 1 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+stream = ExtResource("3_85djr")
+bus = &"SFX"
+
+[node name="Slash 2 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+stream = ExtResource("4_2gyqn")
+bus = &"SFX"
+
+[node name="UI SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+stream = ExtResource("5_4gbm1")
+bus = &"SFX"
+
 [node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
 layout_mode = 1
 anchors_preset = 15
@@ -1962,9 +1987,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -9.0
+offset_left = -6.0
 offset_top = -19.0
-offset_right = 9.0
+offset_right = 12.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2

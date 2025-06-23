@@ -4,6 +4,7 @@ res://Cenas/flecha.tscn
 res://Cenas/barra_de_vida_inimiga.tscn
 res://Cenas/menu.tscn
 res://Cenas/instruções_guia.tscn
-res://Scripts/lista_de_comandos.gd
-res://Scripts/flecha.gd
-res://Scripts/pontuação.gd
+res://default_bus_layout.tres
+res://Scripts/sons.gd
+res://Scripts/menu.gd
+res://Scripts/game_over.gd

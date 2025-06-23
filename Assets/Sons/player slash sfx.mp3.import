@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c583uxxjtymjr"
+path="res://.godot/imported/player slash sfx.mp3-a56211b5760b720a10b8248e95a2022e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sons/player slash sfx.mp3"
+dest_files=["res://.godot/imported/player slash sfx.mp3-a56211b5760b720a10b8248e95a2022e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
