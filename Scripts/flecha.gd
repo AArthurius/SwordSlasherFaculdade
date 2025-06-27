@@ -23,7 +23,8 @@ func _ready() -> void:
 			enemyAtk= true 
 		else:
 			enemyAtk = false
-	
+
+func configurar():
 	setArrowType()
 	#muda a orientação sprite com relação a direção -> setada no node Lista de Comandos
 	setSpriteDirection()
@@ -57,7 +58,7 @@ func randSeta():
 	# 2 = Cinza
 	# 3 = Coração
 	
-	var pool:Dictionary = {0:20, 1:15, 2:7, 3:2}
+	var pool:Dictionary = {0:20, 1:15, 2:7, 3:1}
 	var totalWeight = 0
 	
 	for i in pool:

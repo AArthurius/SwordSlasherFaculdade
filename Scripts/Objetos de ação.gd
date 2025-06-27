@@ -128,7 +128,6 @@ func changeSprite(entity: Sprite2D, sheet:CompressedTexture2D, ID: int):
 	
 	if nivel >= 5:
 		nivel = 4
-	print(nivel)
 	var spriteRect = Rect2(ID * sheetWidth, nivel * sheetHeight, sheetWidth, sheetHeight)
 	
 	entity.texture = sheet

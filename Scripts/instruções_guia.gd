@@ -29,7 +29,7 @@ func _ready() -> void:
 		0:
 			explicação.text = "Uma seta azul normalmente só defende ou ataca o inimigo, caso você erre o comando de qualquer seta ou demorar demais você leva dano"
 		1:
-			explicação.text = "Uma seta laranja prepara um ataque, dando mais tempo para o inimigo te atacar, mas logo depois vem uma seta azul que da dano no inimigo"
+			explicação.text = "Uma seta laranja prepara um ataque, dando mais tempo para o inimigo te atacar, mas logo depois vem uma seta azul na direção contrária que da dano no inimigo"
 		2:
 			explicação.text = "Uma seta cinza aponta pro lado errado, então o movimento tem que ser contrário"
 		3:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=107 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="AudioStream" uid="uid://cqo064k331g3r" path="res://Assets/Sons/Game over sfx.mp3" id="2_5sjv0"]
@@ -1436,6 +1436,175 @@ _data = {
 &"RESET": SubResource("Animation_1i0ms")
 }
 
+[sub_resource type="Animation" id="Animation_uo2l0"]
+resource_name = "ganhar vida"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.25, 0, 320, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(943, -0.25, 0, 0.25, 0, 912, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5sjv0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(320, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(945, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:r")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:g")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate:b")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:modulate:a")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85djr"]
+_data = {
+&"RESET": SubResource("Animation_5sjv0"),
+&"ganhar vida": SubResource("Animation_uo2l0")
+}
+
 [node name="sword slasher" type="Node3D"]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
@@ -1823,8 +1992,6 @@ script = ExtResource("3_61tt7")
 [node name="Flechas" type="Control" parent="CanvasLayer/UI/Lista de Comandos"]
 anchors_preset = 0
 
-[node name="Flecha" parent="CanvasLayer/UI/Lista de Comandos/Flechas" instance=ExtResource("4_u4r6q")]
-
 [node name="Pos0" type="Marker2D" parent="CanvasLayer/UI/Lista de Comandos"]
 position = Vector2(50, 21)
 
@@ -1843,6 +2010,7 @@ position = Vector2(50, -105)
 position = Vector2(50, -134)
 
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
+visible = false
 z_index = 750
 layout_mode = 1
 anchors_preset = 15
@@ -2059,7 +2227,7 @@ theme_override_font_sizes/font_size = 50
 text = "Swipe to start"
 
 [node name="Black" type="ColorRect" parent="CanvasLayer/UI"]
-visible = false
+z_index = 1240
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2068,11 +2236,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
-
-[node name="Animation" type="AnimationPlayer" parent="CanvasLayer/UI"]
-libraries = {
-&"": SubResource("AnimationLibrary_n8unr")
-}
 
 [node name="Pontuação" type="Control" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -2104,6 +2267,33 @@ theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
 
+[node name="Animation" type="AnimationPlayer" parent="CanvasLayer/UI"]
+libraries = {
+&"": SubResource("AnimationLibrary_n8unr")
+}
+
+[node name="Animation Fade In" type="AnimationPlayer" parent="CanvasLayer/UI"]
+libraries = {
+&"": SubResource("AnimationLibrary_n8unr")
+}
+
+[node name="Animation Game Over" type="AnimationPlayer" parent="CanvasLayer/UI"]
+libraries = {
+&"": SubResource("AnimationLibrary_n8unr")
+}
+
+[node name="Animation vida" type="AnimationPlayer" parent="CanvasLayer/UI"]
+root_node = NodePath("../ganhar vida")
+libraries = {
+&"": SubResource("AnimationLibrary_85djr")
+}
+
+[node name="ganhar vida" type="Sprite2D" parent="CanvasLayer/UI"]
+visible = false
+position = Vector2(320, 945)
+scale = Vector2(0.0599998, 0.0599998)
+texture = ExtResource("8_fmfii")
+
 [connection signal="DoubleSwipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_double_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Objetos de ação" method="_on_camera_2d_swipe"]
 [connection signal="Swipe" from="3D/Camera2D" to="CanvasLayer/UI/Lista de Comandos" method="_on_camera_2d_swipe"]
@@ -2114,3 +2304,9 @@ horizontal_alignment = 1
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Objetos de ação" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
 [connection signal="animation_finished" from="CanvasLayer/UI/Animation" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation Fade In" to="CanvasLayer/UI/Objetos de ação" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation Fade In" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation Fade In" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation Game Over" to="CanvasLayer/UI/Objetos de ação" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation Game Over" to="CanvasLayer/UI/Lista de Comandos" method="_on_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/UI/Animation Game Over" to="CanvasLayer/UI/Game Over" method="_on_animation_animation_finished"]

@@ -1,3 +1,6 @@
+AnimationPlayer
+Sprite2D
+Sprite3D
 Control
 MarginContainer
 HBoxContainer
@@ -10,5 +13,3 @@ Label
 AudioStreamPlayer2D
 Node
 ColorRect
-Sprite2D
-TextureRect

@@ -20,6 +20,9 @@ const INSTRUÇÕES_GUIA = preload("res://Cenas/instruções_guia.tscn")
 @onready var lista_de_vida_inimiga: VBoxContainer = $"../Objetos de ação/Lista de vida inimiga"
 @onready var inimigo: Sprite2D = $"../Objetos de ação/Inimigo"
 @onready var player: Sprite2D = $"../Objetos de ação/Player"
+@onready var animation_vida: AnimationPlayer = $"../Animation vida"
+@onready var animation_fade: AnimationPlayer = $"../Animation Fade In"
+
 
 var pause:bool = false;
 var flechaScale = Vector2(0.3, 0.3)
@@ -29,6 +32,7 @@ var dead = false
 var setaCoraçãoContadorMax = 10
 var setaCoraçãoContador = 0
 var explicando = false
+var ganharVidaCount = 0
 
 @onready var tamanhoTextura = $Pos0/Flecha.texture.get_height()/2
 
@@ -36,7 +40,7 @@ func _ready():
 	setaCoraçãoContador = setaCoraçãoContadorMax
 	
 	Global.pontuaçãoAtual = 0
-	animation.play("Fade in")
+	animation_fade.play("Fade in")
 	pos_0.hide()
 	ajustarDistancia()
 	
@@ -47,7 +51,8 @@ func _ready():
 func _process(delta) -> void:
 	tempo_de_reação.paused = pause
 	updateArrows()
-	avisoPerigo()
+	if not tempo_de_reação.is_stopped() or not explicando or not dead:
+		avisoPerigo()
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		var clone = barra_de_vida.get_child(-1).duplicate()
@@ -134,6 +139,7 @@ func addArrow(direção):
 	flecha.scale = flechaScale/5
 	flecha.position = fora.position
 	flecha.modulate = Color(1, 1, 1, 0)
+	flecha.configurar()
 	flechas.add_child(flecha)
 
 func updateArrows():
@@ -201,7 +207,8 @@ func checkArrow(swipeDirection, timeout: bool):
 	afterCheck()
 
 func acerto(swipeDirection):
-	pontuação.acerto(snapped(tempo_de_reação.time_left, 0.1)) #pontuar
+	var pontAmount = snapped(tempo_de_reação.time_left, 0.1)
+	pontuação.acerto(pontAmount) #pontuar
 	if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
 		ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
 	else: # se não for laranja
@@ -212,6 +219,12 @@ func acerto(swipeDirection):
 			damageInimigo()
 		else:
 			ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, false)
+	
+	ganharVidaCount += clamp(pontAmount / tempo_de_reação.wait_time, 0.2, 1.0) * 100.0
+	if ganharVidaCount >= 10000:
+		addLife()
+		ganharVidaCount -= 10000
+	print(ganharVidaCount)
 	
 	checkTipo(flechas.get_child(0), true)
 
@@ -245,13 +258,18 @@ func checkTipo(seta, acerto = false):
 			#inverte a direção quando está no penultimo slot (na função updateArrows()) 
 		seta.Tipo.CORAÇÃO:
 			if acerto:
-				if barra_de_vida.get_child_count() < 3:
-					var clone = barra_de_vida.get_child(-1).duplicate()
-					barra_de_vida.add_child(clone)
-				setaCoraçãoContador = setaCoraçãoContadorMax
+				addLife()
 		seta.Tipo.DOUBLE:
 			pass
 	tempo_de_reação.start()
+
+func addLife():
+	if barra_de_vida.get_child_count() < 3:
+		$"../ganhar vida".show()
+		animation_vida.play("ganhar vida")
+		var clone = barra_de_vida.get_child(-1).duplicate()
+		barra_de_vida.add_child(clone)
+		setaCoraçãoContador = setaCoraçãoContadorMax
 
 func afterCheck():
 	setaCoraçãoContador -= 1
