@@ -1,6 +1,5 @@
 extends Control
 
-
 @onready var game_over_sfx: AudioStreamPlayer2D = $"Game Over SFX"
 @onready var slash_1_sfx: AudioStreamPlayer2D = $"Slash 1 SFX"
 @onready var slash_2_sfx: AudioStreamPlayer2D = $"Slash 2 SFX"
