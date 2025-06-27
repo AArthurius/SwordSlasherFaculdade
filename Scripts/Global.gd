@@ -11,13 +11,15 @@ var setasExplicadas:Array = [false, false, false, false, false]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pontuaçãoAtual = 0
+	pontuações.append(0)
+	pontuações.append(0)
+	pontuações.append(0)
 
 func addPoints(amount):
 	pontuaçãoAtual += amount
 
 func aumentarDificuldade():
 	nivelDificuldade += 1
-
 
 func gameOver():
 	pontuações.append(pontuaçãoAtual)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=104 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="AudioStream" uid="uid://cqo064k331g3r" path="res://Assets/Sons/Game over sfx.mp3" id="2_5sjv0"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
 [ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/vida.png" id="8_fmfii"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
-[ext_resource type="Texture2D" uid="uid://dv2ufv7cdke1j" path="res://Assets/placeholder/UI/Panel/Body/Headless.png" id="9_2v1cl"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
 [ext_resource type="Texture2D" uid="uid://cr7oahb2qespu" path="res://Assets/Finais/UI/Menu/restart noral.png" id="12_fmfii"]
 [ext_resource type="Texture2D" uid="uid://c71nohlr5ddlb" path="res://Assets/Finais/UI/Menu/restart pressionado.png" id="13_5byvl"]
@@ -22,9 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://cnwvi4bcrd2hp" path="res://Assets/placeholder/aviso de perigo.png" id="15_ht1eh"]
 [ext_resource type="Texture2D" uid="uid://bwhiskfs72dvx" path="res://Assets/Finais/UI/Menu/Exit pressionado.png" id="15_uo2l0"]
 [ext_resource type="FontFile" uid="uid://c334wmluxu68f" path="res://Assets/m5x7.ttf" id="16_1i0ms"]
-[ext_resource type="Texture2D" uid="uid://mnyx32biajwl" path="res://Assets/Finais/UI/Menu/game over.png" id="16_fmfii"]
 [ext_resource type="Script" uid="uid://cgvpamqbbdyko" path="res://Scripts/pontuação.gd" id="16_n8unr"]
-[ext_resource type="Texture2D" uid="uid://cqa15xf7a3gnh" path="res://Assets/Finais/UI/Menu/caveira game over.png" id="17_5byvl"]
+[ext_resource type="Texture2D" uid="uid://chup7amy85qgd" path="res://Assets/Finais/UI/Menu/tela game over.png" id="16_uo2l0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c08h"]
 resource_name = "Material"
@@ -1225,7 +1223,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(83, -0.25, 0, 0.25, 0, 83, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(46, -0.25, 0, 0.25, 0, 46, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 tracks/1/type = "bezier"
@@ -1236,7 +1234,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(981, -0.25, 0, 0.25, 0, 330, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1029, -0.25, 0, 0.25, 0, 81.5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5)
 }
 
@@ -1845,7 +1843,6 @@ position = Vector2(50, -105)
 position = Vector2(50, -134)
 
 [node name="Game Over" type="Control" parent="CanvasLayer/UI"]
-visible = false
 z_index = 750
 layout_mode = 1
 anchors_preset = 15
@@ -1856,30 +1853,156 @@ grow_vertical = 2
 script = ExtResource("9_61aoi")
 
 [node name="Background" type="TextureRect" parent="CanvasLayer/UI/Game Over"]
-layout_mode = 2
-offset_left = 83.0
-offset_top = 330.0
-offset_right = 457.0
-offset_bottom = 779.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_2v1cl")
-expand_mode = 1
-
-[node name="Botões" type="VBoxContainer" parent="CanvasLayer/UI/Game Over/Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -172.0
-offset_top = -159.5
-offset_right = 178.0
-offset_bottom = 270.5
+offset_left = -187.0
+offset_top = -150.0
+offset_right = 261.0
+offset_bottom = 647.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("16_uo2l0")
+expand_mode = 1
+
+[node name="Score Label" type="Label" parent="CanvasLayer/UI/Game Over/Background"]
+layout_mode = 2
+offset_left = 60.0
+offset_top = 292.5
+offset_right = 150.0
+offset_bottom = 330.5
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "Score:"
+vertical_alignment = 1
+
+[node name="Actual Score" type="Label" parent="CanvasLayer/UI/Game Over/Background"]
+layout_mode = 2
+offset_left = 151.0
+offset_top = 299.0
+offset_right = 386.0
+offset_bottom = 337.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "-"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Previous Scores Margin" type="MarginContainer" parent="CanvasLayer/UI/Game Over/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -69.5
+offset_right = 162.0
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Previous Scores Name List" type="VBoxContainer" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="1° Score" type="Label" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores Name List"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "1°:"
+vertical_alignment = 1
+
+[node name="2° Score" type="Label" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores Name List"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "2°:"
+vertical_alignment = 1
+
+[node name="3° Score" type="Label" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores Name List"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "3°:"
+vertical_alignment = 1
+
+[node name="Previous Scores List" type="VBoxContainer" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="Align Box 1°" type="HBoxContainer" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores List"]
+layout_mode = 2
+alignment = 2
+
+[node name="Previous Score 1°" type="Label" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores List/Align Box 1°"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "-"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Align Box 2°" type="HBoxContainer" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores List"]
+layout_mode = 2
+alignment = 2
+
+[node name="Previous Score 2°" type="Label" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores List/Align Box 2°"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "-"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Align Box 3°" type="HBoxContainer" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores List"]
+layout_mode = 2
+alignment = 2
+
+[node name="Previous Score 3°" type="Label" parent="CanvasLayer/UI/Game Over/Background/Previous Scores Margin/Previous Scores List/Align Box 3°"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("16_1i0ms")
+theme_override_font_sizes/font_size = 48
+text = "-"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Botões" type="VBoxContainer" parent="CanvasLayer/UI/Game Over/Background"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 104.0
+offset_right = 397.0
+offset_bottom = 547.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.545, 0.545)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 0
+theme_override_constants/separation = 95
 
 [node name="Play" type="TextureButton" parent="CanvasLayer/UI/Game Over/Background/Botões"]
 layout_mode = 2
@@ -1892,24 +2015,6 @@ layout_mode = 2
 texture_normal = ExtResource("14_h0iht")
 texture_pressed = ExtResource("15_uo2l0")
 stretch_mode = 0
-
-[node name="Texto" type="TextureRect" parent="CanvasLayer/UI/Game Over/Background"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = -13.0
-offset_right = 273.0
-offset_bottom = 165.0
-texture = ExtResource("16_fmfii")
-expand_mode = 1
-
-[node name="Caveira" type="TextureRect" parent="CanvasLayer/UI/Game Over/Background"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = -261.0
-offset_right = 273.0
-offset_bottom = -83.0
-texture = ExtResource("17_5byvl")
-expand_mode = 1
 
 [node name="Tempo de reação Label" type="Label" parent="CanvasLayer/UI"]
 layout_mode = 1
@@ -1924,6 +2029,7 @@ theme_override_font_sizes/font_size = 50
 horizontal_alignment = 1
 
 [node name="Bordas Vermelhas" type="TextureRect" parent="CanvasLayer/UI/Tempo de reação Label"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = -220.5
