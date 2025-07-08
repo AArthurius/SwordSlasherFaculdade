@@ -1,10 +1,12 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1751046386
-default_bus_layout.tres::AudioBusLayout::5749326659164667382::1750792471::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1748893840::0::1::::<><><>0<>0<><>::
-::res://APK/::1749225565
-::res://Assets/::1750792470
+::res://::1752004839
+default_bus_layout.tres::AudioBusLayout/AudioBusLayout::5749326659164667382::1750792471::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile/TextFile::-1::1751055937::0::1::::<><><>0<>0<><>::
+gradeLabel.gd::GDScript::134323843593700351::1752004774::0::1::::<>Label<><>0<>0<><>::
+::res://APK/::1751055931
+::res://Assets/::1752003055
 m5x7.ttf::FontFile/FontFile::6797732294834235315::1746557717::1746557723::1::::<><><>0<>0<>dc6272081f160b67a6073eb635862100<>res://.godot/imported/m5x7.ttf-6dfff7e649197dff7c4caa7190366067.fontdata::
+RushDriver-Italic font.otf::FontFile/FontFile::509961280674671074::1752003027::1752003028::1::::<><><>0<>0<>48f2fc51a9bac2ba9b3077ffbfbfebb4<>res://.godot/imported/RushDriver-Italic font.otf-40685a27c01b2ef2689ce4db8263bca6.fontdata::
 ::res://Assets/Finais/::1747771557
 ::res://Assets/Finais/Icon/::1747837625
 caveira game over.png::CompressedTexture2D/CompressedTexture2D::6518649174931980352::1747771557::1747837625::1::::<><><>0<>0<>8f7705167c0381bd4615ae2455a32183<>res://.godot/imported/caveira game over.png-4b4fcc0bd6a66c7f00a188e7a17f112f.ctex::
@@ -26,7 +28,7 @@ seta cinza.png::CompressedTexture2D/CompressedTexture2D::8397913465270068605::17
 seta coração.png::CompressedTexture2D/CompressedTexture2D::6542805391126735506::1747771557::1747837627::1::::<><><>0<>0<>95b149671c3316230b9bfeb758c34d07<>res://.godot/imported/seta coração.png-828e35a45a3969dad3d5a6b2d84c101a.ctex::
 seta laranja.png::CompressedTexture2D/CompressedTexture2D::6798602285301213981::1747771557::1747837627::1::::<><><>0<>0<>b7bc6c50270fa865ab9cc12141027de4<>res://.godot/imported/seta laranja.png-4b8d0314ee10a93e121a3eb2fd1372ab.ctex::
 vida.png::CompressedTexture2D/CompressedTexture2D::8187402895335223534::1748893015::1748893033::1::::<><><>0<>0<>de3a2cfba7dffeb21ec87782ae5e7349<>res://.godot/imported/vida.png-e9bf450be6d5acec30956080acf2c8c6.ctex::
-::res://Assets/Finais/UI/Menu/::1751047422
+::res://Assets/Finais/UI/Menu/::1751047423
 caveira game over.png::CompressedTexture2D/CompressedTexture2D::5897496298439912057::1747771557::1747837627::1::::<><><>0<>0<>15f41eee30cf67557b35151f01c0b71c<>res://.godot/imported/caveira game over.png-d64aeef502fc8e557c8e8fc62530b35b.ctex::
 Exit normal.png::CompressedTexture2D/CompressedTexture2D::3659051693516168680::1751047422::1751047423::1::::<><><>0<>0<>d3a514aede4ff50f1d81fa55062ee21a<>res://.godot/imported/Exit normal.png-c3057260151f3f0dedd131ec006a4268.ctex::
 Exit pressionado.png::CompressedTexture2D/CompressedTexture2D::3945544302059841093::1751047422::1751047423::1::::<><><>0<>0<>08e07bb7df91cfca17211272b04bc908<>res://.godot/imported/Exit pressionado.png-f3e332f2c8e7a786f707727ad46297dc.ctex::
@@ -44,7 +46,7 @@ resume normal.png::CompressedTexture2D/CompressedTexture2D::5525353746823663671:
 resume pressionado.png::CompressedTexture2D/CompressedTexture2D::96634369208329479::1749226040::1749226040::1::::<><><>0<>0<>89ed380a855d0c4d6c9f8022ee3c5021<>res://.godot/imported/resume pressionado.png-f3d67f0b93d175b53be1269ff6e14f7c.ctex::
 retangulo.png::CompressedTexture2D/CompressedTexture2D::3109478118571584801::1747771557::1747837623::1::::<><><>0<>0<>97e0550643d7e760b89f8c00dc1fa680<>res://.godot/imported/retangulo.png-485b0695bfc3d146270f3268e3f9839e.ctex::
 simbolo retry.png::CompressedTexture2D/CompressedTexture2D::5779793338269418824::1747771557::1747837623::1::::<><><>0<>0<>e352738bd0def6e266885c767c527a49<>res://.godot/imported/simbolo retry.png-413b57dd78fc9c0ee2a941a4e72034c2.ctex::
-tela game over.png::CompressedTexture2D::5306418747903478031::1751046974::1751046975::1::::<><><>0<>0<>3a5377ae4601d13281c61ecfc73a2a1d<>res://.godot/imported/tela game over.png-fad3641a864204decbc563edede60122.ctex::
+tela game over.png::CompressedTexture2D/CompressedTexture2D::5306418747903478031::1751046974::1751046975::1::::<><><>0<>0<>3a5377ae4601d13281c61ecfc73a2a1d<>res://.godot/imported/tela game over.png-fad3641a864204decbc563edede60122.ctex::
 ::res://Assets/placeholder/::1747234139
 aviso de perigo.png::CompressedTexture2D/CompressedTexture2D::5732003513304969617::1747162663::1747234139::1::::<><><>0<>0<>70c3115b53b2924f9cae7f9a4132c2d2<>res://.godot/imported/aviso de perigo.png-e8102f75a9751b3d0420e4d8fff1cba4.ctex::
 flecha.png::CompressedTexture2D/CompressedTexture2D::6907511673529224468::1747162663::1747234139::1::::<><><>0<>0<>2efac0adcce61ae625d70dcaa993843c<>res://.godot/imported/flecha.png-d4937f5a2059685b686dafd9d2cecdee.ctex::
@@ -146,21 +148,21 @@ Inimigo Slash.mp3::AudioStreamMP3/AudioStreamMP3::4538385653561810836::175079247
 Menu sfx.mp3::AudioStreamMP3/AudioStreamMP3::2287053291657400020::1750792470::1750792470::1::::<><><>0<>0<>5127000ffcbb551e38ef41a83de556ef<>res://.godot/imported/Menu sfx.mp3-58bb94e653abf7975167750aaa5885d0.mp3str::
 player slash sfx.mp3::AudioStreamMP3/AudioStreamMP3::6948368178089526723::1750792470::1750792470::1::::<><><>0<>0<>38d9208278679321c96c41be9a911722<>res://.godot/imported/player slash sfx.mp3-a56211b5760b720a10b8248e95a2022e.mp3str::
 UI sfx.mp3::AudioStreamMP3/AudioStreamMP3::1292879052640486444::1750792470::1750792470::1::::<><><>0<>0<>f1a77765da2355c9f58d9ed3a31fbaaf<>res://.godot/imported/UI sfx.mp3-19cd23e677859647a0f582109bf3d1d4.mp3str::
-::res://Cenas/::1751047137
-barra_de_vida_inimiga.tscn::PackedScene::2304614423337688214::1750268870::0::1::::<><><>0<>0<><>::uid://dowblg5lsjaxy::::res://Assets/Finais/UI/GUI/vida.png
-flecha.tscn::PackedScene::7970058368810102696::1750268870::0::1::::<><><>0<>0<><>::uid://sahrgodvam8h::::res://Assets/Finais/UI/GUI/seta azul.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
-instruções_guia.tscn::PackedScene::6290368789182414119::1750268870::0::1::::<><><>0<>0<><>::uid://bxhacsjg8uubh::::res://Scripts/instruções_guia.gd<>uid://bprwa5u0r87yx::::res://Assets/Finais/UI/GUI/mão guia.png<>uid://bkkiwd046h3ub::::res://Assets/Finais/UI/Menu/retangulo.png<>uid://c334wmluxu68f::::res://Assets/m5x7.ttf
-menu.tscn::PackedScene::8370396516007970733::1750792470::0::1::::<><><>0<>0<><>::uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://d2671viwls7u::::res://Scripts/menu.gd<>uid://dhuworsc3hldu::::res://Assets/Finais/UI/Menu/Logo sword slasher.png<>uid://btv521e8n7ypt::::res://Assets/Finais/UI/Menu/play normal.png<>uid://cyq0slekhkdaq::::res://Assets/Finais/UI/Menu/play pressionado.png<>uid://bseqbudl7c1cm::::res://Assets/Finais/UI/Menu/Exit normal.png<>uid://bwhiskfs72dvx::::res://Assets/Finais/UI/Menu/Exit pressionado.png<>uid://butp3v2qvg8c2::::res://Scripts/sons.gd<>uid://7t4o0hcpa2lc::::res://Assets/Sons/Menu sfx.mp3<>uid://sojr8v7b2f05::::res://Assets/Sons/UI sfx.mp3
+::res://Cenas/::1752004839
+barra_de_vida_inimiga.tscn::PackedScene/PackedScene::2304614423337688214::1751050927::0::1::::<><><>0<>0<><>::uid://dowblg5lsjaxy::::res://Assets/Finais/UI/GUI/vida.png
+flecha.tscn::PackedScene::7970058368810102696::1752004799::0::1::::<><><>0<>0<><>::uid://sahrgodvam8h::::res://Assets/Finais/UI/GUI/seta azul.png<>uid://boc4x8e2isjqw::::res://Scripts/flecha.gd
+instruções_guia.tscn::PackedScene::6290368789182414119::1752004799::0::1::::<><><>0<>0<><>::uid://bxhacsjg8uubh::::res://Scripts/instruções_guia.gd<>uid://bprwa5u0r87yx::::res://Assets/Finais/UI/GUI/mão guia.png<>uid://bkkiwd046h3ub::::res://Assets/Finais/UI/Menu/retangulo.png<>uid://c334wmluxu68f::::res://Assets/m5x7.ttf
+menu.tscn::PackedScene::8370396516007970733::1752004799::0::1::::<><><>0<>0<><>::uid://dv2ufv7cdke1j::::res://Assets/placeholder/UI/Panel/Body/Headless.png<>uid://d2671viwls7u::::res://Scripts/menu.gd<>uid://dhuworsc3hldu::::res://Assets/Finais/UI/Menu/Logo sword slasher.png<>uid://btv521e8n7ypt::::res://Assets/Finais/UI/Menu/play normal.png<>uid://cyq0slekhkdaq::::res://Assets/Finais/UI/Menu/play pressionado.png<>uid://bseqbudl7c1cm::::res://Assets/Finais/UI/Menu/Exit normal.png<>uid://bwhiskfs72dvx::::res://Assets/Finais/UI/Menu/Exit pressionado.png<>uid://butp3v2qvg8c2::::res://Scripts/sons.gd<>uid://sojr8v7b2f05::::res://Assets/Sons/UI sfx.mp3<>uid://cqo064k331g3r::::res://Assets/Sons/Game over sfx.mp3<>uid://b5woswibx24fo::::res://Assets/Sons/Inimigo Slash.mp3<>uid://c583uxxjtymjr::::res://Assets/Sons/player slash sfx.mp3
 salaDungeonV2.glb::PackedScene/PackedScene::5066369315772649163::1746027531::1746027555::1::::<><><>0<>0<>2426447647fd11962acdd9d7480acb6c<>res://.godot/imported/salaDungeonV2.glb-8a32089c41ffeedb4266223a78f005dc.scn::
-sword_slasher.tscn::PackedScene::6468664047896390950::1751047137::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://cqo064k331g3r::::res://Assets/Sons/Game over sfx.mp3<>uid://dbqgl5mbnjqef::::res://Scripts/Objetos de ação.gd<>uid://butp3v2qvg8c2::::res://Scripts/sons.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://b5woswibx24fo::::res://Assets/Sons/Inimigo Slash.mp3<>uid://c583uxxjtymjr::::res://Assets/Sons/player slash sfx.mp3<>uid://dls0xxuy2slb1::::res://Cenas/flecha.tscn<>uid://sojr8v7b2f05::::res://Assets/Sons/UI sfx.mp3<>uid://65jr517b4wej::::res://Assets/Finais/Objetos de ação/Inimigo/Inimigo def.png<>uid://73mwsioj00p3::::res://Cenas/barra_de_vida_inimiga.tscn<>uid://ycb7i0i3yff5::::res://Assets/Finais/UI/GUI/icone dano.png<>uid://dowblg5lsjaxy::::res://Assets/Finais/UI/GUI/vida.png<>uid://b3fftothk8dvi::::res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png<>uid://bi46ulynp3hed::::res://Scripts/game_over.gd<>uid://cr7oahb2qespu::::res://Assets/Finais/UI/Menu/restart noral.png<>uid://c71nohlr5ddlb::::res://Assets/Finais/UI/Menu/restart pressionado.png<>uid://bseqbudl7c1cm::::res://Assets/Finais/UI/Menu/Exit normal.png<>uid://cnwvi4bcrd2hp::::res://Assets/placeholder/aviso de perigo.png<>uid://bwhiskfs72dvx::::res://Assets/Finais/UI/Menu/Exit pressionado.png<>uid://c334wmluxu68f::::res://Assets/m5x7.ttf<>uid://cgvpamqbbdyko::::res://Scripts/pontuação.gd<>uid://chup7amy85qgd::::res://Assets/Finais/UI/Menu/tela game over.png
-::res://Scripts/::1751047137
-camera_2d.gd::GDScript::8034934747453120834::1748454278::0::1::::<>Camera3D<><>0<>0<><>::
-flecha.gd::GDScript::3374996856871652042::1750268626::0::1::::<>Sprite2D<><>0<>0<><>::
-game_over.gd::GDScript::3009716945762923799::1750792471::0::1::::<>Control<><>0<>0<><>::
-Global.gd::GDScript::8378714616868836821::1750189966::0::1::::<>Node<><>0<>0<><>::
-instruções_guia.gd::GDScript::4015219262875137321::1750192601::0::1::::<>Control<><>0<>0<><>::
-lista_de_comandos.gd::GDScript::6092673651249217483::1750268616::0::1::::<>Control<><>0<>0<><>::
-menu.gd::GDScript::268245500895761684::1750792471::0::1::::<>Control<><>0<>0<><>::
-Objetos de ação.gd::GDScript::7262866478773182085::1751047137::0::1::::<>Control<><>0<>0<><>::
-pontuação.gd::GDScript::5238237771985138826::1750268718::0::1::::<>Control<><>0<>0<><>::
-sons.gd::GDScript::3830382636357094691::1750792471::0::1::::<>Control<><>0<>0<><>::
+sword_slasher.tscn::PackedScene::6468664047896390950::1752004843::0::1::::<><><>0<>0<><>::uid://dmqgg31yrogqk::::res://Scripts/camera_2d.gd<>uid://cqo064k331g3r::::res://Assets/Sons/Game over sfx.mp3<>uid://dbqgl5mbnjqef::::res://Scripts/Objetos de ação.gd<>uid://butp3v2qvg8c2::::res://Scripts/sons.gd<>uid://cs2lpej1i4tep::::res://Scripts/lista_de_comandos.gd<>uid://b5woswibx24fo::::res://Assets/Sons/Inimigo Slash.mp3<>uid://c583uxxjtymjr::::res://Assets/Sons/player slash sfx.mp3<>uid://dls0xxuy2slb1::::res://Cenas/flecha.tscn<>uid://sojr8v7b2f05::::res://Assets/Sons/UI sfx.mp3<>uid://65jr517b4wej::::res://Assets/Finais/Objetos de ação/Inimigo/Inimigo def.png<>uid://73mwsioj00p3::::res://Cenas/barra_de_vida_inimiga.tscn<>uid://ycb7i0i3yff5::::res://Assets/Finais/UI/GUI/icone dano.png<>uid://dowblg5lsjaxy::::res://Assets/Finais/UI/GUI/vida.png<>uid://b3fftothk8dvi::::res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png<>uid://bi46ulynp3hed::::res://Scripts/game_over.gd<>uid://cr7oahb2qespu::::res://Assets/Finais/UI/Menu/restart noral.png<>uid://c71nohlr5ddlb::::res://Assets/Finais/UI/Menu/restart pressionado.png<>uid://bseqbudl7c1cm::::res://Assets/Finais/UI/Menu/Exit normal.png<>uid://cnwvi4bcrd2hp::::res://Assets/placeholder/aviso de perigo.png<>uid://bwhiskfs72dvx::::res://Assets/Finais/UI/Menu/Exit pressionado.png<>uid://c334wmluxu68f::::res://Assets/m5x7.ttf<>uid://cgvpamqbbdyko::::res://Scripts/pontuação.gd<>uid://chup7amy85qgd::::res://Assets/Finais/UI/Menu/tela game over.png<>uid://hja8t47ts3he::::res://Assets/RushDriver-Italic font.otf<>uid://b6cj87qnm14n::::res://gradeLabel.gd
+::res://Scripts/::1752004781
+camera_2d.gd::GDScript/GDScript::8034934747453120834::1748454278::0::1::::<>Camera3D<><>0<>0<><>::
+flecha.gd::GDScript/GDScript::3374996856871652042::1751053319::0::1::::<>Sprite2D<><>0<>0<><>::
+game_over.gd::GDScript/GDScript::3009716945762923799::1751053904::0::1::::<>Control<><>0<>0<><>::
+Global.gd::GDScript::8378714616868836821::1752003411::0::1::::<>Node<><>0<>0<><>::
+instruções_guia.gd::GDScript/GDScript::4015219262875137321::1751053344::0::1::::<>Control<><>0<>0<><>::
+lista_de_comandos.gd::GDScript/GDScript::6092673651249217483::1752002888::0::1::::<>Control<><>0<>0<><>::
+menu.gd::GDScript/GDScript::268245500895761684::1750792471::0::1::::<>Control<><>0<>0<><>::
+Objetos de ação.gd::GDScript/GDScript::7262866478773182085::1752001294::0::1::::<>Control<><>0<>0<><>::
+pontuação.gd::GDScript::5238237771985138826::1752004781::0::1::::<>Control<><>0<>0<><>::
+sons.gd::GDScript/GDScript::3830382636357094691::1751054155::0::1::::<>Control<><>0<>0<><>::

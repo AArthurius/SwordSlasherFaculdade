@@ -2,7 +2,6 @@ extends Node
 
 var pontuaçãoAtual:int = 0
 var pontuações = []
-
 var nivelDificuldade:int = 0
 
 var setasExplicadas:Array = [false, false, false, false, false]

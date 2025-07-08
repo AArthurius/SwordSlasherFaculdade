@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=107 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="AudioStream" uid="uid://cqo064k331g3r" path="res://Assets/Sons/Game over sfx.mp3" id="2_5sjv0"]
@@ -23,8 +23,6 @@
 [ext_resource type="FontFile" uid="uid://c334wmluxu68f" path="res://Assets/m5x7.ttf" id="16_1i0ms"]
 [ext_resource type="Script" uid="uid://cgvpamqbbdyko" path="res://Scripts/pontuação.gd" id="16_n8unr"]
 [ext_resource type="Texture2D" uid="uid://chup7amy85qgd" path="res://Assets/Finais/UI/Menu/tela game over.png" id="16_uo2l0"]
-[ext_resource type="FontFile" uid="uid://hja8t47ts3he" path="res://Assets/RushDriver-Italic font.otf" id="24_5sjv0"]
-[ext_resource type="Script" uid="uid://b6cj87qnm14n" path="res://Scripts/gradeLabel.gd" id="25_85djr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c08h"]
 resource_name = "Material"
@@ -2289,25 +2287,6 @@ theme_override_fonts/font = ExtResource("16_1i0ms")
 theme_override_font_sizes/font_size = 48
 text = "0 streak"
 horizontal_alignment = 2
-
-[node name="gradeLabel" type="Label" parent="CanvasLayer/UI/Pontuação"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 109.0
-offset_top = -296.0
-offset_right = 246.0
-offset_bottom = -256.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(137, 0)
-theme_override_fonts/font = ExtResource("24_5sjv0")
-theme_override_font_sizes/font_size = 48
-horizontal_alignment = 2
-script = ExtResource("25_85djr")
 
 [node name="Animation" type="AnimationPlayer" parent="CanvasLayer/UI"]
 libraries = {

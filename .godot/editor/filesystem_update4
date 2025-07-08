@@ -1,13 +1,10 @@
 res://Cenas/sword_slasher.tscn
 res://Scripts/Objetos de ação.gd
-res://Scripts/game_over.gd
+res://Scripts/lista_de_comandos.gd
+res://Scripts/Global.gd
+res://Scripts/pontuação.gd
 res://Cenas/flecha.tscn
-res://Cenas/barra_de_vida_inimiga.tscn
 res://Cenas/menu.tscn
 res://Cenas/instruções_guia.tscn
-res://Scripts/Global.gd
-res://Scripts/lista_de_comandos.gd
-res://Scripts/flecha.gd
-res://Scripts/pontuação.gd
-res://Scripts/instruções_guia.gd
-res://Scripts/sons.gd
+res://teste.gd
+res://Scripts/gradeLabel.gd

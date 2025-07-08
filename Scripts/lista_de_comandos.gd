@@ -207,8 +207,8 @@ func checkArrow(swipeDirection, timeout: bool):
 	afterCheck()
 
 func acerto(swipeDirection):
-	var pontAmount = snapped(tempo_de_reação.time_left, 0.1)
-	pontuação.acerto(pontAmount) #pontuar
+	var reactTime = snapped(tempo_de_reação.time_left, 0.1)
+	pontuação.acerto(reactTime) #pontuar
 	if flechas.get_child(0).setaAtual == flechas.get_child(0).Tipo.LARANJA: #se for laranja
 		ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, true)
 	else: # se não for laranja
@@ -220,15 +220,15 @@ func acerto(swipeDirection):
 		else:
 			ação.attack(swipeDirection, flechas.get_child(0).enemyAtk, true, false, false, false)
 	
-	ganharVidaCount += clamp(pontAmount / tempo_de_reação.wait_time, 0.2, 1.0) * 100.0
+	ganharVidaCount += clamp(reactTime / tempo_de_reação.wait_time, 0.2, 1.0) * 100.0
 	if ganharVidaCount >= 10000:
 		addLife()
 		ganharVidaCount -= 10000
-	print(ganharVidaCount)
 	
 	checkTipo(flechas.get_child(0), true)
 
 func erro(swipeDirection, timeout:bool):
+	pontuação.erro()
 	shake(player, 10)
 	shake(inimigo, 5)
 	shake(barra_de_vida, 10)
