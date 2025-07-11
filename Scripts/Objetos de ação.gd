@@ -116,7 +116,7 @@ func attack(Direction:int, enemyAtk:bool, acerto: bool, timeout: bool, dano:bool
 			changeSprite(player, P_DEF_SHEET, 5)
 	
 	if !laranja:
-		sons.playSFX(randi_range(0,1))
+		sons.playSlash()
 		impactos[Direction].show()
 		reset_sprites.start()
 

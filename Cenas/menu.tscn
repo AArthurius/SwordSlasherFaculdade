@@ -243,16 +243,34 @@ script = ExtResource("8_1evsv")
 stream = ExtResource("9_bpp88")
 bus = &"SFX"
 
-[node name="Slash 1 SFX" type="AudioStreamPlayer2D" parent="Sons"]
+[node name="UI SFX" type="AudioStreamPlayer2D" parent="Sons"]
+stream = ExtResource("9_1evsv")
+bus = &"SFX"
+
+[node name="Slash SFX" type="Control" parent="Sons"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slash 1 SFX" type="AudioStreamPlayer2D" parent="Sons/Slash SFX"]
 stream = ExtResource("10_ctkf8")
 bus = &"SFX"
 
-[node name="Slash 2 SFX" type="AudioStreamPlayer2D" parent="Sons"]
+[node name="Slash 2 SFX" type="AudioStreamPlayer2D" parent="Sons/Slash SFX"]
 stream = ExtResource("11_bro6f")
 bus = &"SFX"
 
-[node name="UI SFX" type="AudioStreamPlayer2D" parent="Sons"]
-stream = ExtResource("9_1evsv")
+[node name="Slash 3 SFX" type="AudioStreamPlayer2D" parent="Sons/Slash SFX"]
+bus = &"SFX"
+
+[node name="Slash 4 SFX" type="AudioStreamPlayer2D" parent="Sons/Slash SFX"]
+bus = &"SFX"
+
+[node name="Slash 5 SFX" type="AudioStreamPlayer2D" parent="Sons/Slash SFX"]
+bus = &"SFX"
+
+[node name="Slash 6 SFX" type="AudioStreamPlayer2D" parent="Sons/Slash SFX"]
 bus = &"SFX"
 
 [connection signal="pressed" from="Botões/Play" to="." method="button_play_pressed"]

@@ -35,11 +35,11 @@ func gameOver():
 		previous_score_3.text = str(Global.pontuações[2])
 
 func _on_play_pressed() -> void:
-	sons.playSFX(2)
+	sons.playSFX(0)
 	get_tree().reload_current_scene()
 
 func _on_exit_pressed() -> void:
-	sons.playSFX(2)
+	sons.playSFX(0)
 	animation.play("Fade out")
 
 func displayScores():

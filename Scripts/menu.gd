@@ -12,11 +12,11 @@ func _ready() -> void:
 	animation.play("Fade in")
 
 func button_exit_pressed() -> void:
-	sons.playSFX(2)
+	sons.playSFX(0)
 	get_tree().quit()
 
 func button_play_pressed() -> void:
-	sons.playSFX(2)
+	sons.playSFX(0)
 	animation.play("Fade out")
 
 func _on_animation_animation_finished(anim_name: StringName) -> void:

@@ -5,10 +5,13 @@ extends Control
 @onready var scoreLabel: Label = $scoreLabel
 @onready var tempo_de_reação: Timer = $"../Tempo de reação Label/Tempo de reação"
 @onready var animation: AnimationPlayer = $Animation
+@onready var ranbow: Control = $Ranbow
 
 var streak:int = 0
 var grade:String = ""
 var gradeLabelOriginalPosition: Vector2
+var rainbowEffect = false
+
 
 func _ready() -> void:
 	checkDificuldade()
@@ -17,6 +20,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = str(Global.pontuaçãoAtual)
+	if rainbowEffect:
+		gradeLabel.modulate = ranbow.modulate
+		streakLabel.modulate = ranbow.modulate
+		scoreLabel.modulate = ranbow.modulate
+	else:
+		gradeLabel.modulate = Color(1,1,1,1)
+		streakLabel.modulate = Color(1,1,1,1)
+		scoreLabel.modulate = Color(1,1,1,1)
 
 func checkDificuldade():
 	if Global.nivelDificuldade == 0:
@@ -60,25 +71,31 @@ func pop(object):
 
 func updateGrade():
 	if streak < 5 and grade != "":
+		rainbowEffect = false
 		grade = ""
 		gradeLabel.glide = false
 	if streak > 5 and streak < 10 and grade != "D":
+		rainbowEffect = false
 		pop(gradeLabel)
 		grade = "D"
 		gradeLabel.glide = false
 	elif streak > 10 and streak < 15 and grade != "C":
+		rainbowEffect = false
 		pop(gradeLabel)
 		grade = "C"
 		gradeLabel.glide = false
 	elif streak > 15 and streak < 20 and grade != "B":
+		rainbowEffect = false
 		pop(gradeLabel)
 		grade = "B"
 		gradeLabel.glide = false
 	elif streak > 20 and streak < 30 and grade != "A":
+		rainbowEffect = false
 		pop(gradeLabel)
 		grade = "A"
 		gradeLabel.glide = true
 	elif streak > 30 and grade != "S":
+		rainbowEffect = true
 		pop(gradeLabel)
 		grade = "S"
 		gradeLabel.glide = true

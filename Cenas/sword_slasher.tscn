@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=4 uid="uid://cyfp7mi73rcru"]
+[gd_scene load_steps=114 format=4 uid="uid://cyfp7mi73rcru"]
 
 [ext_resource type="Script" uid="uid://dmqgg31yrogqk" path="res://Scripts/camera_2d.gd" id="1_86t8k"]
 [ext_resource type="AudioStream" uid="uid://cqo064k331g3r" path="res://Assets/Sons/Game over sfx.mp3" id="2_5sjv0"]
@@ -12,9 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://65jr517b4wej" path="res://Assets/Finais/Objetos de ação/Inimigo/Inimigo def.png" id="5_fmfii"]
 [ext_resource type="PackedScene" uid="uid://73mwsioj00p3" path="res://Cenas/barra_de_vida_inimiga.tscn" id="6_5byvl"]
 [ext_resource type="Texture2D" uid="uid://ycb7i0i3yff5" path="res://Assets/Finais/UI/GUI/icone dano.png" id="6_l5he2"]
+[ext_resource type="AudioStream" uid="uid://h0admggyk7j1" path="res://Assets/Sons/fantasy-game-sword-cut-sound-effect-2-get-more-on-my-patreon-339823.mp3" id="7_frf08"]
 [ext_resource type="Texture2D" uid="uid://dowblg5lsjaxy" path="res://Assets/Finais/UI/GUI/vida.png" id="8_fmfii"]
 [ext_resource type="Texture2D" uid="uid://b3fftothk8dvi" path="res://Assets/Finais/Objetos de ação/Player/Player defesa sheet.png" id="8_l5he2"]
+[ext_resource type="AudioStream" uid="uid://cnk32fxmpp1w6" path="res://Assets/Sons/fantasy-game-sword-cut-sound-effect-get-more-on-my-patreon-339824.mp3" id="8_r1862"]
 [ext_resource type="Script" uid="uid://bi46ulynp3hed" path="res://Scripts/game_over.gd" id="9_61aoi"]
+[ext_resource type="AudioStream" uid="uid://d0w5a3bhhyb0c" path="res://Assets/Sons/sword-35999.mp3" id="9_sedli"]
+[ext_resource type="AudioStream" uid="uid://cie3si5lvgcti" path="res://Assets/Sons/sword-clash-241729.mp3" id="10_mjvr2"]
 [ext_resource type="Texture2D" uid="uid://cr7oahb2qespu" path="res://Assets/Finais/UI/Menu/restart noral.png" id="12_fmfii"]
 [ext_resource type="Texture2D" uid="uid://c71nohlr5ddlb" path="res://Assets/Finais/UI/Menu/restart pressionado.png" id="13_5byvl"]
 [ext_resource type="Texture2D" uid="uid://bseqbudl7c1cm" path="res://Assets/Finais/UI/Menu/Exit normal.png" id="14_h0iht"]
@@ -25,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://chup7amy85qgd" path="res://Assets/Finais/UI/Menu/tela game over.png" id="16_uo2l0"]
 [ext_resource type="FontFile" uid="uid://hja8t47ts3he" path="res://Assets/RushDriver-Italic font.otf" id="24_5sjv0"]
 [ext_resource type="Script" uid="uid://b6cj87qnm14n" path="res://Scripts/gradeLabel.gd" id="25_85djr"]
+[ext_resource type="Script" uid="uid://dks82aepnudse" path="res://Scripts/ranbow.gd" id="30_r1862"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2c08h"]
 resource_name = "Material"
@@ -1789,16 +1794,37 @@ script = ExtResource("2_85djr")
 stream = ExtResource("2_5sjv0")
 bus = &"SFX"
 
-[node name="Slash 1 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+[node name="UI SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+stream = ExtResource("5_4gbm1")
+bus = &"SFX"
+
+[node name="Slash SFX" type="Control" parent="CanvasLayer/UI/Sons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slash 1 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons/Slash SFX"]
 stream = ExtResource("3_85djr")
 bus = &"SFX"
 
-[node name="Slash 2 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
+[node name="Slash 2 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons/Slash SFX"]
 stream = ExtResource("4_2gyqn")
 bus = &"SFX"
 
-[node name="UI SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons"]
-stream = ExtResource("5_4gbm1")
+[node name="Slash 3 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons/Slash SFX"]
+stream = ExtResource("7_frf08")
+bus = &"SFX"
+
+[node name="Slash 4 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons/Slash SFX"]
+stream = ExtResource("8_r1862")
+bus = &"SFX"
+
+[node name="Slash 5 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons/Slash SFX"]
+stream = ExtResource("9_sedli")
+bus = &"SFX"
+
+[node name="Slash 6 SFX" type="AudioStreamPlayer2D" parent="CanvasLayer/UI/Sons/Slash SFX"]
+stream = ExtResource("10_mjvr2")
 bus = &"SFX"
 
 [node name="Objetos de ação" type="Control" parent="CanvasLayer/UI"]
@@ -2308,6 +2334,12 @@ theme_override_fonts/font = ExtResource("24_5sjv0")
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 2
 script = ExtResource("25_85djr")
+
+[node name="Ranbow" type="Control" parent="CanvasLayer/UI/Pontuação"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("30_r1862")
 
 [node name="Animation" type="AnimationPlayer" parent="CanvasLayer/UI"]
 libraries = {

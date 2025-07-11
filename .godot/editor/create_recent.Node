@@ -1,7 +1,8 @@
+Node
+Control
 AnimationPlayer
 Sprite2D
 Sprite3D
-Control
 MarginContainer
 HBoxContainer
 VBoxContainer
@@ -11,4 +12,3 @@ Panel
 HSplitContainer
 Label
 AudioStreamPlayer2D
-Node
